@@ -48,6 +48,9 @@ int get_hearts() const;
 //setter hearts
 void set_hearts(int newHearts);
 
+//stop horizontal movements
+void stop_horizontal_movement();
+
 private:
 sf::Texture texture;
 
@@ -56,9 +59,6 @@ sf::Sprite sprite;
 // character's x and y position
 float position_x;
 float position_y;
-
-//stop horizontal movements
-void stop_horizontal_movement();
 
 // character is moving left or right
 HorizontalDirection h_dir;
