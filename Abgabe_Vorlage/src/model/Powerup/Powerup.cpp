@@ -25,20 +25,23 @@ void Powerup::move_right() {
 }
 
 HorizontalDirection Powerup::get_horizontal_movement() const {
-    return h_dir
+    return h_dir;
 }
 
-void set_position(float x, float y) {
+void Powerup::set_position(float x, float y) {
     position_x = x;
     position_y = y;
 }
 
-float get_position_x () const {
+float Powerup::get_position_x () const {
     return position_x;
 }
 
-float get_position_y () const {
+float Powerup::get_position_y () const {
     return position_y;
 }
 
+const sf::Sprite& Powerup::get_sprite() const {
+    return sprite;
+}
 

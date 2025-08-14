@@ -63,7 +63,7 @@ void Player::set_score(int newScore){
 }
 //getter hearts
 int Player:: get_hearts() const{
-    return hearts
+    return hearts;
 }
 void Player:: set_hearts(int newHearts){
     hearts = newHearts;
