@@ -20,12 +20,13 @@ void PlayerControl::spacebar_pressed() {
 }
 
 
-//stops 
+//stops Players movement
 void PlayerControl::direction_button_released(HorizontalDirection direction) {
     if (direction == player.get_horizontal_movement())
         player.stop_horizontal_movement();
 }
 
+//
 bool PlayerControl::can_shoot(float elapsed_time) {
     float elapsed_time
     return (elapsed_time > 0.5);
