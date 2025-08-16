@@ -26,7 +26,7 @@ void PlayerControl::direction_button_released(HorizontalDirection direction) {
         player.stop_horizontal_movement();
 }
 
-//
+
 bool PlayerControl::can_shoot(float elapsed_time) {
     float elapsed_time
     return (elapsed_time > 0.5);
