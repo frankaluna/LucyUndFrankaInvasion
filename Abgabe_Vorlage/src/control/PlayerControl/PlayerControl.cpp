@@ -26,8 +26,8 @@ void PlayerControl::direction_button_released(HorizontalDirection direction) {
         player.stop_horizontal_movement();
 }
 
-
+// determines if Player can shoot again after cooldown period
 bool PlayerControl::can_shoot(float elapsed_time) {
-    float elapsed_time
+    float elapsed_time;
     return (elapsed_time > 0.5);
 }
