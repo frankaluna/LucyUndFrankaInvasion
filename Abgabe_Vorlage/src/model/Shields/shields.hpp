@@ -1,5 +1,5 @@
 #ifndef SHIELDS_HPP
-#define ALIEN_HPP
+#define SHIELDS_HPP
 
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Sprite.hpp>
