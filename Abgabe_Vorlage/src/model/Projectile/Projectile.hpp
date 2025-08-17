@@ -2,7 +2,9 @@
 #define PROJECTILE_H
 
 #include <SFML/Graphics.hpp>
-#include "Shooter.hpp"
+#include "./Shooter.hpp"
+
+
 
 //model class for a projectile
 class Projectile {
@@ -31,7 +33,7 @@ class Projectile {
 
     private:
 
-        float x_position
+        float x_position;
         float y_position;
         float speed;
         float radius;
