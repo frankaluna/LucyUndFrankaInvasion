@@ -24,7 +24,20 @@ active(true)  {
 
     y_position = owner->get_position_y();
     x_position = owner->get_position_x();
-
-   
 };
 
+
+void Projectile::update(float deltaTime) {
+    if (active == true) {
+        if (shooter == Shooter::PLAYER) {
+                y_position = y_position + (speed * deltaTime);
+                if (y_position >)
+        }
+
+        if (shooter == Shooter::ALIEN) {
+            //get_level muss noch in Alien implementiert werden
+            y_position = y_position - ((speed + owner.get_level()) * deltaTime);
+        }
+
+    }
+};

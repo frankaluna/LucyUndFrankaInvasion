@@ -2,10 +2,10 @@
 #define PROJECTILE_H
 
 #include <SFML/Graphics.hpp>
-#include "Shooter.hpp"
 #include "Player.hpp"
 #include "Alien.hpp"
 #include "Shooter.hpp"
+
 
 //model class for a projectile
 class Projectile {
@@ -43,6 +43,7 @@ class Projectile {
         float radius;
         Shooter shooter;
         bool active;
+        int level;
 
 };
 
