@@ -2,14 +2,19 @@
 #define PROJECTILE_H
 
 #include <SFML/Graphics.hpp>
-#include "./Shooter.hpp"
-
+#include "Shooter.hpp"
+#include "Player.hpp"
+#include "Alien.hpp"
+#include "Shooter.hpp"
 
 //model class for a projectile
 class Projectile {
     public:
-        //constructor, initializes the projectile
-        Projectile(float startY, float speed, Shooter shooter, float radius);
+        //constructor, initializes the projectile if projectile is shot by Player
+        Projectile(Player* owner, float speed, float radius);
+
+        //constructor, initializes the projectile if it shot by an Alien
+        Projectile(Alien* owner, float speed, float radius);
 
         //updates Projectiles Movement
         void update(float deltaTime) {};

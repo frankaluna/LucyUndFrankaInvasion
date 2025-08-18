@@ -1,4 +1,5 @@
 enum class Shooter {
     ALIEN,
-    PLAYER
+    PLAYER,
+    NONE
 };
