@@ -9,8 +9,6 @@ active(true)  {
 
     y_position = owner->get_position_y();
     x_position = owner->get_position_x();
-
-   
 };
 
 //constructor if owner is alien
@@ -31,21 +29,29 @@ void Projectile::update(float deltaTime) {
     if (active == true) {
         if (shooter == Shooter::PLAYER) {
                 y_position = y_position + (speed * deltaTime);
-                if (y_position > 0) {
+                if (y_position < 0) {
                     deactivate();
                 }
         }
 
         if (shooter == Shooter::ALIEN) {
             //get_level muss noch in Alien implementiert werden
-                y_position = y_position - ((speed + owner.get_level()) * deltaTime);
-                    if (y_position < 600) {
+                y_position = y_position - (speed 
+                //+ owner.get_level())   
+                     * deltaTime);
+                    if (y_position > 600) {
                         deactivate();
                     }
         }
 
     }
 };
+
+//irgendwie erkennt er RenderWindow nicht warum??
+  void draw(sf::RenderWindow &window) {
+        sprite.setPosition(x_position, y_position);
+        window.draw(sprite);
+    }
 
 //deactivates projectile
 void Projectile::deactivate() {

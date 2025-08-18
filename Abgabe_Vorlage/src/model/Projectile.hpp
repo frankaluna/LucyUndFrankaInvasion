@@ -1,7 +1,8 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include "Player.hpp"
 #include "Alien.hpp"
 #include "Shooter.hpp"
@@ -18,6 +19,8 @@ class Projectile {
 
         //updates Projectiles Movement
         void update(float deltaTime) {};
+
+        void draw(sf::RenderWindow &window) {};
 
         //deactivates Projectile
         void deactivate() {};
@@ -46,6 +49,7 @@ class Projectile {
         float radius;
         Shooter shooter;
         bool active;
+        sf::Sprite sprite;
 
 };
 

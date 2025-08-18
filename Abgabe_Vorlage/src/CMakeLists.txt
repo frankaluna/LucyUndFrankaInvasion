@@ -1,5 +1,6 @@
 # Model
 set(ModelSources
+    ${CMAKE_CURRENT_SOURCE_DIR}/model/Projectile.cpp
     )
 
 # Controller
