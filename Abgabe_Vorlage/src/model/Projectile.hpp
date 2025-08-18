@@ -11,10 +11,10 @@
 class Projectile {
     public:
         //constructor, initializes the projectile if projectile is shot by Player
-        Projectile(Player* owner, float speed, float radius);
+        Projectile(Player* owner, float speed);
 
         //constructor, initializes the projectile if it shot by an Alien
-        Projectile(Alien* owner, float speed, float radius);
+        Projectile(Alien* owner, float speed);
 
         //updates Projectiles Movement
         void update(float deltaTime) {};
@@ -34,6 +34,9 @@ class Projectile {
         //get radius
         float get_radius() {};
 
+        //returns if projectile is active
+        bool isActive() {};
+
 
     private:
 
@@ -43,7 +46,6 @@ class Projectile {
         float radius;
         Shooter shooter;
         bool active;
-        int level;
 
 };
 
