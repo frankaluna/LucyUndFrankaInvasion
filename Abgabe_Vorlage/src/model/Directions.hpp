@@ -1,3 +1,6 @@
+#ifndef DIRECTIONS_HPP
+#define DIRECTIONS_HPP
+
 enum class HorizontalDirection {
     LEFT,
     RIGHT,
@@ -6,5 +9,7 @@ enum class HorizontalDirection {
 
 enum class VerticalDirection {
     UP,
-    DOWN
+    DOWN,
+    NONE
 };
+#endif
