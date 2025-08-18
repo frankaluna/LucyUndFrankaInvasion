@@ -4,7 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "./Shooter.hpp"
 
-git 
 
 //model class for a projectile
 class Projectile {
