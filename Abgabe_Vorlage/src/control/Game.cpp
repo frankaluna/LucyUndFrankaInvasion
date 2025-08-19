@@ -6,7 +6,23 @@
 
 Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Space Invaders"),
     view(sf::FloatRect(sf::Vector2f({0,-constants::VIEW_HEIGHT}), sf::Vector2f({constants::VIEW_WIDTH,constants::VIEW_HEIGHT}))),
-    game_layer(window) {
+    game_layer(window),
+    background_layer(window), //Layer
+    background(),              //Texture
+    background_sprite(background)//Sprite 
+    {
+
+    // load background file and configure sprite
+    if (!background.loadFromFile("/home/f/ffreeric/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/hintergrund.png"))
+        throw std::runtime_error("background asset not found");
+
+    background_sprite.setTexture(background);
+    background_sprite.setPosition({0,0});
+    background_sprite.setTextureRect(sf::IntRect({0,0}, {600, 600}));
+
+     // draw on the render target (needs to be done only once) 
+    background_layer.clear();
+    background_layer.add_to_layer(background_sprite);
     // limit frame rate
     window.setFramerateLimit(constants::FRAME_RATE);
 
@@ -61,7 +77,9 @@ void Game::draw() {
 
     game_layer.clear();
     // TODO: add game elements to layer
+    background_layer.draw();
     game_layer.draw();
 
+    
     window.display();
 }

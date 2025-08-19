@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 #include "../view/Layer.hpp"
 
@@ -30,6 +31,12 @@ private:
     // view area and layers
     sf::View view;
     Layer game_layer;
+    Layer background_layer;
+
+
+    // resources to draw the background
+    sf::Texture background;
+    sf::Sprite background_sprite;
 };
 
 #endif

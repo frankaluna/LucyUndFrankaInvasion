@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 build/src/model/Projectile.o: src/model/Projectile.cpp \
  src/model/Projectile.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
@@ -142,3 +143,6 @@ src/model/Player.hpp:
 src/model/Directions.hpp:
 src/model/Alien.hpp:
 src/model/Shooter.hpp:
+=======
+build/src/model/Projectile.o: src/model/Projectile.cpp
+>>>>>>> 60eb7f42963f627ea68b674dda2d49601d6b6905

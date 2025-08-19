@@ -1,4 +1,4 @@
-#include "Projectile.hpp"
+/*#include "Projectile.hpp"
 
 //constructor if owner is player
 Projectile::Projectile(Player* owner, float speed) : 
@@ -10,7 +10,15 @@ active(true)  {
     y_position = owner->get_position_y();
     x_position = owner->get_position_x();
 
-   
+    // load texture
+    // (use "assets/images/spritesheet_bread.png" for the jumping loaf of bread, original can be found here https://caz-creates-games.itch.io/bread) 
+    if (!texture.loadFromFile(("assets/images/aliensandspaceships.png")))
+        throw std::invalid_argument("Spritesheet not found");
+    // set up sprite
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect({0, 0}, {230, 230}));
+    sprite.setOrigin({50,100});
+    sprite.setPosition(position);
 };
 
 //constructor if owner is alien
@@ -31,21 +39,29 @@ void Projectile::update(float deltaTime) {
     if (active == true) {
         if (shooter == Shooter::PLAYER) {
                 y_position = y_position + (speed * deltaTime);
-                if (y_position > 0) {
+                if (y_position < 0) {
                     deactivate();
                 }
         }
 
         if (shooter == Shooter::ALIEN) {
             //get_level muss noch in Alien implementiert werden
-                y_position = y_position - ((speed + owner.get_level()) * deltaTime);
-                    if (y_position < 600) {
+                y_position = y_position - (speed 
+                //+ owner.get_level())   
+                     * deltaTime);
+                    if (y_position > 600) {
                         deactivate();
                     }
         }
 
     }
 };
+
+//irgendwie erkennt er RenderWindow nicht warum??
+  void draw(sf::RenderWindow &window) const {
+        sprite.setPosition(x_position, y_position);
+        window.draw(sprite);
+    }
 
 //deactivates projectile
 void Projectile::deactivate() {
@@ -74,3 +90,4 @@ float Projectile::get_radius() {
 bool Projectile::isActive() {
     return active;
 }
+*/
