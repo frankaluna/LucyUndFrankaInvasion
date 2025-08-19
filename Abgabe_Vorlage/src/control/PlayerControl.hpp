@@ -58,7 +58,7 @@ private:
     // horizontal direction
     HorizontalDirection h_dir = HorizontalDirection::NONE;
 
-    // Projektil-Liste
+    // projectiles
     std::vector<Projectile> projectiles;  
 
 };
