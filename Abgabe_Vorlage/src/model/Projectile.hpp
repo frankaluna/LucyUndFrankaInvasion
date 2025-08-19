@@ -1,7 +1,8 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include "Player.hpp"
 #include "Alien.hpp"
 #include "Shooter.hpp"
@@ -17,25 +18,27 @@ class Projectile {
         Projectile(Alien* owner, float speed);
 
         //updates Projectiles Movement
-        void update(float deltaTime) {};
+        void update(float deltaTime);
+
+        void draw(sf::RenderWindow &window);
 
         //deactivates Projectile
-        void deactivate() {};
+        void deactivate();
 
         //get current x position
-        float get_x_position() {};
+        float get_x_position();
 
         //get current y position
-        float get_y_position() {};
+        float get_y_position();
 
         //get current speed 
-        float get_speed() {};
+        float get_speed();
 
         //get radius
-        float get_radius() {};
+        float get_radius();
 
         //returns if projectile is active
-        bool isActive() {};
+        bool isActive();
 
 
     private:
@@ -46,7 +49,7 @@ class Projectile {
         float radius;
         Shooter shooter;
         bool active;
-
+        sf::Sprite sprite;
 };
 
 #endif

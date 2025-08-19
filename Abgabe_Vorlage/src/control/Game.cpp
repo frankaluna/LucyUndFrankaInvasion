@@ -17,6 +17,7 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
 
     background.loadFromFile("/home/f/ffreeric/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/hintergrund.png");
     background_sprite.setTexture(background);
+    game_layer(window); 
 
     // limit frame rate
     window.setFramerateLimit(constants::FRAME_RATE);

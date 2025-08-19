@@ -33,10 +33,10 @@ private:
     Layer game_layer;
     Layer background_layer;
 
-    //sprites
-    sf::Sprite background_sprite;
-    sf::Texture background;
 
+    // resources to draw the background
+    sf::Texture background;
+    sf::Sprite background_sprite;
 };
 
 #endif
