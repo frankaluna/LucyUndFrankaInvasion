@@ -5,7 +5,8 @@
 #include "../model/Player.hpp"
 #include "./Directions.hpp"
 #include "../view/Layer.hpp"
-
+#include "../model/Projectile.hpp"
+#include <vector>
 
 class PlayerControl {
     public:
@@ -32,13 +33,13 @@ class PlayerControl {
     bool can_shoot(float elapsed_time);
 
     //updates Players position
-    void update(float elapsed_time);
+    void update_player(float elapsed_time);
 
     //draw character to layer
     void draw_player();
 
     //get vertical position of the character
-    float get_player_pos() const;
+    float get_player_length() const;
 
 
 private:
@@ -48,9 +49,17 @@ private:
     //layer where player is drawn
     Layer &layer;
 
+    //length where the current shot started
+    float current_shot_start_time = 0;  
 
+    // speed
+    float speed = 200.f; 
 
-    
+    // horizontal direction
+    HorizontalDirection h_dir = HorizontalDirection::NONE;
+
+    // Projektil-Liste
+    std::vector<Projectile> projectiles;  
 
 };
 
