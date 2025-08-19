@@ -50,7 +50,6 @@ class Projectile {
         Shooter shooter;
         bool active;
         sf::Sprite sprite;
-
 };
 
 #endif

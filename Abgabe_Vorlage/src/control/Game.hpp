@@ -30,6 +30,11 @@ private:
     // view area and layers
     sf::View view;
     Layer game_layer;
+    Layer background_layer;
+
+    // resources to draw the background
+    sf::Texture background;
+    sf::Sprite background_sprite;
 };
 
 #endif

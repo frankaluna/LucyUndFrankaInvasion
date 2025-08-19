@@ -9,6 +9,16 @@ active(true)  {
 
     y_position = owner->get_position_y();
     x_position = owner->get_position_x();
+
+    // load texture
+    // (use "assets/images/spritesheet_bread.png" for the jumping loaf of bread, original can be found here https://caz-creates-games.itch.io/bread) 
+    if (!texture.loadFromFile(("assets/images/aliensandspaceships.png")))
+        throw std::invalid_argument("Spritesheet not found");
+    // set up sprite
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect({0, 0}, {230, 230}));
+    sprite.setOrigin({50,100});
+    sprite.setPosition(position);
 };
 
 //constructor if owner is alien
@@ -48,7 +58,7 @@ void Projectile::update(float deltaTime) {
 };
 
 //irgendwie erkennt er RenderWindow nicht warum??
-  void draw(sf::RenderWindow &window) {
+  void draw(sf::RenderWindow &window) const {
         sprite.setPosition(x_position, y_position);
         window.draw(sprite);
     }
