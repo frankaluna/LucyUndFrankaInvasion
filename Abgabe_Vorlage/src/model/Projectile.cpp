@@ -1,4 +1,4 @@
-#include "Projectile.hpp"
+/*#include "Projectile.hpp"
 
 //constructor if owner is player
 Projectile::Projectile(Player* owner, float speed) : 
@@ -90,3 +90,4 @@ float Projectile::get_radius() {
 bool Projectile::isActive() {
     return active;
 }
+*/

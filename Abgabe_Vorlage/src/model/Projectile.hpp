@@ -1,4 +1,4 @@
-#ifndef PROJECTILE_H
+/*#ifndef PROJECTILE_H
 #define PROJECTILE_H
 
 #include <SFML/Graphics/Sprite.hpp>
@@ -53,3 +53,4 @@ class Projectile {
 };
 
 #endif
+*/
