@@ -10,6 +10,18 @@ Player::Player(int score, int hearts) :
 {
     this->score = score;
     this->hearts = hearts;
+
+    position.y = position_y;
+    position.x = position_x;
+
+     if (!texture.loadFromFile("LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/aliensandspaceships.png"));
+        throw std::invalid_argument("Spritesheet not found");
+    //set up sprite
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect({0, 0}, {232, 232}));
+    sprite.setOrigin({300, 50});
+    sprite.setPosition(position);
+
 }
 
 
@@ -45,6 +57,9 @@ float Player:: get_position_y() const {
 void Player::set_position(float x, float y) {
     position_x = x;
     position_y = y;
+    position.y = y;
+    position.x = x;
+    sprite.setPosition(position);
 }
 //Sprite getter
 const sf::Sprite& Player::get_sprite() const {

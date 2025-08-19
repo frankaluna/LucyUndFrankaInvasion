@@ -76,6 +76,7 @@ void Game::draw() {
     window.clear();
 
     game_layer.clear();
+    player_control.draw_player();
     // TODO: add game elements to layer
     background_layer.draw();
     game_layer.draw();

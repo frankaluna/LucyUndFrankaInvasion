@@ -59,6 +59,7 @@ sf::Sprite sprite;
 // character's x and y position
 float position_x;
 float position_y;
+sf::Vector2f position;
 
 // character is moving left or right
 HorizontalDirection h_dir;

@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../model/Player.hpp"
-#include "./Directions.hpp"
+#include "../model/Directions.hpp"
 #include "../view/Layer.hpp"
 #include "../model/Projectile.hpp"
 #include <vector>

@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
+#include "./PlayerControl.hpp"
 #include "../view/Layer.hpp"
 
 // Game class
@@ -37,6 +38,8 @@ private:
     // resources to draw the background
     sf::Texture background;
     sf::Sprite background_sprite;
+
+    PlayerControl player_control;
 };
 
 #endif
