@@ -5,6 +5,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "Directions.hpp"
+#include "../view/Layer.hpp"
 
 //Player Model Class
 class Player {
@@ -34,6 +35,9 @@ void shoot();
 //return the character's current vertical position (unchanging)
     float get_position_y() const;
 
+//return characters position as a vector
+    sf::Vector2f get_position();
+
 // returns the sprite(picture) depicting the character
     const sf::Sprite &get_sprite() const;
 
@@ -52,23 +56,27 @@ void set_hearts(int newHearts);
 //stop horizontal movements
 void stop_horizontal_movement();
 
+void draw(Layer &layer);
+
 private:
+sf::Vector2f position;
 sf::Texture texture;
 sf::Sprite sprite;
-   
+
+// character is moving left or right
+HorizontalDirection h_dir;   
+
 // character's x and y position
 float position_x;
 float position_y;
-sf::Vector2f position;
-
-// character is moving left or right
-HorizontalDirection h_dir;
 
 //trackment score
 int score;
 
 //trackment hearts
 int hearts;
+
+
 
 
 };

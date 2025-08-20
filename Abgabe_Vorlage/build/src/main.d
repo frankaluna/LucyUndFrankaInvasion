@@ -56,7 +56,11 @@ build/src/main.o: src/main.cpp src/control/Game.hpp \
  SFML/include/SFML/System/FileInputStream.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
- SFML/include/SFML/System/Sleep.hpp src/control/../view/Layer.hpp
+ SFML/include/SFML/System/Sleep.hpp src/control/./PlayerControl.hpp \
+ src/control/./../model/Player.hpp src/control/./../model/Directions.hpp \
+ src/control/./../model/../view/Layer.hpp \
+ src/control/./../model/Directions.hpp src/control/./../view/Layer.hpp \
+ src/control/./../model/Projectile.hpp src/control/../view/Layer.hpp
 src/control/Game.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -136,4 +140,11 @@ SFML/include/SFML/System/FileInputStream.hpp:
 SFML/include/SFML/System/InputStream.hpp:
 SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
+src/control/./PlayerControl.hpp:
+src/control/./../model/Player.hpp:
+src/control/./../model/Directions.hpp:
+src/control/./../model/../view/Layer.hpp:
+src/control/./../model/Directions.hpp:
+src/control/./../view/Layer.hpp:
+src/control/./../model/Projectile.hpp:
 src/control/../view/Layer.hpp:

@@ -9,7 +9,8 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     game_layer(window),
     background_layer(window), //Layer
     background(),              //Texture
-    background_sprite(background)//Sprite 
+    background_sprite(background),//Sprite 
+    player_control(game_layer)
     {
 
     // load background file and configure sprite
@@ -64,20 +65,44 @@ bool Game::input() {
         // if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
             // if (keyReleased->code == sf::Keyboard::Key::Right) { // right arrow released
                 // ...
+
+        /*if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
+            if (keyReleased->code == sf::Keyboard::Key::Left) {
+                // stop moving left
+                player_control.direction_button_released(HorizontalDirection::LEFT);
+            } else if (keyReleased->code == sf::Keyboard::Key::Right) {
+                // stop moving right
+                player_control.direction_button_released(HorizontalDirection::RIGHT);
+            }
+        }
+        if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+            if (keyPressed->code == sf::Keyboard::Key::Right) {
+                // move right
+                player_control.right_button_pressed();
+            } else if (keyPressed->code == sf::Keyboard::Key::Left) {
+                // move left
+                player_control.left_button_pressed();
+            }
+        } */
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
+            player_control.right_button_pressed();
+        }
     }
     return false;
 }
 
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
+    player_control.update_player(time_passed);
 }
 
 void Game::draw() {
     window.clear();
-
+    // TODO: add game elements to layer
     game_layer.clear();
     player_control.draw_player();
-    // TODO: add game elements to layer
+     
+    
     background_layer.draw();
     game_layer.draw();
 

@@ -2,24 +2,19 @@
 
 
 Player::Player(int score, int hearts) :
+  position({300, -50}),
     texture(),
-    sprite(texture),
-    position_x(300),
-    position_y(0),
-    h_dir(HorizontalDirection::NONE)
+    sprite(texture)
 {
     this->score = score;
     this->hearts = hearts;
 
-    position.y = position_y;
-    position.x = position_x;
-
-     if (!texture.loadFromFile("LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/aliensandspaceships.png"));
+     if (!texture.loadFromFile("/home/f/ffreeric/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/alien1_g.png"))
         throw std::invalid_argument("Spritesheet not found");
     //set up sprite
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect({0, 0}, {232, 232}));
-    sprite.setOrigin({300, 50});
+    sprite.setTextureRect(sf::IntRect({0, 0}, {32, 32}));
+    sprite.setOrigin({16, 16});
     sprite.setPosition(position);
 
 }
@@ -37,6 +32,11 @@ void Player:: move_left(){
 void Player:: stop_horizontal_movement(){
     h_dir = HorizontalDirection:: NONE;
 }
+
+void Player::draw(Layer &layer) {
+    layer.add_to_layer(sprite);
+}
+
 //action shoot
 void Player:: shoot(){
 //finish after doing projectile class
@@ -52,6 +52,11 @@ float Player:: get_position_x() const {
 //getter position y
 float Player:: get_position_y() const {
     return position_y;
+}
+
+//get position as vector
+sf::Vector2f Player::get_position() {
+    return position;
 }
 //setter position
 void Player::set_position(float x, float y) {
