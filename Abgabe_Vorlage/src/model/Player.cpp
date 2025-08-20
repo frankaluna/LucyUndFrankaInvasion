@@ -1,15 +1,14 @@
 #include "Player.hpp"
 
 
-Player::Player(int score, int hearts) :
+Player::Player() :
     texture(),
     sprite(texture),
     position_x(300),
     position_y(0),
     h_dir(HorizontalDirection::NONE)
 {
-    this->score = score;
-    this->hearts = hearts;
+   
 }
 
 
