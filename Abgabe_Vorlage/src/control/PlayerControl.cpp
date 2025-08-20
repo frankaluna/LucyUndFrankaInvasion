@@ -17,14 +17,14 @@ void PlayerControl::right_button_pressed() {
 void PlayerControl::left_button_pressed() {
     player.move_left();
 }
-/*
+
 // release button stop
 void PlayerControl::direction_button_released(HorizontalDirection direction) {
-    if (h_dir == direction) {
-        h_dir = HorizontalDirection::NONE;
+    if (direction == player.get_horizontal_movement()){
+        player.stop_horizontal_movement();
     }
 }
-
+/*
 //set back shoot timer
 void PlayerControl:: start_shoot(){
     current_shot_start_time = 0.f;
@@ -51,17 +51,18 @@ void PlayerControl::spacebar_pressed() {
 void PlayerControl::update_player(float elapsed_time){
     sf::Vector2f position = player.get_position();
 
-    float x = player.get_position_x();
+    float x = 0;
 
-    if (h_dir == HorizontalDirection::LEFT){
-        x -= speed * elapsed_time;
-    } 
-    else if (h_dir == HorizontalDirection::RIGHT){
-        x += speed * elapsed_time;
+    if (player.get_position().x > 50 && player.get_horizontal_movement() == HorizontalDirection::LEFT) {
+        x = -200;
     }
-
+    
+    if (player.get_position().x < 550 && player.get_horizontal_movement() == HorizontalDirection::RIGHT) {
+        x = 200;
+    }
+    x = player.get_position().x + x * elapsed_time;
     //update position
-    player.set_position(x ,player.get_position_y());
+    player.set_position(x , -50);
     /*
     //move projectile
     for (auto &projectile : projectiles){

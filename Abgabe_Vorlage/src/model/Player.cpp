@@ -2,6 +2,7 @@
 
 
 Player::Player(int score, int hearts) :
+//if we change view width etc. we have to adjust
   position({300, -50}),
     texture(),
     sprite(texture)
