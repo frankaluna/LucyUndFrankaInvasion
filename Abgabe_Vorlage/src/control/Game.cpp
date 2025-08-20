@@ -17,7 +17,7 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     {
 
     // load background file and configure sprite
-    if (!background.loadFromFile("/home/f/ffreeric/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/hintergrund.png"))
+    if (!background.loadFromFile("assets/images/hintergrund.png"))
         throw std::runtime_error("background asset not found");
 
     background_sprite.setTexture(background);

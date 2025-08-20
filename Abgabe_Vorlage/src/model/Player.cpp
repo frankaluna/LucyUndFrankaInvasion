@@ -8,7 +8,7 @@ Player::Player() :
 {
     
 
-     if (!texture.loadFromFile("/home/f/ffreeric/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/alien1_g.png"))
+     if (!texture.loadFromFile("/home/l/lhansche/LucyUndFrankaInvasion/Abgabe_Vorlage/assets/images/alien1_g.png")) //Lösung finden
         throw std::invalid_argument("Spritesheet not found");
     //set up sprite
     sprite.setTexture(texture);
