@@ -1,7 +1,7 @@
 #include "shields.hpp"
 
-Shield:: Shield(int lives) :
-    position({x,y});
+Shield:: Shield() :
+    position(1, 2), //Platzhalter Werte
     texture(),
     sprite(texture){
         //load texture
@@ -13,18 +13,16 @@ Shield:: Shield(int lives) :
         //sprite.setPosition({});
         //sprite sachen ergänzen!!!
     } 
-    //get position x
-    float Shield:: get_position_x() const{
-        return position_x;
+    //get position 
+    sf::Vector2f Shield:: get_position() const{
+        return position;
     }
-    //get position y
-    float Shield:: get_position_y() const{
-        return position_y;
-    }
+    
+    
     //set positions x and y
     void Shield:: set_position(float x, float y){
-        position_x = x;
-        position_y = y;
+        position.x = x;
+        position.y = y;
     }
     //get a pretty Sprite picture please 
     const sf:: Sprite& Shield:: get_sprite() const{

@@ -1,9 +1,9 @@
 #include "PlayerControl.hpp"
 #include <iostream>
 
-PlayerControl::PlayerControl(Layer &layer) : layer(layer),
-player(400.f, 550.f)  // startposition (x,y) anpassen nach Spielfeld!!
+PlayerControl::PlayerControl(Layer &layer) : layer(layer)
 {
+// startposition (x,y) anpassen nach Spielfeld!!
 
 }
 

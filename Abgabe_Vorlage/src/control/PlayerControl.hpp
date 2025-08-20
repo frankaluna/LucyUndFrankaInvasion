@@ -5,7 +5,6 @@
 #include "../model/Player.hpp"
 #include "../model/Directions.hpp"
 #include "../view/Layer.hpp"
-#include "../model/Projectile.hpp"
 #include <vector>
 
 class PlayerControl {

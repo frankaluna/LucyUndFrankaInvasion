@@ -9,26 +9,21 @@
 class Shield{
     public:
     //constructor and initialize
-    Shield(int lives = 30);
+    Shield();
 
     //position of shield
     void set_position(float x, float y);
 
     //shield's horizontal position
-    float get_position_x() const;
-
-    //shield's vertical position
-    float get_position_y() const;
+    sf::Vector2f get_position() const;
 
     //sprite for shield
     const sf:: Sprite&get_sprite() const;
 
     private:
+    sf::Vector2f position;
     sf:: Texture texture;
     sf:: Sprite sprite;
 
-    //sprite position
-    float position_x;
-    float position_y;
 };
 #endif

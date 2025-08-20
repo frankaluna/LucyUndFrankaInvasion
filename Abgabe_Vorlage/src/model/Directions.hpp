@@ -7,9 +7,10 @@ enum class HorizontalDirection {
     NONE
 };
 
+
 enum class VerticalDirection {
     UP,
     DOWN,
     NONE
-}
+};
 #endif
