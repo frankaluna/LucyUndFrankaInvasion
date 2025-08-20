@@ -2,7 +2,7 @@
 
 Player::Player() :
 
-  position({300, -50}),
+  position({300, -50}), //um an screen anzupassen: position({(GetScreenWidth()-image.width)/?, (GetScreenHight() - imahe.hight/?})
     texture(),
     sprite(texture)
 {
