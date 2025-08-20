@@ -1,7 +1,7 @@
 #include "Player.hpp"
 
-
 Player::Player() :
+
   position({300, -50}),
     texture(),
     sprite(texture)

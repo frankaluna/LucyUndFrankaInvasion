@@ -1,6 +1,9 @@
 #include "Game.hpp"
 
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Event.hpp>
+
+
 
 #include "../model/Constants.hpp"
 
@@ -66,26 +69,25 @@ bool Game::input() {
             // if (keyReleased->code == sf::Keyboard::Key::Right) { // right arrow released
                 // ...
 
-        /*if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
-            if (keyReleased->code == sf::Keyboard::Key::Left) {
-                // stop moving left
-                player_control.direction_button_released(HorizontalDirection::LEFT);
-            } else if (keyReleased->code == sf::Keyboard::Key::Right) {
-                // stop moving right
+    
+        if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
+    
+             if (keyReleased->code == sf::Keyboard::Key::Right)
+                {
                 player_control.direction_button_released(HorizontalDirection::RIGHT);
-            }
+                }
+
+            else if (keyReleased->code == sf::Keyboard::Key::Left)
+                {
+                player_control.direction_button_released(HorizontalDirection::LEFT);
+                }
         }
-        if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-            if (keyPressed->code == sf::Keyboard::Key::Right) {
-                // move right
-                player_control.right_button_pressed();
-            } else if (keyPressed->code == sf::Keyboard::Key::Left) {
-                // move left
-                player_control.left_button_pressed();
-            }
-        } */
+        
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
             player_control.right_button_pressed();
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
+            player_control.left_button_pressed();
         }
     }
     return false;
