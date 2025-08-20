@@ -11,7 +11,7 @@
 class Player {
 public:
 //constructor and initialize
-Player(int score = 0, int hearts = 3);
+Player();
 
 //movement left
 void move_left();
@@ -29,29 +29,11 @@ void shoot();
 // updates the character's position
     void set_position(float x, float y);
 
- // returns the character's current horizontal position
-    float get_position_x() const;
-
-//return the character's current vertical position (unchanging)
-    float get_position_y() const;
-
 //return characters position as a vector
     sf::Vector2f get_position();
 
 // returns the sprite(picture) depicting the character
     const sf::Sprite &get_sprite() const;
-
-//getter score
-int get_score() const;
-
-//setter score
-void set_score(int newScore);
-
-//getter hearts
-int get_hearts() const;
-
-//setter hearts
-void set_hearts(int newHearts);
 
 //stop horizontal movements
 void stop_horizontal_movement();
@@ -65,19 +47,6 @@ sf::Sprite sprite;
 
 // character is moving left or right
 HorizontalDirection h_dir;   
-
-// character's x and y position
-float position_x;
-float position_y;
-
-//trackment score
-int score;
-
-//trackment hearts
-int hearts;
-
-
-
 
 };
 #endif

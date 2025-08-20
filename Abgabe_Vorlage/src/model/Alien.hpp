@@ -5,8 +5,9 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "Directions.hpp"
+#include "../view/Layer.hpp"
 
-
+//!!! attention to the fact that our aliens = invaders which in our case are spaceships instead of aliens
 //Alien Model Class
 class Alien{
 public:
@@ -30,11 +31,8 @@ void shoot();
 //updates alien position
 void set_position(float x, float y);
 
-//alien's current horizontal position
-float get_position_x() const;
-
-//alien's current vertical position
-float get_position_y() const;
+//return invader position as a vector
+    sf::Vector2f get_position();
 
 // sprite for alien
 const sf:: Sprite &get_sprite() const;
@@ -45,13 +43,15 @@ float get_speed() const;
 //setter speed
 void set_speed (float newSpeed);
 
+//draw the alien
+void draw(Layer &layer);
+
 private:
+sf::Vector2f position;
 sf::Texture texture;
 sf:: Sprite sprite;
 
-// alien x and y positions
-float position_x;
-float position_y;
+
 
 //stop horizontal movements
 void stop_horizontal_movement();

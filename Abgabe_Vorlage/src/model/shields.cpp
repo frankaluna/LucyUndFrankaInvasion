@@ -1,8 +1,7 @@
 #include "shields.hpp"
 
 Shield:: Shield(int lives) :
-    position_x(0), //ein x Wert ??????
-    position_y(-150), //mehrere y-werte für verschiedene shields ???
+    position({x,y});
     texture(),
     sprite(texture){
         //load texture
@@ -27,7 +26,7 @@ Shield:: Shield(int lives) :
         position_x = x;
         position_y = y;
     }
-    //get a pretty Sprite picture pleasegit 
+    //get a pretty Sprite picture please 
     const sf:: Sprite& Shield:: get_sprite() const{
         return sprite;
     }
