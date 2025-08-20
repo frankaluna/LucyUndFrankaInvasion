@@ -3,7 +3,7 @@
 
 #include "./Directions.hpp"
 #include <SFML/Graphics.hpp>
-#include "../model/Player.hpp"
+#include "../model/Alien.hpp"
 #include "../view/Layer.hpp"
 #include "../model/Projectile.hpp"
 #include <vector>
@@ -14,11 +14,11 @@ class AlienControl{
     //initializes Alien on a layer
     AlienControl (Layer &layer);
 
-    //start shooting
-    void start_shoot();
+    //add an alien
+    void add_alien(float x, float y, float speed);
 
-    //checks if alien can shoot 
-    bool can_shoot(float elapsed_time);
+    //alien shooter
+    void alien_shoot();
 
     //update alien position
     void update_alien(float elapsed_time);
@@ -26,18 +26,15 @@ class AlienControl{
     //draw alien to layer
     void draw_alien();
 
-    //get hight of aliens
-    float get_alien_hight() const;
-
-    //get length of alien
-    float get_alien_length() const;
+    //get aliens
+    const std::vector<Alien>& get_aliens() const;
 
 private:
-    //alien
-    Alien alien;
-
-    //layer where alien is drawn
+        //layer where alien is drawn
     Layer &layer;
+
+    //alien
+    std::vector<Alien> aliens;
 
     //shot timer start
     float current_shot_start_time = 0;
@@ -50,6 +47,12 @@ private:
 
     //vertical direction
     VerticalDirection v_dir = VerticalDirection::NONE;
+
+    //2 seconds between shots at the start
+    float shoot_dif = 2.0f
+
+    //timer
+    float shoot_timer = 0.0f;
 
     //projectiles
     std::vector<Projectile> projectiles;
