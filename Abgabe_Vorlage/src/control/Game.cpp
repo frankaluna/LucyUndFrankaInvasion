@@ -14,7 +14,7 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background(),              //Texture
     background_sprite(background),//Sprite 
     player_control(game_layer),
-    laser({300.f,300.f}, -200)
+    laser({300.f,-300.f}, -200)
     {
 
     // load background file and configure sprite

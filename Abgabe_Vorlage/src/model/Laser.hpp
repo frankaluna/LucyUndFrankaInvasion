@@ -11,7 +11,7 @@ class Laser{
     public:
         Laser(sf::Vector2f position, int speed);
 
-        void update();
+        void update(float dt);
 
         void draw(Layer &layer);
 
@@ -19,6 +19,5 @@ class Laser{
     private:
     sf::Vector2f position;
     int speed;
-
 };
 #endif
