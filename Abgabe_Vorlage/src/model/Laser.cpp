@@ -5,8 +5,9 @@ Laser::Laser(sf::Vector2f position, int speed)
     this -> position = position;
     this -> speed = speed;
 }
+//dt: delta time
 void Laser::update(float dt){
-    //noch ergänzen
+    position.y += speed * dt;
 }
 
 void Laser::draw(Layer &layer){

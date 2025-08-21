@@ -97,7 +97,7 @@ bool Game::input() {
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
-    //laser.update();
+    laser.update(time_passed);
 }
 
 void Game::draw() {
