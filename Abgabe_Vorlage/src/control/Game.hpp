@@ -6,6 +6,7 @@
 
 #include "./PlayerControl.hpp"
 #include "../view/Layer.hpp"
+#include "../model/Laser.hpp"
 
 // Game class
 class Game {
@@ -40,6 +41,8 @@ private:
     sf::Sprite background_sprite;
 
     PlayerControl player_control;
+
+    Laser laser; //Laser declaration
 };
 
 #endif

@@ -13,7 +13,8 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background_layer(window), //Layer
     background(),              //Texture
     background_sprite(background),//Sprite 
-    player_control(game_layer)
+    player_control(game_layer),
+    laser({300.f,300.f}, -200)
     {
 
     // load background file and configure sprite
@@ -96,18 +97,16 @@ bool Game::input() {
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
+    //laser.update();
 }
 
 void Game::draw() {
     window.clear();
     // TODO: add game elements to layer
+    background_layer.draw();
     game_layer.clear();
     player_control.draw_player();
-     
-    
-    background_layer.draw();
+    laser.draw(game_layer);
     game_layer.draw();
-
-    
     window.display();
 }
