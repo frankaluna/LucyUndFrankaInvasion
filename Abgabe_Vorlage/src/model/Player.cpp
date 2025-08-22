@@ -6,9 +6,7 @@ Player::Player() :
     texture(),
     sprite(texture)
 {
-    
-
-     if (!texture.loadFromFile("assets/images/alien1_g.png")) 
+     if (!texture.loadFromFile("assets/images/Player.png")) 
         throw std::invalid_argument("Spritesheet not found");
     //set up sprite
     sprite.setTexture(texture);

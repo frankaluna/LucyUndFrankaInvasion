@@ -60,6 +60,7 @@ build/src/main.o: src/main.cpp src/control/Game.hpp \
  src/control/./../model/Player.hpp src/control/./../model/Directions.hpp \
  src/control/./../model/../view/Layer.hpp \
  src/control/./../model/Directions.hpp src/control/./../view/Layer.hpp \
+ src/control/./ShieldControl.hpp src/control/./../model/Shield.hpp \
  src/control/../view/Layer.hpp src/control/../model/Laser.hpp \
  src/control/../model/Directions.hpp \
  src/control/../model/../view/Layer.hpp
@@ -148,6 +149,8 @@ src/control/./../model/Directions.hpp:
 src/control/./../model/../view/Layer.hpp:
 src/control/./../model/Directions.hpp:
 src/control/./../view/Layer.hpp:
+src/control/./ShieldControl.hpp:
+src/control/./../model/Shield.hpp:
 src/control/../view/Layer.hpp:
 src/control/../model/Laser.hpp:
 src/control/../model/Directions.hpp:
