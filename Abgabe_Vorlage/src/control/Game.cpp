@@ -82,7 +82,10 @@ bool Game::input() {
                 {
                 player_control.direction_button_released(HorizontalDirection::LEFT);
                 }
-        }
+         }
+
+
+
         if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
 
             if(keyPressed->code == sf::Keyboard::Key::Right){
@@ -91,10 +94,11 @@ bool Game::input() {
             else if(keyPressed->code == sf::Keyboard::Key::Left){
                 player_control.left_button_pressed();
             }
-            else if(keyPressed->code == sf::Keyboard::Key::Space){
+            
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
                 player_control.shoot_player();
             }
-        }
     return false;
     }
 }
