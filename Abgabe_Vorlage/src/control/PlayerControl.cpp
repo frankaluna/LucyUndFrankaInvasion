@@ -63,20 +63,6 @@ void PlayerControl::update_player(float elapsed_time){
     x = player.get_position().x + x * elapsed_time;
     //update position
     player.set_position(x , -50);
-    /*
-    //move projectile
-    for (auto &projectile : projectiles){
-        sf:: Vector2f projectile_pos = projectile.get_position();
-        projectile_pos.y += projectile.get_speed()* elapsed_time;
-        projectile.set_position(projectile_pos.x, projectile_pos.y);
-    }
-    
-    //delete projectile if out of window
-    projectiles.erase(std:: remove(projectiles.begin(), projectiles.end(), [](const Projectile &p){
-        return p.get_position_y < 0
-    }),
-    projectiles.end());
-*/  
 }
 
 void PlayerControl:: draw_player(){
@@ -86,9 +72,12 @@ void PlayerControl:: draw_player(){
     //    projectile.draw(layer);
     //}
 }
-
-/*
-float PlayerControl::get_player_length()const{
-    return player.get_position().y;
+const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
+    return lasers;
 }
-*/
+ void PlayerControl:: shoot_player(){
+    lasers.push_back(std::make_shared<Laser>(
+    sf::Vector2f(player.get_position().x, player.get_position().y),-200));
+ }
+
+

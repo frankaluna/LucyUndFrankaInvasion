@@ -15,6 +15,8 @@ class Laser{
 
         void draw(Layer &layer);
 
+        bool active;
+
 
     private:
     sf::Vector2f position;

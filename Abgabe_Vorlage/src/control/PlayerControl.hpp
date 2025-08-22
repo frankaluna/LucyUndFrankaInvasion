@@ -6,6 +6,7 @@
 #include "../model/Directions.hpp"
 #include "../view/Layer.hpp"
 #include <vector>
+#include "../model/Laser.hpp"
 
 class PlayerControl {
     public:
@@ -24,23 +25,20 @@ class PlayerControl {
 
     //stop horizontal movement
     void direction_button_released(HorizontalDirection direction);
-/*
-    //lets the character start shooting (reset shoot timer)
-    void start_shoot();
 
-    //checks if character can shoot again
-    bool can_shoot(float elapsed_time);
-*/
     //updates Players position
     void update_player(float elapsed_time);
 
     //draw character to layer
     void draw_player();
-/*
-    //get vertical position of the character
-    float get_player_length() const;
 
-*/
+    //shoot for player control
+    void shoot_player();
+
+    //getter for laser dynamic array for when we want to work on collusion
+    const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
+
+
 private:
     //player
     Player player;
@@ -57,9 +55,9 @@ private:
     // horizontal direction
     HorizontalDirection h_dir = HorizontalDirection::NONE;
 
- /*   // Projektil-Liste
-    std::vector<Projectile> projectiles;  
-*/
+    //Vector for all the active lasers
+    std::vector<std::shared_ptr<Laser>> lasers; 
+
 };
 
 #endif

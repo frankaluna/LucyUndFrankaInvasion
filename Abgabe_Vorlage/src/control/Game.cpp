@@ -13,8 +13,8 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background_layer(window), //Layer
     background(),              //Texture
     background_sprite(background),//Sprite 
-    player_control(game_layer),
-    laser({300.f,-300.f}, -200)
+    player_control(game_layer)
+    //laser({300.f,-300.f}, -200)
     {
 
     // load background file and configure sprite
@@ -83,21 +83,29 @@ bool Game::input() {
                 player_control.direction_button_released(HorizontalDirection::LEFT);
                 }
         }
-        
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
-            player_control.right_button_pressed();
+        if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+
+            if(keyPressed->code == sf::Keyboard::Key::Right){
+                player_control.right_button_pressed();
+            }
+            else if(keyPressed->code == sf::Keyboard::Key::Left){
+                player_control.left_button_pressed();
+            }
+            else if(keyPressed->code == sf::Keyboard::Key::Space){
+                player_control.shoot_player();
+            }
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
-            player_control.left_button_pressed();
-        }
-    }
     return false;
+    }
 }
 
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
-    laser.update(time_passed);
+    //laser.update(time_passed);
+     for (auto& laser: player_control.get_lasers()){
+        laser->update(time_passed);
+    }
 }
 
 void Game::draw() {
@@ -105,8 +113,12 @@ void Game::draw() {
     // TODO: add game elements to layer
     background_layer.draw();
     game_layer.clear();
+    
+    //laser.draw(game_layer);
+    for (auto& laser: player_control.get_lasers()){
+        laser->draw(game_layer);
+    }
     player_control.draw_player();
-    laser.draw(game_layer);
     game_layer.draw();
     window.display();
 }
