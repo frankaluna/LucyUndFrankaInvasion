@@ -28,5 +28,5 @@ rectangle.setFillColor(sf::Color{ 232, 9, 121});
 rectangle.setPosition(position);
 layer.add_to_layer(rectangle);
 layer.draw();
-
+git
 }
