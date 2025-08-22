@@ -23,7 +23,8 @@ void Laser::draw(Layer &layer){
         return;
     }
 sf::RectangleShape rectangle({4.f, 15.f});
-rectangle.setFillColor(sf::Color::Green);
+//rectangle.setFillColor(sf::Color::Green);
+rectangle.setFillColor(sf::Color{ 232, 9, 121});
 rectangle.setPosition(position);
 layer.add_to_layer(rectangle);
 layer.draw();

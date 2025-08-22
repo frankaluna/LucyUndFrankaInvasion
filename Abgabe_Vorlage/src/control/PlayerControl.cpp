@@ -68,9 +68,7 @@ void PlayerControl::update_player(float elapsed_time){
 void PlayerControl:: draw_player(){
     //layer.add_to_layer(player.get_sprite());
     player.draw(layer);
-    //for (auto &projectile : projectiles) {
-    //    projectile.draw(layer);
-    //}
+    
 }
 const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
     return lasers;

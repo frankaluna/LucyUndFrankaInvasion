@@ -82,6 +82,10 @@ bool Game::input() {
                 {
                 player_control.direction_button_released(HorizontalDirection::LEFT);
                 }
+            else if(keyReleased->code == sf::Keyboard::Key::Space)
+                {
+                    player_control.direction_button_released()
+                }
         }
         if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
 
