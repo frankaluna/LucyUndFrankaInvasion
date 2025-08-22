@@ -13,7 +13,7 @@ void Laser::update(float dt){
     if (active){
         if(position.y < -600 || position.y >0){
             active = false;
-            std::cout<<"inactive Laser" << std::endl; 
+            //std::cout<<"inactive Laser" << std::endl; 
         }
     }
 }
@@ -23,9 +23,9 @@ void Laser::draw(Layer &layer){
         return;
     }
 sf::RectangleShape rectangle({4.f, 15.f});
-rectangle.setFillColor(sf::Color::Green);
+rectangle.setFillColor(sf::Color{232, 9, 121});
 rectangle.setPosition(position);
 layer.add_to_layer(rectangle);
-layer.draw();
+//layer.draw();
 
 }

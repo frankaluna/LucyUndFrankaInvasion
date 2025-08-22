@@ -8,6 +8,7 @@
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
 
+
 // Game class
 class Game {
 

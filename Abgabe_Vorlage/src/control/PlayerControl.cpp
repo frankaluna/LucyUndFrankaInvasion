@@ -4,7 +4,7 @@
 PlayerControl::PlayerControl(Layer &layer) : layer(layer)
 {
 // startposition (x,y) anpassen nach Spielfeld!!
-
+ //   shot_start_time = sf::seconds(0.0f);
 }
 
 //moves Player to the right
@@ -76,8 +76,13 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
     return lasers;
 }
  void PlayerControl:: shoot_player(){
-    lasers.push_back(std::make_shared<Laser>(
-    sf::Vector2f(player.get_position().x, player.get_position().y),-200));
- }
+   // if (clock.getElapsedTime() - shot_start_time >= sf::seconds(1.0f)) {
+        lasers.push_back(std::make_shared<Laser>(
+        sf::Vector2f(player.get_position().x, player.get_position().y), -150));
+    //    shot_start_time = clock.getElapsedTime();
+    //}
 
+
+
+ }
 

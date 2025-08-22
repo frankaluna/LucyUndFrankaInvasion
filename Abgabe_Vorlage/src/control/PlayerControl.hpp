@@ -7,6 +7,8 @@
 #include "../view/Layer.hpp"
 #include <vector>
 #include "../model/Laser.hpp"
+#include <SFML/System.hpp>
+
 
 class PlayerControl {
     public:
@@ -47,7 +49,7 @@ private:
     Layer &layer;
 
     //length where the current shot started
-    float current_shot_start_time = 0;  
+    //sf::Time shot_start_time;  
 
     // speed
     float speed = 200.f; 
@@ -57,6 +59,8 @@ private:
 
     //Vector for all the active lasers
     std::vector<std::shared_ptr<Laser>> lasers; 
+
+    //sf::Clock clock;
 
 };
 

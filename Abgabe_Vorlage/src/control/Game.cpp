@@ -99,6 +99,7 @@ bool Game::input() {
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
                 player_control.shoot_player();
             }
+            
     return false;
     }
 }
