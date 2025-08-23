@@ -1,17 +1,32 @@
 #include "Alien.hpp"
 
-Alien:: Alien() :
+Alien:: Alien(int type, sf::Vector2f position) :
     texture(),
     sprite(texture),
-    position({0,200}),
-    h_dir(HorizontalDirection::LEFT),
-    v_dir(VerticalDirection::NONE),
-    speed(0)
+    type(type)
 {
-     if (!texture.loadFromFile("assets/images/alien1_g.png"))
+    //this -> type = type;
+    this -> position = position;
+
+    switch(type) {
+        case 1 :
+        if (!texture.loadFromFile("assets/images/Alien_1.png"))
         throw std::invalid_argument("Spritesheet not found");
-    //set up sprite
-    sprite.setTexture(texture);
+        sprite.setTexture(texture);
+        break;
+        case 2 :
+        if (!texture.loadFromFile("assets/images/Alien_2.png"))
+        throw std::invalid_argument("Spritesheet not found");
+        sprite.setTexture(texture);
+        break;
+        case 3 :
+        if (!texture.loadFromFile("assets/images/Alien_3.png"))
+        throw std::invalid_argument("Spritesheet not found");
+        sprite.setTexture(texture);
+        break; 
+        default : throw std::invalid_argument("No such Alien type found");
+    }
+
     sprite.setTextureRect(sf::IntRect({0, 0}, {32, 32}));
     sprite.setOrigin({16, 16}); // middle point
     sprite.setPosition(position);
@@ -64,5 +79,10 @@ float Alien:: get_speed() const{
 
 // set speed
 void Alien:: set_speed(float newSpeed) {
-    speed= newSpeed;
+    speed = newSpeed;
+}
+
+//gets type of Alien
+int Alien::get_type() {
+    return type;
 }

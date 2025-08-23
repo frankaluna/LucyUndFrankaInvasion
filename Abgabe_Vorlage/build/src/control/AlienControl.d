@@ -1,16 +1,17 @@
-build/src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
+build/src/control/AlienControl.o: src/control/AlienControl.cpp \
+ src/control/AlienControl.hpp src/control/../model/Alien.hpp \
+ SFML/include/SFML/System/Vector2.hpp SFML/include/SFML/System/Export.hpp \
+ SFML/include/SFML/Config.hpp SFML/include/SFML/System/Angle.hpp \
+ SFML/include/SFML/System/Angle.inl SFML/include/SFML/System/Vector2.inl \
  SFML/include/SFML/Graphics.hpp SFML/include/SFML/Graphics/BlendMode.hpp \
- SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \
+ SFML/include/SFML/Graphics/Export.hpp \
  SFML/include/SFML/Graphics/CircleShape.hpp \
  SFML/include/SFML/Graphics/Shape.hpp \
  SFML/include/SFML/Graphics/Color.hpp \
  SFML/include/SFML/Graphics/Color.inl \
  SFML/include/SFML/Graphics/Drawable.hpp \
  SFML/include/SFML/Graphics/PrimitiveType.hpp \
- SFML/include/SFML/Graphics/Rect.hpp SFML/include/SFML/System/Vector2.hpp \
- SFML/include/SFML/System/Export.hpp SFML/include/SFML/System/Angle.hpp \
- SFML/include/SFML/System/Angle.inl SFML/include/SFML/System/Vector2.inl \
- SFML/include/SFML/Graphics/Rect.inl \
+ SFML/include/SFML/Graphics/Rect.hpp SFML/include/SFML/Graphics/Rect.inl \
  SFML/include/SFML/Graphics/RenderStates.hpp \
  SFML/include/SFML/Graphics/CoordinateType.hpp \
  SFML/include/SFML/Graphics/StencilMode.hpp \
@@ -56,21 +57,19 @@ build/src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
  SFML/include/SFML/System/FileInputStream.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
- SFML/include/SFML/System/Sleep.hpp src/control/./PlayerControl.hpp \
- src/control/./../model/Player.hpp src/control/./../model/Directions.hpp \
- src/control/./../model/../view/Layer.hpp \
- src/control/./../model/Directions.hpp src/control/./../view/Layer.hpp \
- src/control/./ShieldControl.hpp src/control/./../model/Shield.hpp \
- src/control/./AlienControl.hpp src/control/./../model/Alien.hpp \
- src/control/../view/Layer.hpp src/control/../model/Laser.hpp \
- src/control/../model/Directions.hpp \
- src/control/../model/../view/Layer.hpp \
- src/control/../model/Constants.hpp
-src/control/Game.hpp:
+ SFML/include/SFML/System/Sleep.hpp src/control/../model/Directions.hpp \
+ src/control/../model/../view/Layer.hpp src/control/../view/Layer.hpp
+src/control/AlienControl.hpp:
+src/control/../model/Alien.hpp:
+SFML/include/SFML/System/Vector2.hpp:
+SFML/include/SFML/System/Export.hpp:
+SFML/include/SFML/Config.hpp:
+SFML/include/SFML/System/Angle.hpp:
+SFML/include/SFML/System/Angle.inl:
+SFML/include/SFML/System/Vector2.inl:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
 SFML/include/SFML/Graphics/Export.hpp:
-SFML/include/SFML/Config.hpp:
 SFML/include/SFML/Graphics/CircleShape.hpp:
 SFML/include/SFML/Graphics/Shape.hpp:
 SFML/include/SFML/Graphics/Color.hpp:
@@ -78,11 +77,6 @@ SFML/include/SFML/Graphics/Color.inl:
 SFML/include/SFML/Graphics/Drawable.hpp:
 SFML/include/SFML/Graphics/PrimitiveType.hpp:
 SFML/include/SFML/Graphics/Rect.hpp:
-SFML/include/SFML/System/Vector2.hpp:
-SFML/include/SFML/System/Export.hpp:
-SFML/include/SFML/System/Angle.hpp:
-SFML/include/SFML/System/Angle.inl:
-SFML/include/SFML/System/Vector2.inl:
 SFML/include/SFML/Graphics/Rect.inl:
 SFML/include/SFML/Graphics/RenderStates.hpp:
 SFML/include/SFML/Graphics/CoordinateType.hpp:
@@ -145,18 +139,6 @@ SFML/include/SFML/System/FileInputStream.hpp:
 SFML/include/SFML/System/InputStream.hpp:
 SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
-src/control/./PlayerControl.hpp:
-src/control/./../model/Player.hpp:
-src/control/./../model/Directions.hpp:
-src/control/./../model/../view/Layer.hpp:
-src/control/./../model/Directions.hpp:
-src/control/./../view/Layer.hpp:
-src/control/./ShieldControl.hpp:
-src/control/./../model/Shield.hpp:
-src/control/./AlienControl.hpp:
-src/control/./../model/Alien.hpp:
-src/control/../view/Layer.hpp:
-src/control/../model/Laser.hpp:
 src/control/../model/Directions.hpp:
 src/control/../model/../view/Layer.hpp:
-src/control/../model/Constants.hpp:
+src/control/../view/Layer.hpp:
