@@ -108,9 +108,7 @@ void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
     //laser.update(time_passed);
-     for (auto& laser: player_control.get_lasers()){
-        laser->update(time_passed);
-    }
+    
 }
 
 void Game::draw() {

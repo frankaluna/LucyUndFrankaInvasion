@@ -63,6 +63,19 @@ void PlayerControl::update_player(float elapsed_time){
     x = player.get_position().x + x * elapsed_time;
     //update position
     player.set_position(x , -50);
+
+    for (auto& laser: this->get_lasers()){
+        laser->update(elapsed_time);
+    }
+
+    lasers.erase(
+        std::remove_if(lasers.begin(), lasers.end(), [&](const std::shared_ptr<Laser>& laser)
+        {
+            return laser->active;
+        }),
+    lasers.end()
+    );
+
 }
 
 void PlayerControl:: draw_player(){
