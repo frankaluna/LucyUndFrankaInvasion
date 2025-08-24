@@ -13,7 +13,7 @@ void Laser::update(float dt){
     if (active){
         if(position.y < -600 || position.y >0){
             active = false;
-            //std::cout<<"inactive Laser" << std::endl; 
+            std::cout<<"inactive Laser" << std::endl; 
             
         }
     }

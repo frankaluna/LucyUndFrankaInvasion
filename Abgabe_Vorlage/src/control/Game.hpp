@@ -6,9 +6,12 @@
 
 #include "./PlayerControl.hpp"
 #include "./ShieldControl.hpp"
+#include "./AlienControl.hpp"
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
 
+//wop
+//#include "../model/Alien.hpp"
 
 // Game class
 class Game {
@@ -44,8 +47,11 @@ private:
 
     PlayerControl player_control;
     ShieldControl shield_control;
+    AlienControl alien_control;
 
-    Laser laser; //Laser declaration
+   // Laser laser; //Laser declaration
+//wop
+
 };
 
 #endif

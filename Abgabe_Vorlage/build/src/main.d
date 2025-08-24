@@ -61,7 +61,8 @@ build/src/main.o: src/main.cpp src/control/Game.hpp \
  src/control/./../model/../view/Layer.hpp \
  src/control/./../model/Directions.hpp src/control/./../view/Layer.hpp \
  src/control/./../model/Laser.hpp src/control/./ShieldControl.hpp \
- src/control/./../model/Shield.hpp src/control/../view/Layer.hpp \
+ src/control/./../model/Shield.hpp src/control/./AlienControl.hpp \
+ src/control/./../model/Alien.hpp src/control/../view/Layer.hpp \
  src/control/../model/Laser.hpp
 src/control/Game.hpp:
 SFML/include/SFML/Graphics.hpp:
@@ -151,5 +152,7 @@ src/control/./../view/Layer.hpp:
 src/control/./../model/Laser.hpp:
 src/control/./ShieldControl.hpp:
 src/control/./../model/Shield.hpp:
+src/control/./AlienControl.hpp:
+src/control/./../model/Alien.hpp:
 src/control/../view/Layer.hpp:
 src/control/../model/Laser.hpp:
