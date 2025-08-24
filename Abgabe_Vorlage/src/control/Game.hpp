@@ -43,7 +43,7 @@ private:
 
     PlayerControl player_control;
 
-    //Laser laser; //Laser declaration
+    Laser laser; //Laser declaration
 };
 
 #endif

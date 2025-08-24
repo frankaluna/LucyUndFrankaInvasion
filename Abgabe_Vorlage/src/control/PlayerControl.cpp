@@ -68,14 +68,14 @@ void PlayerControl::update_player(float elapsed_time){
         laser->update(elapsed_time);
     }
 
-    lasers.erase(
+    /*lasers.erase(
         std::remove_if(lasers.begin(), lasers.end(), [&](const std::shared_ptr<Laser>& laser)
         {
             return laser->active;
         }),
     lasers.end()
     );
-
+*/
 }
 
 void PlayerControl:: draw_player(){
