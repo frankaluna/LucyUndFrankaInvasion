@@ -5,6 +5,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "./PlayerControl.hpp"
+#include "./ShieldControl.hpp"
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
 
@@ -42,6 +43,7 @@ private:
     sf::Sprite background_sprite;
 
     PlayerControl player_control;
+    ShieldControl shield_control;
 
     Laser laser; //Laser declaration
 };

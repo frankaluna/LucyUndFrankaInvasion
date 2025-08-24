@@ -5,11 +5,13 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "Directions.hpp"
+#include "../view/Layer.hpp"
+
 //shield model class
 class Shield{
     public:
     //constructor and initialize
-    Shield();
+    Shield(sf::Vector2f position);
 
     //position of shield
     void set_position(float x, float y);
@@ -19,6 +21,8 @@ class Shield{
 
     //sprite for shield
     const sf:: Sprite&get_sprite() const;
+
+    void draw(Layer &layer);
 
     private:
     sf::Vector2f position;

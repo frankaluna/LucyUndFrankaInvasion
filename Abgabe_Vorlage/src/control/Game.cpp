@@ -14,6 +14,7 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background(),              //Texture
     background_sprite(background),//Sprite 
     player_control(game_layer),
+    shield_control(game_layer),
     laser({300.f,-300.f}, -200)
     {
 
@@ -120,6 +121,10 @@ void Game::draw() {
         laser->draw(game_layer);
     }
     player_control.draw_player();
+    shield_control.draw();
+    laser.draw(game_layer);
     game_layer.draw();
+
+
     window.display();
 }
