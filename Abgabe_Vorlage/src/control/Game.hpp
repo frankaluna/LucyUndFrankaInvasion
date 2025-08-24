@@ -49,7 +49,7 @@ private:
     ShieldControl shield_control;
     AlienControl alien_control;
 
-    Laser laser; //Laser declaration
+   // Laser laser; //Laser declaration
 //wop
 
 };

@@ -14,9 +14,9 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background(),              //Texture
     background_sprite(background),//Sprite 
     player_control(game_layer),
-    alien_control(game_layer),
     shield_control(game_layer),
-    laser({300.f,-300.f}, -200)
+    alien_control(game_layer)
+    //laser({300.f,-300.f}, -200)
     //alien(1, {300, -300})
     {
 

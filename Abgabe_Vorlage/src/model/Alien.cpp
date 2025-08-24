@@ -2,31 +2,29 @@
 
 Alien:: Alien(int type, sf::Vector2f position) :
     texture(),
-    sprite(texture),
-    type(type)
+    sprite(texture)
+    
 {
-    //this -> type = type;
+    this -> type = type;
     this -> position = position;
 
     switch(type) {
         case 1 :
-        if (!texture.loadFromFile("assets/images/Alien_1.png"))
-        throw std::invalid_argument("Spritesheet not found");
-        sprite.setTexture(texture);
+            if (!texture.loadFromFile("assets/images/Alien_1.png")) 
+                throw std::invalid_argument("Spritesheet not found");      
         break;
         case 2 :
-        if (!texture.loadFromFile("assets/images/Alien_2.png"))
-        throw std::invalid_argument("Spritesheet not found");
-        sprite.setTexture(texture);
+            if (!texture.loadFromFile("assets/images/Alien_2.png"))
+                throw std::invalid_argument("Spritesheet not found");
         break;
         case 3 :
-        if (!texture.loadFromFile("assets/images/Alien_3.png"))
-        throw std::invalid_argument("Spritesheet not found");
-        sprite.setTexture(texture);
+            if (!texture.loadFromFile("assets/images/Alien_3.png"))
+                throw std::invalid_argument("Spritesheet not found");
         break; 
-        default : throw std::invalid_argument("No such Alien type found");
+        default : 
+                throw std::invalid_argument("No such Alien type found");
     }
-
+    sprite.setTexture(texture);
     sprite.setTextureRect(sf::IntRect({0, 0}, {32, 32}));
     sprite.setOrigin({16, 16}); // middle point
     sprite.setPosition(position);

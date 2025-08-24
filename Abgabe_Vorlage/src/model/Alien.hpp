@@ -6,6 +6,8 @@
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
 
+#include <iostream>
+
 //!!! attention to the fact that our aliens = invaders which in our case are spaceships instead of aliens
 //Alien Model Class
 class Alien{
