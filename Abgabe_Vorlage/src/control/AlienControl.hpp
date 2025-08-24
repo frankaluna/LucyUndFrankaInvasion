@@ -12,18 +12,14 @@ class AlienControl {
 
     AlienControl(Layer &layer);
     
-    std::vector<Alien> create_aliens();
+    std::vector<std::shared_ptr<Alien>> create_aliens();
 
     void draw_alien();
 
     private:
     //Alien alien;
     Layer &layer;
-    std::vector<Alien> aliens;
-
-    
-
-
+    std::vector<std::shared_ptr<Alien>> aliens;
 };
 
 #endif

@@ -2,13 +2,13 @@
 #include <iostream>
 
 AlienControl::AlienControl(Layer &layer) : layer(layer)
-//alien(1, {300, -300})
+
 {
     aliens = create_aliens();
 }
 
-std::vector<Alien> AlienControl::create_aliens() {
-    std::vector<Alien> aliens;
+std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
+    std::vector<std::shared_ptr<Alien>> aliens;
     int i;
     int j;
     int type;
@@ -28,7 +28,7 @@ std::vector<Alien> AlienControl::create_aliens() {
         for (j = 0; j < 10; j++) {
             float x = 83 + j * 48;
             float y = -548 + i * 48; 
-            aliens.emplace_back(Alien(type, {x, y}));
+            aliens.push_back(std::make_shared<Alien> (type, sf::Vector2f {x, y}));
             
         }
     }
@@ -36,8 +36,8 @@ std::vector<Alien> AlienControl::create_aliens() {
 }
 
 void AlienControl::draw_alien() {
-    for(Alien& alien : aliens) {
-         alien.draw(layer);
-       //  std::cout<< "i am drawing an alien" << std::endl;
-    }
+    for(auto &alien : aliens) {
+        //layer.add_to_layer(alien->get_sprite());
+        alien->draw(layer);
+       }
 }

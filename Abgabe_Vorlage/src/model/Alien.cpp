@@ -7,7 +7,7 @@ Alien:: Alien(int type, sf::Vector2f position) :
 {
     this -> type = type;
     this -> position = position;
-
+    
     switch(type) {
         case 1 :
             if (!texture.loadFromFile("assets/images/Alien_1.png")) 
