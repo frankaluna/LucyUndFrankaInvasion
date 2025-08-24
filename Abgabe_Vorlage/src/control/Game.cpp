@@ -119,13 +119,14 @@ void Game::draw() {
     game_layer.clear();
     
     //laser.draw(game_layer);
-    for (auto& laser: player_control.get_lasers()){
-        laser->draw(game_layer);
-    }
+   
     player_control.draw_player();
     shield_control.draw();
     //laser.draw(game_layer);
     alien_control.draw_alien();
+     for (auto& laser: player_control.get_lasers()){
+        laser->draw(game_layer);
+    }
 
     game_layer.draw();
 
