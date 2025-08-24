@@ -49,7 +49,7 @@ private:
     Layer &layer;
 
     //length where the current shot started
-    //sf::Time shot_start_time;  
+    sf::Time shot_start_time;  
 
     // speed
     float speed = 200.f; 
@@ -60,7 +60,7 @@ private:
     //Vector for all the active lasers
     std::vector<std::shared_ptr<Laser>> lasers; 
 
-    //sf::Clock clock;
+    sf::Clock clock;
 
 };
 
