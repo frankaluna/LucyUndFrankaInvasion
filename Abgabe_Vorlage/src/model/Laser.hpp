@@ -7,6 +7,7 @@
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
 
+
 class Laser{
     public:
         Laser(sf::Vector2f position, int speed);
@@ -14,6 +15,8 @@ class Laser{
         void update(float dt);
 
         void draw(Layer &layer);
+
+        bool active;
 
 
     private:

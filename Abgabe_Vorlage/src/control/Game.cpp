@@ -64,34 +64,40 @@ bool Game::input() {
             window.close();
             return true;
         }
-        // TODO: Process other events
-        // examples:
-        //if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-            //if (keyPressed->code == sf::Keyboard::Key::Right) { // right arrow key pressed
-                // ...
-        // if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
-            // if (keyReleased->code == sf::Keyboard::Key::Right) { // right arrow released
-                // ...
 
-    
+        // KeyPressed = einmalige Aktionen beim Drücken
+        if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+            switch (keyPressed->code) {
+                case sf::Keyboard::Key::Right:
+                    player_control.right_button_pressed();
+                    break;
+
+                case sf::Keyboard::Key::Left:
+                    player_control.left_button_pressed();
+                    break;
+
+                case sf::Keyboard::Key::Space:
+                    player_control.shoot_player();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        // KeyReleased = Aktionen beim Loslassen
         if (const auto* keyReleased = event->getIf<sf::Event::KeyReleased>()) {
-    
-             if (keyReleased->code == sf::Keyboard::Key::Right)
-                {
-                player_control.direction_button_released(HorizontalDirection::RIGHT);
-                }
+            switch (keyReleased->code) {
+                case sf::Keyboard::Key::Right:
+                    player_control.direction_button_released(HorizontalDirection::RIGHT);
+                    break;
+                case sf::Keyboard::Key::Left:
+                    player_control.direction_button_released(HorizontalDirection::LEFT);
+                    break;
 
-            else if (keyReleased->code == sf::Keyboard::Key::Left)
-                {
-                player_control.direction_button_released(HorizontalDirection::LEFT);
-                }
-        }
-        
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
-            player_control.right_button_pressed();
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
-            player_control.left_button_pressed();
+                default:
+                    break;
+            }
         }
     }
     return false;
@@ -100,7 +106,10 @@ bool Game::input() {
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
-    //laser.update();
+    //laser.update(time_passed);
+     for (auto& laser: player_control.get_lasers()){
+        laser->update(time_passed);
+    }
 }
 
 void Game::draw() {
@@ -108,7 +117,11 @@ void Game::draw() {
     // TODO: add game elements to layer
     background_layer.draw();
     game_layer.clear();
-
+    
+    //laser.draw(game_layer);
+    for (auto& laser: player_control.get_lasers()){
+        laser->draw(game_layer);
+    }
     player_control.draw_player();
     shield_control.draw();
     //laser.draw(game_layer);
