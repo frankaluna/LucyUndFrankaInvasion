@@ -2,7 +2,10 @@
 #include <random>
 
 SpaceshipControl:: SpaceshipControl(Layer &layer) :
-layer(layer), speed(0)
+layer(layer), 
+speed(0), 
+last_seen(0), 
+interval() //hier hast du aufgehört Luthy
 {
 
 }

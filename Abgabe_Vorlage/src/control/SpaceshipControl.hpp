@@ -20,6 +20,7 @@ class SpaceshipControl{
     //appear method
     void appear();
     
+
     private:
 
     //spaceship
@@ -30,6 +31,12 @@ class SpaceshipControl{
 
     //speed
     float speed;
+
+    //float for the interval declaration
+    float interval;
+
+    //time for last appearance
+    float last_seen;
     
     };
 
