@@ -15,9 +15,12 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     background_sprite(background),//Sprite 
     player_control(game_layer),
     shield_control(game_layer),
-    alien_control(game_layer)
+    alien_control(game_layer),
+    spaceship_control(game_layer)
+
     //laser({300.f,-300.f}, -200)
     //alien(1, {300, -300})
+
     {
 
     // load background file and configure sprite
@@ -110,6 +113,7 @@ void Game::update(float time_passed) {
      for (auto& laser: player_control.get_lasers()){
         laser->update(time_passed);
     }
+    spaceship_control.update();
 }
 
 void Game::draw() {
@@ -124,9 +128,11 @@ void Game::draw() {
     shield_control.draw();
     //laser.draw(game_layer);
     alien_control.draw_alien();
+    spaceship_control.draw_spaceship();
      for (auto& laser: player_control.get_lasers()){
         laser->draw(game_layer);
     }
+    
 
     game_layer.draw();
 
