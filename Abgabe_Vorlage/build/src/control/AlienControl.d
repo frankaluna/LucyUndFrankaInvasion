@@ -58,7 +58,8 @@ build/src/control/AlienControl.o: src/control/AlienControl.cpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
  SFML/include/SFML/System/Sleep.hpp src/control/../model/Directions.hpp \
- src/control/../model/../view/Layer.hpp src/control/../view/Layer.hpp
+ src/control/../model/../view/Layer.hpp src/control/../view/Layer.hpp \
+ src/control/../model/Directions.hpp
 src/control/AlienControl.hpp:
 src/control/../model/Alien.hpp:
 SFML/include/SFML/System/Vector2.hpp:
@@ -142,3 +143,4 @@ SFML/include/SFML/System/Sleep.hpp:
 src/control/../model/Directions.hpp:
 src/control/../model/../view/Layer.hpp:
 src/control/../view/Layer.hpp:
+src/control/../model/Directions.hpp:
