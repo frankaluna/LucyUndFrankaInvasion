@@ -31,6 +31,7 @@ class AlienControl {
     float speed;
     std::shared_ptr<Alien> most_left;
     std::shared_ptr<Alien> most_right;
+    std::shared_ptr<Alien> most_down;
     HorizontalDirection h_dir;
 };
 

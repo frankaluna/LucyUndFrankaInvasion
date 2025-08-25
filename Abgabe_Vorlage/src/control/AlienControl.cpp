@@ -5,7 +5,7 @@ AlienControl::AlienControl(Layer &layer) : layer(layer)
 
 {
     aliens = create_aliens();
-    speed = 50;
+    speed = 20;
     h_dir = HorizontalDirection::RIGHT;
     //je nachdem, wie die aliens sich weiter entwickeln, das vllt in eine andere Methode tun
     set_outer_aliens();
@@ -48,6 +48,8 @@ void AlienControl::set_outer_aliens() {
 
     most_left  = aliens.front();
     most_right = aliens.front();
+    most_down = aliens.front();
+
     
     for (auto &alien : aliens) {
         float cur_pos = alien->get_position().x; 
@@ -58,25 +60,38 @@ void AlienControl::set_outer_aliens() {
         if (cur_pos < most_left->get_position().x){
             most_left = alien;
         }
+
+        if (cur_pos < most_down->get_position().y){
+            most_down = alien;
+        }
     }
 }
 
 void AlienControl::update_aliens(float elapsed_time) {
-    
+
+    bool go_down = false;
         if (most_left->get_position().x < 25 && h_dir == HorizontalDirection::LEFT) {
             speed = -speed;
             h_dir = HorizontalDirection::RIGHT;
+            go_down = true;
+            
         }
 
         if (most_right->get_position().x > 575 && h_dir == HorizontalDirection::RIGHT) {
             speed = -speed;
             h_dir = HorizontalDirection::LEFT;
-            
+            go_down = true;
         }
        
         for(auto &alien : aliens){
         float x = alien->get_position().x;
+        float y = alien->get_position().y;
+        if(go_down){
+            y += 32;
+        }
         x += elapsed_time * speed;
-        alien->set_position(x, alien->get_position().y);}
+        alien->set_position(x, y);
+        }
+           
     }
 
