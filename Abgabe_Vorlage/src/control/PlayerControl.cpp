@@ -69,15 +69,20 @@ void PlayerControl::update_player(float elapsed_time){
         laser->update(elapsed_time);
     }
 
-    /*lasers.erase(
-        std::remove_if(lasers.begin(), lasers.end(), [&](const std::shared_ptr<Laser>& laser)
-        {
-            return laser->active;
-        }),
-    lasers.end()
+    lasers.erase(
+        std::remove_if(
+            lasers.begin(),
+            lasers.end(),
+            [&](const std::shared_ptr<Laser>& laser) {
+                return !laser->active; // oder laser->get_position().y < 0
+            }
+        ),
+        lasers.end()
     );
-*/
+    //testing if lasers really are deleted
+    //std::cout << "Vector size: " << lasers.size() << std::endl;
 }
+
 
 void PlayerControl:: draw_player(){
     //layer.add_to_layer(player.get_sprite());
@@ -93,8 +98,7 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
         sf::Vector2f(player.get_position().x, player.get_position().y), -150));
         shot_start_time = clock.getElapsedTime();
     }
-
-
-
  }
+
+ 
 

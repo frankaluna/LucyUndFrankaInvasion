@@ -62,6 +62,8 @@ private:
 
     sf::Clock clock;
 
+    
+
 };
 
 #endif
