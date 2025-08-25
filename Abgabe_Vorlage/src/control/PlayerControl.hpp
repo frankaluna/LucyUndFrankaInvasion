@@ -61,7 +61,7 @@ private:
     std::vector<std::shared_ptr<Laser>> lasers; 
 
     sf::Clock clock;
-
+gi
     
 
 };
