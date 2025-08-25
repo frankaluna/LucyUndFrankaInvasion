@@ -14,18 +14,16 @@ std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
     int type;
     
     //create Alien rows
-    for (i = 0; i < 6; i++){
+    for (i = 0; i < 4; i++){
         if (i == 0 || i == 1) {
         type = 1;
     }
     else if (i == 2 || i == 3) {
         type = 2;
     }
-    else if (i == 4 || i == 5) {
-        type = 3;
-    }
+   
         //create Alien columns
-        for (j = 0; j < 10; j++) {
+        for (j = 0; j < 9; j++) {
             float x = 83 + j * 48;
             float y = -548 + i * 48; 
             aliens.push_back(std::make_shared<Alien> (type, sf::Vector2f {x, y}));
