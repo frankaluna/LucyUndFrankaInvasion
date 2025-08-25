@@ -5,6 +5,7 @@
 #include <vector>
 #include "../view/Layer.hpp"
 #include <SFML/Graphics.hpp>
+#include "../model/Directions.hpp"
 
 
 class AlienControl {
@@ -16,10 +17,16 @@ class AlienControl {
 
     void draw_alien();
 
+   // void move_aliens();
+
+    void update_aliens(float elapsed_time);
+
+
     private:
     //Alien alien;
     Layer &layer;
     std::vector<std::shared_ptr<Alien>> aliens;
+    float speed;
 };
 
 #endif

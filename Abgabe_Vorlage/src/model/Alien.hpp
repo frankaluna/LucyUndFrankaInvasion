@@ -43,7 +43,7 @@ const sf:: Sprite &get_sprite() const;
 float get_speed() const;
 
 //setter speed
-void set_speed (float newSpeed);
+void set_speed(float newSpeed);
 
 int get_type();
 

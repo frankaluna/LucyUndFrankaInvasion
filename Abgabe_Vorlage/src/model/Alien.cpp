@@ -63,6 +63,7 @@ sf::Vector2f Alien::get_position() {
 void Alien:: set_position(float x, float y){
     position.x = x;
     position.y = y;
+    sprite.setPosition({x, y});
 }
 
 //get Sprite picture
@@ -84,3 +85,4 @@ void Alien:: set_speed(float newSpeed) {
 int Alien::get_type() {
     return type;
 }
+
