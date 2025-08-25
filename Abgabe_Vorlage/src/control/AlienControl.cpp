@@ -2,10 +2,10 @@
 #include <iostream>
 
 AlienControl::AlienControl(Layer &layer) : layer(layer)
-
+//game_over(false)
 {
     aliens = create_aliens();
-    speed = 20;
+    speed = 25;
     h_dir = HorizontalDirection::RIGHT;
     //je nachdem, wie die aliens sich weiter entwickeln, das vllt in eine andere Methode tun
     set_outer_aliens();
@@ -87,11 +87,20 @@ void AlienControl::update_aliens(float elapsed_time) {
         float x = alien->get_position().x;
         float y = alien->get_position().y;
         if(go_down){
-            y += 32;
+            y += 16;
         }
         x += elapsed_time * speed;
         alien->set_position(x, y);
         }
-           
+
+    /*für wenn wir einen game over screen haben    
+        if(most_down->get_position().y > -50){
+            game_over = true;
+        }
+    */       
     }
+
+    void AlienControl::shoot_alien(){
+        if (clock.getElapse)
+    };
 

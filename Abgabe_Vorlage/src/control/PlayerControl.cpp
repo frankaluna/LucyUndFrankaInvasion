@@ -93,8 +93,5 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
         sf::Vector2f(player.get_position().x, player.get_position().y), -150));
         shot_start_time = clock.getElapsedTime();
     }
-
-
-
  }
 
