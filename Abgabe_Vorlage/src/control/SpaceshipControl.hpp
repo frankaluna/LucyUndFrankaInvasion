@@ -12,7 +12,7 @@ class SpaceshipControl{
     SpaceshipControl(Layer &layer);
 
     //updates Spaceship
-    void update();
+    void update(float dt);
 
     //draws Spaceship to layer
     void draw_spaceship();
@@ -20,6 +20,7 @@ class SpaceshipControl{
     //appear method
     void appear();
     
+    void start_interval();
 
     private:
 
@@ -37,7 +38,7 @@ class SpaceshipControl{
 
     //time for last appearance
     float last_seen;
-    
+
     };
 
 #endif 

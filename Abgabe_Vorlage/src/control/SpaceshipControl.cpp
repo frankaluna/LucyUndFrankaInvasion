@@ -4,16 +4,25 @@
 SpaceshipControl:: SpaceshipControl(Layer &layer) :
 layer(layer), 
 speed(0), 
-last_seen(0), 
-interval() //hier hast du aufgehört 
+last_seen(0.f), 
+interval(0.f)
 {
+    //starts new random interval at the start
+    start_interval();
+}
+void SpaceshipControl::start_interval(){
+    std::random_device randomizer;
+    std::mt19937 generate(randomizer());
+    std::uniform_int_distribution<> distribute(10,20); //every 10 to 20 seconds
 
+    interval = static_cast<float>(distribute(generate));
+    last_seen = 0.f;
 }
 //appearance of the spaceship
 void SpaceshipControl::appear(){
     spaceship.set_position(spaceship.get_position().x,-565);
 
-    //randomize the location where the spaceship pops up
+     //randomize the location where the spaceship pops up
     std::random_device randomizer;
     std::mt19937 generate(randomizer());
     std::uniform_int_distribution<> distribute(0,1);
@@ -31,9 +40,14 @@ void SpaceshipControl::appear(){
     }
     spaceship.alive = true;
 }
-void SpaceshipControl:: update() {
+void SpaceshipControl:: update(float dt) {
     if (!spaceship.alive) {
-        appear();
+        last_seen += dt;
+        
+        if(last_seen >= interval){
+            appear();
+            start_interval(); //start a new interval for next appearance
+        }
     }
 
     if(spaceship.alive){
