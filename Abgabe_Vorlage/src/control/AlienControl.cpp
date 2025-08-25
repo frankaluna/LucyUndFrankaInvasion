@@ -9,6 +9,7 @@ AlienControl::AlienControl(Layer &layer) : layer(layer)
     h_dir = HorizontalDirection::RIGHT;
     //je nachdem, wie die aliens sich weiter entwickeln, das vllt in eine andere Methode tun
     set_outer_aliens();
+    shot_start_time = sf::seconds(0.0f);
 }
 
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
@@ -25,11 +26,10 @@ std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
     else if (i == 2 || i == 3) {
         type = 2;
     }
-   
         //create Alien columns
         for (j = 0; j < 9; j++) {
-            float x = 83 + j * 48;
-            float y = -548 + i * 48; 
+            float x = 83 + j * 48; // 83 is x coordinate of the column most to the right
+            float y = -548 + i * 48; // -548 is y coordinate of the highest row 
             aliens.push_back(std::make_shared<Alien> (type, sf::Vector2f {x, y}));
 
         }
@@ -97,10 +97,40 @@ void AlienControl::update_aliens(float elapsed_time) {
         if(most_down->get_position().y > -50){
             game_over = true;
         }
-    */       
+    */    
+   for (auto& laser: alien_lasers){
+        laser->update(elapsed_time);
     }
 
-    void AlienControl::shoot_alien(){
-        if (clock.getElapse)
-    };
+    alien_lasers.erase(
+        std::remove_if(
+            alien_lasers.begin(),
+            alien_lasers.end(),
+            [&](const std::shared_ptr<Laser>& laser) {
+                return !laser->active; // oder laser->get_position().y < 0
+            }
+        ),
+        alien_lasers.end()
+        //std::cout << "ich werde gelöscht" << std::endl;
+    );   
+    }
 
+void AlienControl::shoot_alien(){
+    std::shared_ptr<Alien> random_a = random_alien();
+    if (clock.getElapsedTime() - shot_start_time >= sf::seconds(1.0f)) {
+        alien_lasers.push_back(std::make_shared<Laser>(
+        sf::Vector2f(random_a->get_position().x, random_a->get_position().y) , 150));
+        shot_start_time = clock.getElapsedTime();
+    }
+};
+
+std::shared_ptr<Alien> AlienControl::random_alien(){
+static std::default_random_engine generator;
+std::uniform_int_distribution<int> distribution(0, aliens.size() - 1);
+int random_number = distribution(generator);  // generates number between zero and the size of the aliens vector
+
+return aliens[random_number];
+}
+std::vector<std::shared_ptr<Laser>> AlienControl::get_alien_lasers() {
+    return alien_lasers;
+}
