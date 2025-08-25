@@ -7,6 +7,8 @@
 #include "./PlayerControl.hpp"
 #include "./ShieldControl.hpp"
 #include "./AlienControl.hpp"
+#include "./SpaceshipControl.hpp"
+
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
 
@@ -48,9 +50,7 @@ private:
     PlayerControl player_control;
     ShieldControl shield_control;
     AlienControl alien_control;
-
-   // Laser laser; //Laser declaration
-//wop
+    SpaceshipControl spaceship_control;
 
 };
 
