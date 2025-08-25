@@ -21,12 +21,17 @@ class AlienControl {
 
     void update_aliens(float elapsed_time);
 
+    void set_outer_aliens();
+
 
     private:
     //Alien alien;
     Layer &layer;
     std::vector<std::shared_ptr<Alien>> aliens;
     float speed;
+    std::shared_ptr<Alien> most_left;
+    std::shared_ptr<Alien> most_right;
+    HorizontalDirection h_dir;
 };
 
 #endif

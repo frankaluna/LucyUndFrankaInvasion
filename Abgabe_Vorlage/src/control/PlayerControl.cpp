@@ -56,7 +56,7 @@ void PlayerControl::update_player(float elapsed_time){
     if (player.get_position().x > 50 && player.get_horizontal_movement() == HorizontalDirection::LEFT) {
         x = -200;
     }
-    
+
     if (player.get_position().x < 550 && player.get_horizontal_movement() == HorizontalDirection::RIGHT) {
         x = 200;
     }
