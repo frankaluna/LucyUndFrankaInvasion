@@ -99,8 +99,9 @@ void AlienControl::update_aliens(float elapsed_time) {
         }
     */       
     }
-
+/*
     void AlienControl::shoot_alien(){
         if (clock.getElapse)
     };
 
+*/
