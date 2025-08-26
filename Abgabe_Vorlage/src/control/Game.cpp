@@ -123,7 +123,10 @@ void Game::update(float time_passed) {
         player_control.collisions_player(laser);
         
     }
+    for (auto& laser: spaceship_control.get_lasers()){
     spaceship_control.update(time_passed);
+    spaceship_control.collisions_spaceship(laser);
+    }
 }
 
 void Game::draw() {

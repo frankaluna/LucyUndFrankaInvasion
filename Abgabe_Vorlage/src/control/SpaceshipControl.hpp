@@ -1,9 +1,13 @@
 #ifndef SPACESHIPCONTROL_HPP
 #define SPACESHIPCONTROL_HPP
 
+#include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include "../model/Spaceship.hpp"
 #include "../view/Layer.hpp"
+#include "../model/Laser.hpp"
+#include "PlayerControl.hpp"
 
 class SpaceshipControl{
     public:
@@ -22,6 +26,8 @@ class SpaceshipControl{
     
     void start_interval();
 
+    void collisions_spaceship(std::shared_ptr<Laser> laser);
+
     private:
 
     //spaceship
@@ -29,6 +35,8 @@ class SpaceshipControl{
 
     //layer where spaceship is drawn
     Layer &layer;
+
+    std::vector<std::shared_ptr<Laser>> lasers;
 
     //speed
     float speed;

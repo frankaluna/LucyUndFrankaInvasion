@@ -1,5 +1,6 @@
 #include "SpaceshipControl.hpp"
 #include <random>
+#include <iostream>
 
 SpaceshipControl:: SpaceshipControl(Layer &layer) :
 layer(layer), 
@@ -64,5 +65,12 @@ void SpaceshipControl:: update(float dt) {
 void SpaceshipControl::draw_spaceship(){
     if(spaceship.alive){
         spaceship.draw(layer);
+    }
+}
+
+void SpaceshipControl::collisions_spaceship(std::shared_ptr<Laser> laser){
+    if (laser->get_rectangle().getGlobalBounds().findIntersection(spaceship.get_sprite().getGlobalBounds())){
+        laser->active = false;
+        std::cout <<"spaceship down" << std::endl;
     }
 }
