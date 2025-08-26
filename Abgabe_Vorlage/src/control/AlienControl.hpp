@@ -1,11 +1,14 @@
 #ifndef ALIENCONTROL_HPP
 #define ALIENCONTROL_HPP
 
-#include "../model/Alien.hpp"
+
 #include <vector>
 #include <random>
-#include "../view/Layer.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include "../view/Layer.hpp"
+#include "../model/Laser.hpp"
+#include "../model/Alien.hpp"
 #include "../model/Directions.hpp"
 
 
@@ -25,6 +28,10 @@ class AlienControl {
 
     void shoot_alien();
 
+    std::shared_ptr<Alien> random_alien();
+
+    std::vector<std::shared_ptr<Laser>> get_alien_lasers();
+
 
     private:
     //Alien alien;
@@ -38,6 +45,9 @@ class AlienControl {
     std::shared_ptr<Alien> most_down;
     HorizontalDirection h_dir;
     //bool game_over;   //für wenn wir einen game over screen haben
+
+    sf::Time shot_start_time;
+    sf::Clock clock;
 
 };
 

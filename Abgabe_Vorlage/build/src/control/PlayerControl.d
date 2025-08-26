@@ -61,7 +61,8 @@ build/src/control/PlayerControl.o: src/control/PlayerControl.cpp \
  src/control/../model/Directions.hpp \
  src/control/../model/../view/Layer.hpp \
  src/control/../model/Directions.hpp src/control/../view/Layer.hpp \
- src/control/../model/Laser.hpp
+ src/control/AlienControl.hpp src/control/../model/Laser.hpp \
+ src/control/../model/Alien.hpp
 src/control/PlayerControl.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -146,4 +147,6 @@ src/control/../model/Directions.hpp:
 src/control/../model/../view/Layer.hpp:
 src/control/../model/Directions.hpp:
 src/control/../view/Layer.hpp:
+src/control/AlienControl.hpp:
 src/control/../model/Laser.hpp:
+src/control/../model/Alien.hpp:

@@ -110,10 +110,16 @@ void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
     player_control.update_player(time_passed);
     //laser.update(time_passed);
-     for (auto& laser: player_control.get_lasers()){
+    for (auto& laser: player_control.get_lasers()){
         laser->update(time_passed);
     }
+    
     alien_control.update_aliens(time_passed);
+    alien_control.shoot_alien();
+    
+    for (auto& laser: alien_control.get_alien_lasers()){
+        laser->update(time_passed);
+    }
     spaceship_control.update(time_passed);
 }
 
@@ -133,7 +139,9 @@ void Game::draw() {
      for (auto& laser: player_control.get_lasers()){
         laser->draw(game_layer);
     }
-    
+    for (auto& laser: alien_control.get_alien_lasers()){
+        laser->draw(game_layer);
+    }
 
     game_layer.draw();
 

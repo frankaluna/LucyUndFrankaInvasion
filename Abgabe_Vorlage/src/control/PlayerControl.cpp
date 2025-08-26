@@ -57,7 +57,7 @@ void PlayerControl::update_player(float elapsed_time){
         lasers.end()
     );
 
-    check_for_collisions(Laser& alien_control.alien_lasers);
+    collisions_alien(Laser& alien_control.get_alien_lasers());
     //testing if lasers really are deleted
     //std::cout << "Vector size: " << lasers.size() << std::endl;
 }
@@ -80,10 +80,16 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
  }
 
  
+/*bool PlayerControl::check_for_collision(const Laser& laser) const {
+    //check if the upper half of the Player intersects with the Laser
+    auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser.getShape().getGlobalBounds());
+    return intersection.has_value() && intersection->position.y > player.get_position().y - 16;
+    std::cout << "ich werde getroffen" << std::endl; }
+    */
 
-bool PlayerControl::check_for_collisions(Laser& laser) {
+bool PlayerControl::collisions_alien(Laser& laser) {
     std::cout << "ich werde getroffen" << std::endl;
     auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser.get_shape().getGlobalBounds());
     return intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser.get_speed > 0;
    
-}
+
