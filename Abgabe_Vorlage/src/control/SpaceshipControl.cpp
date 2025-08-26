@@ -71,6 +71,7 @@ void SpaceshipControl::draw_spaceship(){
 void SpaceshipControl::collisions_spaceship(std::shared_ptr<Laser> laser){
     if (laser->get_rectangle().getGlobalBounds().findIntersection(spaceship.get_sprite().getGlobalBounds())){
         laser->active = false;
+        //when spaceship is unalived it disappears
         spaceship.alive = false;
         std::cout <<"spaceship down" << std::endl;
     }
