@@ -8,3 +8,19 @@ game
 /CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
+Makefile
+
+# Ignore user/editor specific files
+*.user
+*.suo
+*.swp
+*.vscode/
+.idea/
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore SFML or other asset cache (optional)
+*.sfml-cache
