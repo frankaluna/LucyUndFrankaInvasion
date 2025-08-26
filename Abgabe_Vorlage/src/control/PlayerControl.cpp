@@ -79,13 +79,14 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
 
  
 
-bool PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
+void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
     auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser->get_rectangle().getGlobalBounds());
     if(intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0) {
+        std::cout << "ich werde getroffen" << player.get_lives() << std::endl;
         player.set_lives(player.get_lives() - 1);
         laser->active = false;
     }
-    return intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0;
+    
 }
 
