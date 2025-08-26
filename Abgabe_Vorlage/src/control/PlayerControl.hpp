@@ -41,7 +41,7 @@ class PlayerControl {
     //getter for laser dynamic array for when we want to work on collusion
     const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
 
-    bool check_for_collisions(Laser& laser);
+    bool collisions_alien(std::shared_ptr<Laser> laser);
 
 
 private:
