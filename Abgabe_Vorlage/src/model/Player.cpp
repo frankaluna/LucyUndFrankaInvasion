@@ -4,7 +4,8 @@ Player::Player() :
 
   position({300, -50}), //um an screen anzupassen
     texture(),
-    sprite(texture)
+    sprite(texture),
+    lives(3)
 {
      if (!texture.loadFromFile("assets/images/Player.png")) 
         throw std::invalid_argument("Spritesheet not found");
@@ -46,6 +47,17 @@ HorizontalDirection Player::get_horizontal_movement() const{
 sf::Vector2f Player::get_position() {
     return position;
 }
+
+int Player::get_lives() {
+    return lives;
+}
+
+void Player::set_lives(int new_lives) {
+    if(new_lives < 0) new_lives = 0;
+    if(new_lives > 3) new_lives = 3;
+    lives = new_lives;
+}
+
 //setter position
 void Player::set_position(float x, float y) {
     position.y = y;
