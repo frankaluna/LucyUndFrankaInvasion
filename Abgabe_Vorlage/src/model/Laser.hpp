@@ -18,7 +18,6 @@ class Laser{
 
         bool active;
 
-
     private:
     sf::Vector2f position;
     int speed;
