@@ -134,3 +134,22 @@ return aliens[random_number];
 std::vector<std::shared_ptr<Laser>> AlienControl::get_alien_lasers() {
     return alien_lasers;
 }
+
+void AlienControl::collisions_aliens(std::shared_ptr<Laser> laser) {
+
+    auto iteration_aliens = aliens.begin();
+    while(iteration_aliens != aliens.end()){
+        if (laser->get_rectangle().getGlobalBounds().findIntersection((*iteration_aliens)->get_sprite().getGlobalBounds())) {
+            
+            iteration_aliens = aliens.erase(iteration_aliens);
+            
+            laser->active = false;
+
+            std::cout << "Alien getroffen!" << std::endl;
+
+        }else{
+            ++iteration_aliens;
+        }
+    }
+}
+

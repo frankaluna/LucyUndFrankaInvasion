@@ -10,6 +10,7 @@
 #include "../model/Laser.hpp"
 #include "../model/Alien.hpp"
 #include "../model/Directions.hpp"
+#include "PlayerControl.hpp"
 
 
 
@@ -32,11 +33,16 @@ class AlienControl {
 
     std::vector<std::shared_ptr<Laser>> get_alien_lasers();
 
+    void collisions_aliens(std::shared_ptr<Laser> laser);
+
 
     private:
-    //Alien alien;
-    Layer &layer;
+
+
     std::vector<std::shared_ptr<Alien>> aliens;
+
+    Layer &layer;
+    
     std::vector<std::shared_ptr<Laser>> alien_lasers;
 
     float speed;

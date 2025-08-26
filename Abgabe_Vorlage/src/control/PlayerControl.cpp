@@ -77,19 +77,11 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
     }
  }
 
- 
-/*bool PlayerControl::check_for_collision(const Laser& laser) const {
-    //check if the upper half of the Player intersects with the Laser
-    auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser.getShape().getGlobalBounds());
-    return intersection.has_value() && intersection->position.y > player.get_position().y - 16;
-    std::cout << "ich werde getroffen" << std::endl; }
-    */
-
 bool PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
     auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser->get_rectangle().getGlobalBounds());
     if(intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0) {
-        std::cout << "ich werde getroffen" << std::endl;
+        //std::cout << "ich werde getroffen" << std::endl;
     }
     return intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0;
 }
