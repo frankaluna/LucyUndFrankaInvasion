@@ -2,31 +2,28 @@ build/src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
  SFML/include/SFML/System/Vector2.hpp SFML/include/SFML/System/Export.hpp \
  SFML/include/SFML/Config.hpp SFML/include/SFML/System/Angle.hpp \
  SFML/include/SFML/System/Angle.inl SFML/include/SFML/System/Vector2.inl \
- SFML/include/SFML/Graphics/Sprite.hpp \
+ SFML/include/SFML/Graphics.hpp SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp \
+ SFML/include/SFML/Graphics/CircleShape.hpp \
+ SFML/include/SFML/Graphics/Shape.hpp \
+ SFML/include/SFML/Graphics/Color.hpp \
+ SFML/include/SFML/Graphics/Color.inl \
  SFML/include/SFML/Graphics/Drawable.hpp \
+ SFML/include/SFML/Graphics/PrimitiveType.hpp \
  SFML/include/SFML/Graphics/Rect.hpp SFML/include/SFML/Graphics/Rect.inl \
  SFML/include/SFML/Graphics/RenderStates.hpp \
- SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/CoordinateType.hpp \
  SFML/include/SFML/Graphics/StencilMode.hpp \
  SFML/include/SFML/Graphics/Transform.hpp \
  SFML/include/SFML/Graphics/Transform.inl \
  SFML/include/SFML/Graphics/Transformable.hpp \
- SFML/include/SFML/Graphics/Vertex.hpp \
- SFML/include/SFML/Graphics/Color.hpp \
- SFML/include/SFML/Graphics/Color.inl \
- SFML/include/SFML/Graphics/Texture.hpp \
- SFML/include/SFML/Window/GlResource.hpp \
- SFML/include/SFML/Window/Export.hpp src/model/Directions.hpp \
- src/model/../view/Layer.hpp SFML/include/SFML/Graphics.hpp \
- SFML/include/SFML/Graphics/CircleShape.hpp \
- SFML/include/SFML/Graphics/Shape.hpp \
- SFML/include/SFML/Graphics/PrimitiveType.hpp \
  SFML/include/SFML/Graphics/VertexArray.hpp \
+ SFML/include/SFML/Graphics/Vertex.hpp \
  SFML/include/SFML/Graphics/ConvexShape.hpp \
  SFML/include/SFML/Graphics/Font.hpp SFML/include/SFML/Graphics/Glyph.hpp \
- SFML/include/SFML/Graphics/Image.hpp \
+ SFML/include/SFML/Graphics/Texture.hpp \
+ SFML/include/SFML/Window/GlResource.hpp \
+ SFML/include/SFML/Window/Export.hpp SFML/include/SFML/Graphics/Image.hpp \
  SFML/include/SFML/Graphics/RectangleShape.hpp \
  SFML/include/SFML/Graphics/RenderTarget.hpp \
  SFML/include/SFML/Graphics/View.hpp \
@@ -49,6 +46,7 @@ build/src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
  SFML/include/SFML/System/Vector3.inl SFML/include/SFML/Window/Event.inl \
  SFML/include/SFML/System/Clock.hpp SFML/include/SFML/Graphics/Shader.hpp \
  SFML/include/SFML/Graphics/Glsl.hpp SFML/include/SFML/Graphics/Glsl.inl \
+ SFML/include/SFML/Graphics/Sprite.hpp \
  SFML/include/SFML/Graphics/Text.hpp \
  SFML/include/SFML/Graphics/VertexBuffer.hpp SFML/include/SFML/Window.hpp \
  SFML/include/SFML/Window/Clipboard.hpp \
@@ -58,7 +56,8 @@ build/src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
  SFML/include/SFML/System/FileInputStream.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
- SFML/include/SFML/System/Sleep.hpp
+ SFML/include/SFML/System/Sleep.hpp src/model/Directions.hpp \
+ src/model/../view/Layer.hpp
 src/model/Laser.hpp:
 SFML/include/SFML/System/Vector2.hpp:
 SFML/include/SFML/System/Export.hpp:
@@ -66,34 +65,31 @@ SFML/include/SFML/Config.hpp:
 SFML/include/SFML/System/Angle.hpp:
 SFML/include/SFML/System/Angle.inl:
 SFML/include/SFML/System/Vector2.inl:
-SFML/include/SFML/Graphics/Sprite.hpp:
+SFML/include/SFML/Graphics.hpp:
+SFML/include/SFML/Graphics/BlendMode.hpp:
 SFML/include/SFML/Graphics/Export.hpp:
+SFML/include/SFML/Graphics/CircleShape.hpp:
+SFML/include/SFML/Graphics/Shape.hpp:
+SFML/include/SFML/Graphics/Color.hpp:
+SFML/include/SFML/Graphics/Color.inl:
 SFML/include/SFML/Graphics/Drawable.hpp:
+SFML/include/SFML/Graphics/PrimitiveType.hpp:
 SFML/include/SFML/Graphics/Rect.hpp:
 SFML/include/SFML/Graphics/Rect.inl:
 SFML/include/SFML/Graphics/RenderStates.hpp:
-SFML/include/SFML/Graphics/BlendMode.hpp:
 SFML/include/SFML/Graphics/CoordinateType.hpp:
 SFML/include/SFML/Graphics/StencilMode.hpp:
 SFML/include/SFML/Graphics/Transform.hpp:
 SFML/include/SFML/Graphics/Transform.inl:
 SFML/include/SFML/Graphics/Transformable.hpp:
-SFML/include/SFML/Graphics/Vertex.hpp:
-SFML/include/SFML/Graphics/Color.hpp:
-SFML/include/SFML/Graphics/Color.inl:
-SFML/include/SFML/Graphics/Texture.hpp:
-SFML/include/SFML/Window/GlResource.hpp:
-SFML/include/SFML/Window/Export.hpp:
-src/model/Directions.hpp:
-src/model/../view/Layer.hpp:
-SFML/include/SFML/Graphics.hpp:
-SFML/include/SFML/Graphics/CircleShape.hpp:
-SFML/include/SFML/Graphics/Shape.hpp:
-SFML/include/SFML/Graphics/PrimitiveType.hpp:
 SFML/include/SFML/Graphics/VertexArray.hpp:
+SFML/include/SFML/Graphics/Vertex.hpp:
 SFML/include/SFML/Graphics/ConvexShape.hpp:
 SFML/include/SFML/Graphics/Font.hpp:
 SFML/include/SFML/Graphics/Glyph.hpp:
+SFML/include/SFML/Graphics/Texture.hpp:
+SFML/include/SFML/Window/GlResource.hpp:
+SFML/include/SFML/Window/Export.hpp:
 SFML/include/SFML/Graphics/Image.hpp:
 SFML/include/SFML/Graphics/RectangleShape.hpp:
 SFML/include/SFML/Graphics/RenderTarget.hpp:
@@ -126,6 +122,7 @@ SFML/include/SFML/System/Clock.hpp:
 SFML/include/SFML/Graphics/Shader.hpp:
 SFML/include/SFML/Graphics/Glsl.hpp:
 SFML/include/SFML/Graphics/Glsl.inl:
+SFML/include/SFML/Graphics/Sprite.hpp:
 SFML/include/SFML/Graphics/Text.hpp:
 SFML/include/SFML/Graphics/VertexBuffer.hpp:
 SFML/include/SFML/Window.hpp:
@@ -140,3 +137,5 @@ SFML/include/SFML/System/FileInputStream.hpp:
 SFML/include/SFML/System/InputStream.hpp:
 SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
+src/model/Directions.hpp:
+src/model/../view/Layer.hpp:

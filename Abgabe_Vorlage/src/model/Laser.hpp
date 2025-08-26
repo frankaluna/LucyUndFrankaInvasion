@@ -2,8 +2,7 @@
 #define LASER_HPP
 
 #include <SFML/System/Vector2.hpp>
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics.hpp>
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
 
@@ -18,8 +17,16 @@ class Laser{
 
         bool active;
 
+        int get_speed();
+
+        const sf::RectangleShape& get_rectangle() const;
+
+
     private:
     sf::Vector2f position;
     int speed;
+    sf::RectangleShape rectangle;
+    
 };
+
 #endif

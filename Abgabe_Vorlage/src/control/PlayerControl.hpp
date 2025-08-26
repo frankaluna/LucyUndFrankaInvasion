@@ -5,6 +5,7 @@
 #include "../model/Player.hpp"
 #include "../model/Directions.hpp"
 #include "../view/Layer.hpp"
+#include "AlienControl.hpp"
 #include <vector>
 #include "../model/Laser.hpp"
 #include <SFML/System.hpp>
@@ -39,6 +40,8 @@ class PlayerControl {
 
     //getter for laser dynamic array for when we want to work on collusion
     const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
+
+    bool collisions_alien(std::shared_ptr<Laser> laser);
 
 
 private:

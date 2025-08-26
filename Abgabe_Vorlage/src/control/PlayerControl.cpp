@@ -24,30 +24,7 @@ void PlayerControl::direction_button_released(HorizontalDirection direction) {
         player.stop_horizontal_movement();
     }
 }
-/*
-//set back shoot timer
-void PlayerControl:: start_shoot(){
-    current_shot_start_time = 0.f;
-}
-// checking if able to shoot again
-bool PlayerControl:: can_shoot(float elapsed_time){
-    const float cooldown = 0.5f; //half second between 2 shots
-    return (elapsed_time - current_shot_start_time) >= cooldown;
-}
 
-//shoots if spacebar is pressed
-void PlayerControl::spacebar_pressed() {
-    float x = player.get_position_x();
-    float y = player.get_position_y()-20.f;
-
-    Projectile projectile(y, -300.f, Shooter:: Player, 5.f);
-    projectile.set_position(x,y);
-    projectiles.push_back(projectile);
-
-    //reset timer
-    start_shoot();
-}
-*/
 void PlayerControl::update_player(float elapsed_time){
     sf::Vector2f position = player.get_position();
 
@@ -101,4 +78,19 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
  }
 
  
+/*bool PlayerControl::check_for_collision(const Laser& laser) const {
+    //check if the upper half of the Player intersects with the Laser
+    auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser.getShape().getGlobalBounds());
+    return intersection.has_value() && intersection->position.y > player.get_position().y - 16;
+    std::cout << "ich werde getroffen" << std::endl; }
+    */
+
+bool PlayerControl::collisions_alien(std::shared_ptr<Laser> laser) {
+    
+    auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser->get_rectangle().getGlobalBounds());
+    if(intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0) {
+        std::cout << "ich werde getroffen" << std::endl;
+    }
+    return intersection.has_value() && intersection->position.y > player.get_position().y - 16 && laser->get_speed() > 0;
+}
 
