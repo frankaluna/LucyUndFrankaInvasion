@@ -69,6 +69,8 @@ void AlienControl::set_outer_aliens() {
 
 void AlienControl::update_aliens(float elapsed_time) {
 
+    set_outer_aliens();
+
     bool go_down = false;
         if (most_left->get_position().x < 25 && h_dir == HorizontalDirection::LEFT) {
             speed = -speed;
