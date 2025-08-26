@@ -48,5 +48,7 @@ sf::Sprite sprite;
 // character is moving left or right
 HorizontalDirection h_dir;   
 
+int lives;
+
 };
 #endif
