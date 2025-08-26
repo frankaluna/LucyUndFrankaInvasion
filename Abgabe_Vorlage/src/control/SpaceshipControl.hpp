@@ -36,7 +36,6 @@ class SpaceshipControl{
     //layer where spaceship is drawn
     Layer &layer;
 
-    std::vector<std::shared_ptr<Laser>> lasers;
 
     //speed
     float speed;

@@ -33,11 +33,11 @@ void SpaceshipControl::appear(){
     if (random_x == 0){
         //left side
         spaceship.set_position(0,spaceship.get_position().y);
-        speed = 3;
+        speed = 2;
     }else {
         //right side
         spaceship.set_position(600 - 32, spaceship.get_position().y) ; //screen width - image width
-        speed = -3;
+        speed = -2;
     }
     spaceship.alive = true;
 }
@@ -71,6 +71,7 @@ void SpaceshipControl::draw_spaceship(){
 void SpaceshipControl::collisions_spaceship(std::shared_ptr<Laser> laser){
     if (laser->get_rectangle().getGlobalBounds().findIntersection(spaceship.get_sprite().getGlobalBounds())){
         laser->active = false;
+        spaceship.alive = false;
         std::cout <<"spaceship down" << std::endl;
     }
 }
