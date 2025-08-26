@@ -30,3 +30,7 @@ rectangle.setPosition(position);
 layer.add_to_layer(rectangle);
 //layer.draw();
 }
+
+int Laser::get_speed(){
+    return speed;
+}

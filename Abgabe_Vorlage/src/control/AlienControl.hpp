@@ -30,7 +30,7 @@ class AlienControl {
     //Alien alien;
     Layer &layer;
     std::vector<std::shared_ptr<Alien>> aliens;
-    //std::vector<std::shared_ptr<Laser>> alien_lasers;
+    std::vector<std::shared_ptr<Laser>> alien_lasers;
 
     float speed;
     std::shared_ptr<Alien> most_left;
