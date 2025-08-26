@@ -64,8 +64,8 @@ build/src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
  src/control/./../model/Alien.hpp src/control/./ShieldControl.hpp \
  src/control/./../model/Shield.hpp src/control/./AlienControl.hpp \
  src/control/./SpaceshipControl.hpp src/control/./../model/Spaceship.hpp \
- src/control/../view/Layer.hpp src/control/../model/Laser.hpp \
- src/control/../model/Constants.hpp
+ src/control/OverlayControl.hpp src/control/../view/Layer.hpp \
+ src/control/../model/Laser.hpp src/control/../model/Constants.hpp
 src/control/Game.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -159,6 +159,7 @@ src/control/./../model/Shield.hpp:
 src/control/./AlienControl.hpp:
 src/control/./SpaceshipControl.hpp:
 src/control/./../model/Spaceship.hpp:
+src/control/OverlayControl.hpp:
 src/control/../view/Layer.hpp:
 src/control/../model/Laser.hpp:
 src/control/../model/Constants.hpp:

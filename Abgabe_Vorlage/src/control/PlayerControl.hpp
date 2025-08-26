@@ -43,6 +43,8 @@ class PlayerControl {
 
     void collisions_player(std::shared_ptr<Laser> laser);
 
+    bool is_game_over();
+
 
 private:
     //player

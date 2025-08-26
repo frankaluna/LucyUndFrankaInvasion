@@ -77,8 +77,6 @@ const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
     }
  }
 
- 
-
 void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
     auto intersection = player.get_sprite().getGlobalBounds().findIntersection(laser->get_rectangle().getGlobalBounds());
@@ -90,3 +88,6 @@ void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
 }
 
+bool PlayerControl::is_game_over(){
+    return player.get_lives() <= 0;
+}

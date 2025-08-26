@@ -10,17 +10,15 @@
 Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Space Invaders"),
     view(sf::FloatRect(sf::Vector2f({0,-constants::VIEW_HEIGHT}), sf::Vector2f({constants::VIEW_WIDTH,constants::VIEW_HEIGHT}))),
     game_layer(window),
+    overlay_layer(window),
     background_layer(window), //Layer
     background(),              //Texture
     background_sprite(background),//Sprite 
     player_control(game_layer),
     shield_control(game_layer),
     alien_control(game_layer),
-    spaceship_control(game_layer)
-
-    //laser({300.f,-300.f}, -200)
-    //alien(1, {300, -300})
-
+    spaceship_control(game_layer),
+    overlay_control(overlay_layer)
     {
 
     // load background file and configure sprite
@@ -108,6 +106,11 @@ bool Game::input() {
 
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
+    if(player_control.is_game_over()){
+        overlay_control.is_game_over();
+    }
+
+
     player_control.update_player(time_passed);
     //laser.update(time_passed);
     for (auto& laser: player_control.get_lasers()){
@@ -120,7 +123,6 @@ void Game::update(float time_passed) {
     for (auto& laser: alien_control.get_alien_lasers()){
         laser->update(time_passed);
         player_control.collisions_player(laser);
-        
     }
     spaceship_control.update(time_passed);
 }
@@ -128,14 +130,13 @@ void Game::update(float time_passed) {
 void Game::draw() {
     window.clear();
     // TODO: add game elements to layer
-    background_layer.draw();
+  
+
+    //draw the game elements
     game_layer.clear();
     
-    //laser.draw(game_layer);
-   
     player_control.draw_player();
     shield_control.draw();
-    //laser.draw(game_layer);
     alien_control.draw_alien();
     spaceship_control.draw_spaceship();
      for (auto& laser: player_control.get_lasers()){
@@ -145,8 +146,14 @@ void Game::draw() {
         laser->draw(game_layer);
     }
 
-    game_layer.draw();
+    //draw the overlay
+    overlay_layer.clear();
+    overlay_control.draw();
 
+    //draw the layers
+    background_layer.draw();
+    game_layer.draw();
+    overlay_layer.draw();
 
     window.display();
 }
