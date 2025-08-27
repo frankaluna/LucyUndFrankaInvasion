@@ -5,7 +5,7 @@
 ShieldControl::ShieldControl(Layer &layer) : 
 layer(layer) 
 {
-create_shields();
+ shields = create_shields();
 }
 std::vector<Shield> ShieldControl::create_shields(){
     int i;
@@ -19,7 +19,7 @@ std::vector<Shield> ShieldControl::create_shields(){
         //shield.draw(layer);
         x = x + 164;
     }
-    //return shields;
+    return shields;
 }
 void ShieldControl::draw() {
      for(auto &shield : shields){

@@ -12,7 +12,7 @@ class ShieldControl {
     
     ShieldControl(Layer &layer);
 
-    void draw_shield();
+    void draw();
 
     std::vector<Shield> create_shields();
 

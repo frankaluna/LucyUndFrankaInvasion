@@ -19,7 +19,7 @@ class SpaceshipControl{
     void update(float dt);
 
     //draws Spaceship to layer
-    void draw();
+    void draw_spaceship();
     
     //appear method
     void appear();
