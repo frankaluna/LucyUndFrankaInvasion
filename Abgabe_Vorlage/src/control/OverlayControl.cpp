@@ -1,20 +1,24 @@
 #include "OverlayControl.hpp"
 
 OverlayControl::OverlayControl(Layer &layer) :
+font("assets/fonts/ARCADECLASSIC.TTF"),
 layer(layer),
 game_over(), 
 game_over_sprite(game_over),
 game_going(),
-score_sprite(game_going)
+score_sprite(game_going),
+score_counter(font)
 {
     show_game_over = false;
- 
+    
+    score_counter.setPosition({70 , 562});  
 }
 
 void OverlayControl::draw(int score) {
     // draw the text views to the layer
     show_score(score);
     layer.add_to_layer(score_sprite);
+    layer.add_to_layer(score_counter);
     if (show_game_over)
         layer.add_to_layer(game_over_sprite);
 }
@@ -40,6 +44,9 @@ void OverlayControl::show_score(int score) {
     score_sprite.setTextureRect(sf::IntRect({0,0}, {52 ,16}));
     score_sprite.setOrigin({0, 0});
     score_sprite.setPosition({10, 575});
+
+    
+    score_counter.setString(std::to_string(score));
 
 }
 

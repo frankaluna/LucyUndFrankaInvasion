@@ -23,11 +23,15 @@ class OverlayControl{
 
     Layer &layer;
 
+    sf::Font font;
+
     sf::Texture game_over;
     sf::Texture game_going;
  
     sf::Sprite game_over_sprite;
     sf::Sprite score_sprite;
+
+    sf::Text score_counter;
 
     bool show_game_over;
 
