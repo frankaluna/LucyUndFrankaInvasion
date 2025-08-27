@@ -132,6 +132,8 @@ void Game::update(float time_passed) {
     }
     
     spaceship_control.update(time_passed);    
+
+    overlay_control.update(alien_control.get_score(), player_control.get_lives());
 }
 
 void Game::draw() {
@@ -153,7 +155,7 @@ void Game::draw() {
     }
 
     overlay_layer.clear();
-    overlay_control.draw(alien_control.get_score());
+    overlay_control.draw();
 
     background_layer.draw();
     game_layer.draw();

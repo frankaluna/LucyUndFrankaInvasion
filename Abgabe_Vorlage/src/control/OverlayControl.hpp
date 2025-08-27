@@ -2,6 +2,7 @@
 #define OVERLAYCONTROL_H
 
 #include <stddef.h>
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include "../view/Layer.hpp"
@@ -11,13 +12,15 @@ class OverlayControl{
 
     OverlayControl(Layer &layer);
 
-    //void update_score(int oldScore);
+    void update(int score, int lives);
 
-    void draw(int score);
+    void draw();
 
     void is_game_over(); 
 
     void show_score(int score);
+
+    void show_lives(int lives);
 
     private:
 
@@ -26,10 +29,12 @@ class OverlayControl{
     sf::Font font;
 
     sf::Texture game_over;
-    sf::Texture game_going;
+    sf::Texture game_score;
+    sf::Texture game_lives;
  
     sf::Sprite game_over_sprite;
     sf::Sprite score_sprite;
+    std::vector<sf::Sprite> lives_sprites;
 
     sf::Text score_counter;
 

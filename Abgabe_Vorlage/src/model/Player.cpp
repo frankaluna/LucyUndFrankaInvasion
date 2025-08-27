@@ -17,7 +17,6 @@ Player::Player() :
 
 }
 
-
 //movement right
 void Player:: move_right() {
     h_dir = HorizontalDirection:: RIGHT;

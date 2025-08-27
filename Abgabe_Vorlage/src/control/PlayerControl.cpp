@@ -85,8 +85,8 @@ void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
         std::cout << "ich werde getroffen" << player.get_lives() << std::endl;
         player.set_lives(player.get_lives() - 1);
         laser->active = false;
+        
     }
-    
 }
 
 bool PlayerControl::is_game_over(){
