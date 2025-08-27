@@ -96,3 +96,8 @@ bool PlayerControl::is_game_over(){
 int PlayerControl::get_lives(){
     return player.get_lives();
 }
+
+Player PlayerControl::get_Player(){
+    return player;
+}
+

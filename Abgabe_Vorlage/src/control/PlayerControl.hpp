@@ -44,6 +44,8 @@ class PlayerControl {
 
     int get_lives();
 
+    Player get_Player();
+
 private:
     //player
     Player player;

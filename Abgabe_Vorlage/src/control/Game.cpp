@@ -131,7 +131,13 @@ void Game::update(float time_passed) {
         
     }
     
-    spaceship_control.update(time_passed);    
+    spaceship_control.update(time_passed);
+    if (spaceship_control.collision){
+        int newLives = player_control.get_lives() + 1;
+        player_control.get_Player().set_lives(newLives);
+        std::cout << "ein neues Leben!!!!" << player_control.get_lives() << std::endl;
+        spaceship_control
+    }    
 
     overlay_control.update(alien_control.get_score(), player_control.get_lives());
 }
