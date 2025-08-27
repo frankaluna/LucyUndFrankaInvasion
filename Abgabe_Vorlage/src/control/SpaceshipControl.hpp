@@ -19,7 +19,7 @@ class SpaceshipControl{
     void update(float dt);
 
     //draws Spaceship to layer
-    void draw_spaceship();
+    void draw();
     
     //appear method
     void appear();
@@ -35,7 +35,6 @@ class SpaceshipControl{
 
     //layer where spaceship is drawn
     Layer &layer;
-
 
     //speed
     float speed;

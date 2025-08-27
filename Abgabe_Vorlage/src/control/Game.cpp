@@ -114,6 +114,7 @@ void Game::update(float time_passed) {
         laser->update(time_passed);
         alien_control.collisions_aliens(laser);
         spaceship_control.collisions_spaceship(laser);
+        shield_control.collisions_shield(laser);
     }
 
     alien_control.update_aliens(time_passed);
@@ -122,6 +123,7 @@ void Game::update(float time_passed) {
     for (auto& laser: alien_control.get_alien_lasers()){
         laser->update(time_passed);
         player_control.collisions_player(laser);
+        shield_control.collisions_shield(laser);
         
     }
     
