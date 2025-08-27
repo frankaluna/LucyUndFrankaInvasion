@@ -14,7 +14,7 @@ sprite(texture)
     sprite.setPosition(position);
 
 }
-    
+
     //get position 
     sf::Vector2f Shield:: get_position() const{
         return position;

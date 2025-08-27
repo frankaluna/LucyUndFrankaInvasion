@@ -12,7 +12,6 @@ void PlayerControl::right_button_pressed() {
     player.move_right();
 } 
 
-
 //moves Player to the left
 void PlayerControl::left_button_pressed() {
     player.move_left();
@@ -61,7 +60,7 @@ void PlayerControl::update_player(float elapsed_time){
 }
 
 
-void PlayerControl:: draw_player(){
+void PlayerControl::draw_player(){
     //layer.add_to_layer(player.get_sprite());
     player.draw(layer);
     
@@ -90,8 +89,10 @@ void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
 }
 
-
 bool PlayerControl::is_game_over(){
     return player.get_lives() <= 0;
 }
 
+int PlayerControl::get_lives(){
+    return player.get_lives();
+}

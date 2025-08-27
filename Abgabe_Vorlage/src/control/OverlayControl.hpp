@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include "../view/Layer.hpp"
 
 class OverlayControl{
@@ -12,22 +13,21 @@ class OverlayControl{
 
     //void update_score(int oldScore);
 
-    //void update_lives();
+    void draw(int score);
 
-    void draw();
+    void is_game_over(); 
 
-    void is_game_over();
+    void show_score(int score);
 
     private:
-
-    //sf::Font font;
-
-    //size_t score;
 
     Layer &layer;
 
     sf::Texture game_over;
-    sf::Sprite sprite;
+    sf::Texture game_going;
+ 
+    sf::Sprite game_over_sprite;
+    sf::Sprite score_sprite;
 
     bool show_game_over;
 

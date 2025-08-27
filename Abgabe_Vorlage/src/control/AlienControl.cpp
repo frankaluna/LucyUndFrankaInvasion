@@ -1,8 +1,8 @@
 #include "AlienControl.hpp"
 #include <iostream>
 
-AlienControl::AlienControl(Layer &layer) : layer(layer)
-//game_over(false)
+AlienControl::AlienControl(Layer &layer) : layer(layer),
+score(0)
 {
     aliens = create_aliens();
     speed = 25;
@@ -10,6 +10,8 @@ AlienControl::AlienControl(Layer &layer) : layer(layer)
     //je nachdem, wie die aliens sich weiter entwickeln, das vllt in eine andere Methode tun
     set_outer_aliens();
     shot_start_time = sf::seconds(0.0f);
+    is_game_over = false;
+   // score = 0;
 }
 
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
@@ -61,7 +63,7 @@ void AlienControl::set_outer_aliens() {
             most_left = alien;
         }
 
-        if (cur_pos < most_down->get_position().y){
+        if (cur_pos > most_down->get_position().y){
             most_down = alien;
         }
     }
@@ -69,21 +71,23 @@ void AlienControl::set_outer_aliens() {
 
 void AlienControl::update_aliens(float elapsed_time) {
 
+    set_outer_aliens();
+
     bool go_down = false;
-        if (most_left->get_position().x < 25 && h_dir == HorizontalDirection::LEFT) {
+    if (most_left->get_position().x < 25 && h_dir == HorizontalDirection::LEFT) {
             speed = -speed;
             h_dir = HorizontalDirection::RIGHT;
             go_down = true;
             
-        }
+    }
 
-        if (most_right->get_position().x > 575 && h_dir == HorizontalDirection::RIGHT) {
+    if (most_right->get_position().x > 575 && h_dir == HorizontalDirection::RIGHT) {
             speed = -speed;
             h_dir = HorizontalDirection::LEFT;
             go_down = true;
-        }
+    }
        
-        for(auto &alien : aliens){
+    for(auto &alien : aliens){
         float x = alien->get_position().x;
         float y = alien->get_position().y;
         if(go_down){
@@ -91,13 +95,13 @@ void AlienControl::update_aliens(float elapsed_time) {
         }
         x += elapsed_time * speed;
         alien->set_position(x, y);
-        }
+    }
 
-    /*für wenn wir einen game over screen haben    
-        if(most_down->get_position().y > -50){
-            game_over = true;
-        }
-    */    
+
+    if(most_down->get_position().y > -150){
+            is_game_over = true;
+    }
+       
    for (auto& laser: alien_lasers){
         laser->update(elapsed_time);
     }
@@ -131,6 +135,7 @@ int random_number = distribution(generator);  // generates number between zero a
 
 return aliens[random_number];
 }
+
 std::vector<std::shared_ptr<Laser>> AlienControl::get_alien_lasers() {
     return alien_lasers;
 }
@@ -147,9 +152,18 @@ void AlienControl::collisions_aliens(std::shared_ptr<Laser> laser) {
 
             std::cout << "Alien getroffen!" << std::endl;
 
-        }else{
+            set_score(score += 1);
+
+        } else {
             ++iteration_aliens;
         }
     }
 }
 
+int AlienControl::get_score() {
+    return score;
+}
+
+void AlienControl::set_score(int newScore) {
+    score = newScore;
+}

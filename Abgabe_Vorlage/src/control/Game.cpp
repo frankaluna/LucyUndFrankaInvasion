@@ -110,7 +110,8 @@ bool Game::input() {
 
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
-    if(player_control.is_game_over()) {
+    if(player_control.is_game_over() || alien_control.is_game_over == true) {
+        game_layer.clear();
         overlay_control.is_game_over();
     }
     player_control.update_player(time_passed);
@@ -130,9 +131,7 @@ void Game::update(float time_passed) {
         
     }
     
-    spaceship_control.update(time_passed);
-    
-    
+    spaceship_control.update(time_passed);    
 }
 
 void Game::draw() {
@@ -141,12 +140,11 @@ void Game::draw() {
     
     game_layer.clear();
     
-    //laser.draw(game_layer);
     player_control.draw_player();
     shield_control.draw();
-    //laser.draw(game_layer);
     alien_control.draw_alien();
     spaceship_control.draw_spaceship();
+
      for (auto& laser: player_control.get_lasers()){
         laser->draw(game_layer);
     }
@@ -155,7 +153,7 @@ void Game::draw() {
     }
 
     overlay_layer.clear();
-    overlay_control.draw();
+    overlay_control.draw(alien_control.get_score());
 
     background_layer.draw();
     game_layer.draw();
