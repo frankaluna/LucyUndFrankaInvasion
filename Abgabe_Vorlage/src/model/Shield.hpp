@@ -20,7 +20,7 @@ class Shield{
     sf::Vector2f get_position() ;
 
     //sprite for shield
-    const sf:: Sprite&get_sprite() const;
+    const sf:: Sprite &get_sprite() const;
 
     void draw(Layer &layer);
 

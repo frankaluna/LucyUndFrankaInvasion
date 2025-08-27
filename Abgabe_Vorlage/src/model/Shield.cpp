@@ -24,14 +24,14 @@ sf::Vector2f Shield:: get_position() {
     return position;
 }
     
-    //set positions x and y
-    void Shield:: set_position(float x, float y){
-        position.x = x;
-        position.y = y;
-        sprite.setPosition({x, y});
-    }
+//set positions x and y
+void Shield:: set_position(float x, float y){
+    position.x = x;
+    position.y = y;
+    sprite.setPosition({x, y});
+}
     
-    //get a pretty Sprite picture please 
-    const sf:: Sprite& Shield:: get_sprite() const{
-        return sprite;
-    }
+//get a pretty Sprite picture please 
+const sf:: Sprite& Shield:: get_sprite() const{
+    return sprite;
+}

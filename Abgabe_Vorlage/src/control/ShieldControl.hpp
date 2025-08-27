@@ -14,7 +14,7 @@ class ShieldControl {
 
     void draw();
 
-    std::vector<Shield> create_shields();
+    std::vector<std::shared_ptr<Shield>> create_shields();
 
     void collisions_shield(std::shared_ptr<Laser> laser);
 
@@ -22,7 +22,7 @@ class ShieldControl {
 
     Layer &layer;
 
-    std::vector<Shield> shields;
+    std::vector<std::shared_ptr<Shield>> shields;
 
 };
 
