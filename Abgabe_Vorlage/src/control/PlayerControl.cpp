@@ -90,3 +90,8 @@ void PlayerControl::collisions_player(std::shared_ptr<Laser> laser) {
     
 }
 
+
+bool PlayerControl::is_game_over(){
+    return player.get_lives() <= 0;
+}
+
