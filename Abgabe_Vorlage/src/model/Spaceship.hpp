@@ -11,9 +11,6 @@ class Spaceship {
         //constructor and initialize
         Spaceship();
 
-        //destructor
-        ~Spaceship();
-
         //boolean for checking if it is alive
         bool alive;
 
@@ -33,9 +30,11 @@ class Spaceship {
         float get_speed() const;
 
     private:
-        sf::Vector2f position;
-        sf::Texture texture;
-        sf::Sprite sprite;
+        sf::Vector2f position;  //spaceships position
+        sf::Texture texture;    //spaceships texture
+        sf::Sprite sprite;      //spaceships sprite
+
+        //speed of spaceship
         float speed;
 };
 
