@@ -39,8 +39,8 @@ $(BUILDDIR)/libgmock.a: $(BUILDDIR)/gmock-all.o
 
 
 # build game 
-game: $(GAME_OBJECTS) 
-	$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)
+game: $(GAME_OBJECTS)
+	$(CXX) $(GAME_OBJECTS) -o $@ $(LDFLAGS) $(LDLIBS)
 
 # build tests
 TEST_BINARY := Test
