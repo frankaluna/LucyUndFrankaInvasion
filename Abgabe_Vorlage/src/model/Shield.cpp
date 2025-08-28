@@ -2,7 +2,8 @@
 
 Shield:: Shield(sf::Vector2f position) : 
 texture(),
-sprite(texture)
+sprite(texture),
+resilience(5)
 {
     this -> position = position; 
 
@@ -30,8 +31,22 @@ void Shield:: set_position(float x, float y){
     position.y = y;
     sprite.setPosition({x, y});
 }
-    
 //get a pretty Sprite picture please 
 const sf:: Sprite& Shield:: get_sprite() const{
     return sprite;
+}
+
+int Shield::get_resilience(){
+    return resilience;
+}
+
+void Shield::set_resilience(int new_reslience){
+    if(new_reslience > 5){
+        new_reslience = 5;
+    }
+    if(new_reslience < 0){
+        new_reslience = 5;
+    }
+    resilience = new_reslience;
+    
 }

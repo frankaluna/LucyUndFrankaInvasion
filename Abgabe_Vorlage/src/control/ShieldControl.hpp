@@ -18,6 +18,7 @@ class ShieldControl {
 
     void collisions_shield(std::shared_ptr<Laser> laser);
 
+
     private:
 
     Layer &layer;
