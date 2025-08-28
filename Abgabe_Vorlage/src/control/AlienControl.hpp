@@ -81,8 +81,6 @@ class AlienControl {
     sf::Time shot_start_time;
 
     sf::Clock clock;
-
-   
 };
 
 #endif

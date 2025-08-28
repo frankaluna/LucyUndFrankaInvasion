@@ -9,20 +9,16 @@
 
 Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Space Invaders"),
     view(sf::FloatRect(sf::Vector2f({0,-constants::VIEW_HEIGHT}), sf::Vector2f({constants::VIEW_WIDTH,constants::VIEW_HEIGHT}))),
-    game_layer(window),
-    background_layer(window), //Layer
+    game_layer(window),             
+    background_layer(window),       //Layer
     overlay_layer(window),
-    background(),              //Texture
-    background_sprite(background),//Sprite 
+    background(),                   //Texture
+    background_sprite(background),  //Background Sprite 
     player_control(game_layer),
     shield_control(game_layer),
     alien_control(game_layer),
     spaceship_control(game_layer),
     overlay_control(overlay_layer)
-
-    //laser({300.f,-300.f}, -200)
-    //alien(1, {300, -300})
-
     {
 
     // load background file and configure sprite
@@ -35,7 +31,8 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
 
      // draw on the render target (needs to be done only once) 
     background_layer.clear();
-    background_layer.add_to_layer(background_sprite);
+    background_layer.add_to_layer(background_sprite); // adds background to layer
+
     // limit frame rate
     window.setFramerateLimit(constants::FRAME_RATE);
 
@@ -73,14 +70,15 @@ bool Game::input() {
         // KeyPressed = einmalige Aktionen beim Drücken
         if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
             switch (keyPressed->code) {
+                //moves right if right key is pressed
                 case sf::Keyboard::Key::Right:
                     player_control.right_button_pressed();
                     break;
-
+                //moves left if left key is pressed
                 case sf::Keyboard::Key::Left:
                     player_control.left_button_pressed();
                     break;
-
+                //shoots if spacebar is pressed
                 case sf::Keyboard::Key::Space:
                     player_control.shoot_player();
                     break;
