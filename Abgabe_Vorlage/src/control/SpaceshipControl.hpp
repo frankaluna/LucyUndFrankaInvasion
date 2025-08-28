@@ -28,6 +28,9 @@ class SpaceshipControl{
 
     void collisions_spaceship(std::shared_ptr<Laser> laser);
 
+   
+    bool collision;
+    
     private:
 
     //spaceship
@@ -44,6 +47,8 @@ class SpaceshipControl{
 
     //time for last appearance
     float last_seen;
+
+   
 
     };
 

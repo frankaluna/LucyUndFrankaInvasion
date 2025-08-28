@@ -18,6 +18,7 @@ void SpaceshipControl::start_interval(){
 
     interval = static_cast<float>(distribute(generate));
     last_seen = 0.f;
+    collision = false;
 }
 //appearance of the spaceship
 void SpaceshipControl::appear(){
@@ -79,6 +80,7 @@ void SpaceshipControl::collisions_spaceship(std::shared_ptr<Laser> laser){
         //when spaceship is unalived it disappears
         spaceship.alive = false;
         std::cout <<"spaceship down" << std::endl;
+        collision = true;
     }
     
 }
