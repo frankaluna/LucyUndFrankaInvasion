@@ -17,17 +17,13 @@ Spaceship::Spaceship() :
     alive = false;
 
 }
-//destructor for Spaceship
-Spaceship::~Spaceship(){
-    //sf::Texture nothing;
-    //texture.swap(nothing);
-}
 
 //get position
 sf::Vector2f Spaceship:: get_position() const{
     return position;
 }
-//set positions
+
+//sets spaceships position and adjusts sprite accordingly
 void Spaceship:: set_position(float x, float y){
     position.x = x;
     position.y = y;
@@ -39,6 +35,7 @@ const sf:: Sprite& Spaceship:: get_sprite() const{
     return sprite;
 }
 
+//draws spaceship on given layer
 void Spaceship:: draw(Layer &layer){
     layer.add_to_layer(sprite);
 }

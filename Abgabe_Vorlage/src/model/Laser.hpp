@@ -6,25 +6,35 @@
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
 
+//class that handles lasers
 
 class Laser{
+
     public:
-        Laser(sf::Vector2f position, int speed);
+    //constructor
+    Laser(sf::Vector2f position, int speed);
 
-        void update(float dt);
+    //updates lasers
+    void update(float dt);
 
-        void draw(Layer &layer);
+    //draws lasers
+    void draw(Layer &layer);
 
-        bool active;
+    //is true if laser is active
+    bool active;
 
-        int get_speed();
+    //returns lasers speed
+    int get_speed();
 
-        const sf::RectangleShape& get_rectangle() const;
-
+    //returns lasers shape
+    const sf::RectangleShape& get_rectangle() const;
 
     private:
+    //lasers position
     sf::Vector2f position;
+    //lasers speed
     int speed;
+    //lasers shape
     sf::RectangleShape rectangle;
     
 };

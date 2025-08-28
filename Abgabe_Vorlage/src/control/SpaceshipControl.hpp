@@ -24,11 +24,13 @@ class SpaceshipControl{
     //appear method
     void appear();
     
+    //starts new time interval
     void start_interval();
 
+    //checks for collision with spaceship
     void collisions_spaceship(std::shared_ptr<Laser> laser);
 
-   
+    //returns true if there is a collision
     bool collision;
     
     private:
@@ -47,12 +49,7 @@ class SpaceshipControl{
 
     //time for last appearance
     float last_seen;
-
-   
-
+    
     };
 
 #endif 
-/*
-
-*/
