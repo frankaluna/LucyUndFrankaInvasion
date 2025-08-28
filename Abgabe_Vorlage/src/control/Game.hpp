@@ -8,6 +8,7 @@
 #include "./ShieldControl.hpp"
 #include "./AlienControl.hpp"
 #include "./SpaceshipControl.hpp"
+#include "OverlayControl.hpp"
 
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
@@ -41,6 +42,7 @@ private:
     sf::View view;
     Layer game_layer;
     Layer background_layer;
+    Layer overlay_layer;
 
 
     // resources to draw the background
@@ -51,6 +53,7 @@ private:
     ShieldControl shield_control;
     AlienControl alien_control;
     SpaceshipControl spaceship_control;
+    OverlayControl overlay_control;
 
 };
 

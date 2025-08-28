@@ -35,9 +35,15 @@ class AlienControl {
 
     void collisions_aliens(std::shared_ptr<Laser> laser);
 
+    int get_score();
+
+    void set_score(int newScore);
+
+    bool is_game_over;
+
 
     private:
-
+    int score;
 
     std::vector<std::shared_ptr<Alien>> aliens;
 
@@ -55,6 +61,7 @@ class AlienControl {
     sf::Time shot_start_time;
     sf::Clock clock;
 
+   
 };
 
 #endif

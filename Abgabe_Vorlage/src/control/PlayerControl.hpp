@@ -23,9 +23,6 @@ class PlayerControl {
     //move Player to the left
     void left_button_pressed();
 
-    //shoots projectile
-   // void spacebar_pressed();
-
     //stop horizontal movement
     void direction_button_released(HorizontalDirection direction);
 
@@ -43,6 +40,9 @@ class PlayerControl {
 
     void collisions_player(std::shared_ptr<Laser> laser);
 
+    bool is_game_over();
+
+    int get_lives();
 
 private:
     //player

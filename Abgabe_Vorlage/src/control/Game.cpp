@@ -11,12 +11,14 @@ Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIG
     view(sf::FloatRect(sf::Vector2f({0,-constants::VIEW_HEIGHT}), sf::Vector2f({constants::VIEW_WIDTH,constants::VIEW_HEIGHT}))),
     game_layer(window),
     background_layer(window), //Layer
+    overlay_layer(window),
     background(),              //Texture
     background_sprite(background),//Sprite 
     player_control(game_layer),
     shield_control(game_layer),
     alien_control(game_layer),
-    spaceship_control(game_layer)
+    spaceship_control(game_layer),
+    overlay_control(overlay_layer)
 
     //laser({300.f,-300.f}, -200)
     //alien(1, {300, -300})
@@ -108,6 +110,10 @@ bool Game::input() {
 
 void Game::update(float time_passed) {
     // TODO: update the game objects with the current time stamp
+    if(player_control.is_game_over() || alien_control.is_game_over == true) {
+        game_layer.clear();
+        overlay_control.is_game_over();
+    }
     player_control.update_player(time_passed);
     //laser.update(time_passed);
     for (auto& laser: player_control.get_lasers()){
@@ -127,24 +133,22 @@ void Game::update(float time_passed) {
         
     }
     
-    spaceship_control.update(time_passed);
-    
-    
+    spaceship_control.update(time_passed);    
+
+    overlay_control.update(alien_control.get_score(), player_control.get_lives());
 }
 
 void Game::draw() {
     window.clear();
     // TODO: add game elements to layer
-    background_layer.draw();
+    
     game_layer.clear();
     
-    //laser.draw(game_layer);
-   
     player_control.draw_player();
     shield_control.draw();
-    //laser.draw(game_layer);
     alien_control.draw_alien();
     spaceship_control.draw_spaceship();
+
      for (auto& laser: player_control.get_lasers()){
         laser->draw(game_layer);
     }
@@ -152,8 +156,12 @@ void Game::draw() {
         laser->draw(game_layer);
     }
 
-    game_layer.draw();
+    overlay_layer.clear();
+    overlay_control.draw();
 
+    background_layer.draw();
+    game_layer.draw();
+    overlay_layer.draw();
 
     window.display();
 }

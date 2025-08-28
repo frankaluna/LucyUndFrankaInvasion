@@ -24,3 +24,4 @@ Makefile
 
 # Ignore SFML or other asset cache (optional)
 *.sfml-cache
+CMakeCache.txt
