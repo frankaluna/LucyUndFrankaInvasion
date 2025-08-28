@@ -21,11 +21,11 @@ std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
     int type;
     
     //create Alien rows
-    for (i = 0; i < 5; i++){
+    for (i = 0; i < 4; i++){
         if (i == 0 || i == 1) {
         type = 1;
     }
-    else if (i == 2 || i == 4) {
+    else if (i == 2 || i == 3) {
         type = 2;
     }
         //create Alien columns
