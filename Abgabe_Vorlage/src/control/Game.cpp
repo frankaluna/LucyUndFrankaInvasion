@@ -1,10 +1,6 @@
 #include "Game.hpp"
-
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Event.hpp>
-
-
-
 #include "../model/Constants.hpp"
 
 Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Space Invaders"),

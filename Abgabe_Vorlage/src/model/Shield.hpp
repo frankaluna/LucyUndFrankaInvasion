@@ -27,12 +27,14 @@ class Shield{
     //reslience counter in shields
     int get_resilience();
 
-    void set_resilice();
+    void set_resilience(int new_reslience);
 
     private:
     sf::Vector2f position;
     sf:: Texture texture;
     sf:: Sprite sprite;
+    //sf::Text text;
+    //sf::Font font;
 
     int resilience;
 
