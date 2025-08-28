@@ -15,7 +15,7 @@ score(0)
 }
 
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
-    std::vector<std::shared_ptr<Alien>> aliens;
+    //std::vector<std::shared_ptr<Alien>> aliens;
     int i;
     int j;
     int type;

@@ -36,7 +36,6 @@ class SpaceshipControl{
     //layer where spaceship is drawn
     Layer &layer;
 
-
     //speed
     float speed;
 
