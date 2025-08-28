@@ -38,15 +38,19 @@ class PlayerControl {
     //getter for laser dynamic array for when we want to work on collusion
     const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
 
+    //handles players collisions with lasers
     void collisions_player(std::shared_ptr<Laser> laser);
 
+    //shows if game is over, when the player has less then one life
     bool is_game_over();
 
+    //returns players lives
     int get_lives();
 
+    //sets the players lives
     void set_lives(int new_lives);
 
-private:
+    private:
     //player
     Player player;
 
@@ -56,18 +60,16 @@ private:
     //length where the current shot started
     sf::Time shot_start_time;  
 
-    // speed
+    //players moving speed
     float speed = 200.f; 
 
     // horizontal direction
     HorizontalDirection h_dir = HorizontalDirection::NONE;
 
-    //Vector for all the active lasers
+    //Vector for all the active lasers shot by the player
     std::vector<std::shared_ptr<Laser>> lasers; 
 
     sf::Clock clock;
-    
-
 };
 
 #endif
