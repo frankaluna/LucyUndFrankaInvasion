@@ -24,10 +24,17 @@ class Shield{
 
     void draw(Layer &layer);
 
+    //reslience counter in shields
+    int get_resilience();
+
+    void set_resilice();
+
     private:
     sf::Vector2f position;
     sf:: Texture texture;
     sf:: Sprite sprite;
+
+    int resilience;
 
 };
 #endif

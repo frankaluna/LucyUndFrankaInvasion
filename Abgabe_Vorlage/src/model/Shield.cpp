@@ -30,8 +30,12 @@ void Shield:: set_position(float x, float y){
     position.y = y;
     sprite.setPosition({x, y});
 }
-    
 //get a pretty Sprite picture please 
 const sf:: Sprite& Shield:: get_sprite() const{
     return sprite;
 }
+
+int Shield::get_resilience(){
+    return resilience;
+}
+
