@@ -2,16 +2,17 @@
 #include <iostream>
 
 AlienControl::AlienControl(Layer &layer) : layer(layer),
-score(0)
+score(0),
+level(1)
 {
     aliens = create_aliens();
-    speed = 25;
+    speed = 20;
     h_dir = HorizontalDirection::RIGHT;
-    //je nachdem, wie die aliens sich weiter entwickeln, das vllt in eine andere Methode tun
     set_outer_aliens();
     shot_start_time = sf::seconds(0.0f);
     is_game_over = false;
-   // score = 0;
+    //level = 1;
+
 }
 
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
@@ -116,8 +117,15 @@ void AlienControl::update_aliens(float elapsed_time) {
         ),
         alien_lasers.end()
         //std::cout << "ich werde gelöscht" << std::endl;
-    );   
+    ); 
+
+    if (aliens.size() == 0){
+            level++;
+            speed = speed + 5 * level;
+            create_aliens(); 
+
     }
+}
 
 void AlienControl::shoot_alien(){
     std::shared_ptr<Alien> random_a = random_alien();
