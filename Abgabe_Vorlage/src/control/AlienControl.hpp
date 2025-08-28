@@ -66,14 +66,20 @@ class AlienControl {
     
     //vector of pointers to all lasers shot by aliens
     std::vector<std::shared_ptr<Laser>> alien_lasers;
-
     
+    //pointer to the alien that is most left in the alien cluster
     std::shared_ptr<Alien> most_left;
+    //pointer to the alien, that is most right in the alien cluster
     std::shared_ptr<Alien> most_right;
+    //pointer to the alien, that is most down in the alien cluster
     std::shared_ptr<Alien> most_down;
+
+    //horizontal direction in which the alien cluster is moving
     HorizontalDirection h_dir;
 
+    //time at which the shot of an alien starts
     sf::Time shot_start_time;
+
     sf::Clock clock;
 
    
