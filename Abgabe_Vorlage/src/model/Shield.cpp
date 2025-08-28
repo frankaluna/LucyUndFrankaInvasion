@@ -45,7 +45,7 @@ void Shield::set_resilience(int new_reslience){
         new_reslience = 5;
     }
     if(new_reslience < 0){
-        new_reslience = 5;
+        new_reslience = 0;
     }
     resilience = new_reslience;
     
