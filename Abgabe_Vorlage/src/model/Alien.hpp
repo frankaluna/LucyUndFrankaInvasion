@@ -10,19 +10,15 @@
 
 //!!! attention to the fact that our aliens = invaders which in our case are spaceships instead of aliens
 //Alien Model Class
-class Alien{
+class Alien {
 public:
 //constructor and initialize
 Alien(int type, sf::Vector2f position);
-
 
 //movements
 void move_right();
 void move_left();
 void move_down();
-
-//action shoot
-void shoot();
 
 //check if aliens is moving right or left
 HorizontalDirection get_horizontal_movement() const;
@@ -33,7 +29,7 @@ VerticalDirection get_vertical_movement() const;
 //updates alien position
 void set_position(float x, float y);
 
-//return invader position as a vector
+//return alien position as a vector
 sf::Vector2f get_position();
 
 // sprite for alien
@@ -45,6 +41,7 @@ float get_speed() const;
 //setter speed
 void set_speed(float newSpeed);
 
+//getter type
 int get_type();
 
 //updates ALien
@@ -54,10 +51,11 @@ void update();
 void draw(Layer &layer);
 
 private:
-sf::Vector2f position;
-sf::Texture texture;
-sf:: Sprite sprite;
+sf::Vector2f position;  //aliens position
+sf::Texture texture;    //aliens texture
+sf:: Sprite sprite;     //aliens sprite
 
+//alien type
 int type;
 
 //stop horizontal movements

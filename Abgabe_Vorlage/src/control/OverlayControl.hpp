@@ -12,6 +12,7 @@
 class OverlayControl{
     public: 
 
+    //constructor
     OverlayControl(Layer &layer);
 
     //updates the overlay

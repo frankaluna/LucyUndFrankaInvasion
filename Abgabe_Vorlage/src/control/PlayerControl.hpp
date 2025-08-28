@@ -14,7 +14,7 @@
 class PlayerControl {
     public:
 
-    //initializes Player on a layer
+    //constructs and initializes Player on a layer
     PlayerControl(Layer &layer);
 
     //move Player to the right
