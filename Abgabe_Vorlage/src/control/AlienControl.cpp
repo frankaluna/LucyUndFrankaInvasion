@@ -11,8 +11,6 @@ level(1)
     set_outer_aliens();
     shot_start_time = sf::seconds(0.0f);
     is_game_over = false;
-    //level = 1;
-
 }
 
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
