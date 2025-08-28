@@ -58,7 +58,7 @@ void OverlayControl::show_score(int score) {
     score_sprite.setTexture(game_score);
     score_sprite.setTextureRect(sf::IntRect({0,0}, {52 ,16}));
     score_sprite.setOrigin({0, 0});
-    score_sprite.setPosition({10, -575});
+    score_sprite.setPosition({10, 575});
 
     
     score_counter.setString(std::to_string(score));
@@ -75,7 +75,7 @@ void OverlayControl::show_lives(int lives){
         //lives_sprite.setTexture(game_lives);
         lives_sprite.setTextureRect(sf::IntRect({0,0}, {32, 32}));
         lives_sprite.setOrigin({0, 0});
-        lives_sprite.setPosition({400 + i * 32, 562});
+        lives_sprite.setPosition({475 + i * 32, 565});
         lives_sprites.push_back(lives_sprite);
     
     }

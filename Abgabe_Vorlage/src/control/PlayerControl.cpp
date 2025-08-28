@@ -97,7 +97,7 @@ int PlayerControl::get_lives(){
     return player.get_lives();
 }
 
-Player PlayerControl::get_Player(){
-    return player;
+void PlayerControl::set_lives(int new_lives){
+    player.set_lives(new_lives);
 }
 

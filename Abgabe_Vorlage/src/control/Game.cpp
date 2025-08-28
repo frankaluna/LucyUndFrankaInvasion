@@ -120,6 +120,7 @@ void Game::update(float time_passed) {
         laser->update(time_passed);
         alien_control.collisions_aliens(laser);
         spaceship_control.collisions_spaceship(laser);
+        shield_control.collisions_shield(laser);
     }
 
     alien_control.update_aliens(time_passed);
@@ -128,15 +129,16 @@ void Game::update(float time_passed) {
     for (auto& laser: alien_control.get_alien_lasers()){
         laser->update(time_passed);
         player_control.collisions_player(laser);
+        shield_control.collisions_shield(laser);
         
     }
     
     spaceship_control.update(time_passed);
     if (spaceship_control.collision){
-        int newLives = player_control.get_lives() + 1;
-        player_control.get_Player().set_lives(newLives);
+        int new_lives = player_control.get_lives() + 1;
+        player_control.set_lives(new_lives);
         std::cout << "ein neues Leben!!!!" << player_control.get_lives() << std::endl;
-        spaceship_control
+        spaceship_control.collision = false;
     }    
 
     overlay_control.update(alien_control.get_score(), player_control.get_lives());
