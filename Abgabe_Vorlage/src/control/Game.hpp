@@ -48,7 +48,7 @@ private:
     //initializing our control classes
     PlayerControl player_control;       //the player = alien at the bottom of the screen
     ShieldControl shield_control;       //shields protecting the player
-    AlienControl alien_control;         //invadors
+    AlienControl alien_control;         //invaders
     SpaceshipControl spaceship_control; //spaceship at the top
     OverlayControl overlay_control;     //score, lives, end game
 
