@@ -1,5 +1,5 @@
 #include "Player.hpp"
-
+//Constructor for Player
 Player::Player() :
     position({300, -50}), //sets players start in the middle of the screen and on a fixed y position
     texture(),
