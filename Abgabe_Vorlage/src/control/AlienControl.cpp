@@ -83,6 +83,20 @@ void AlienControl::update_aliens(float elapsed_time) {
     //checks for every update, if the outer aliens are still set correctly
     set_outer_aliens();
 
+     //starts new level with faster aliens, if all the aliens in aliens are erased  //starts new level with faster aliens, if all the aliens in aliens are erased 
+    if (aliens.size() == 0){
+            level++;
+            if(h_dir == HorizontalDirection::RIGHT) {
+                speed = speed + (4 * level);}
+            if(h_dir == HorizontalDirection::LEFT) {
+                speed = speed - (4 * level);
+            }
+            //creates new alien cluster
+            create_aliens(); 
+    }
+
+
+
     //checks if alien cluster collides with window bounds and if it does makes it go down and change horizontal direction
     bool go_down = false;
         if (most_left->get_position().x < 25 && h_dir == HorizontalDirection::LEFT) {
@@ -131,14 +145,15 @@ void AlienControl::update_aliens(float elapsed_time) {
         alien_lasers.end()
     ); 
 
+/*
     //starts new level with faster aliens, if all the aliens in aliens are erased 
     if (aliens.size() == 0){
             level++;
             speed = speed + 5 * level;
             //creates new alien cluster
             create_aliens(); 
-
     }
+    */
 }
 
 //handles the shots of the aliens
@@ -146,7 +161,7 @@ void AlienControl::shoot_alien(){
     //selects a random alien
     std::shared_ptr<Alien> random_a = random_alien();
     //determines times between shots
-    if (clock.getElapsedTime() - shot_start_time >= sf::seconds(1.0f)) {
+    if (clock.getElapsedTime() - shot_start_time >= sf::seconds(2.0f - (0.4 * level))) {
         //adds a new laser to the alien_lasers vector
         alien_lasers.push_back(std::make_shared<Laser>(
         sf::Vector2f(random_a->get_position().x, random_a->get_position().y) , 150));

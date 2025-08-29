@@ -3,7 +3,7 @@
 Shield:: Shield(sf::Vector2f position) : 
 texture(),
 sprite(texture),
-resilience(5)
+resilience(33)
 {
     this -> position = position; 
 
@@ -41,11 +41,11 @@ int Shield::get_resilience(){
 }
 
 void Shield::set_resilience(int new_reslience){
-    if(new_reslience > 5){
-        new_reslience = 5;
+    if(new_reslience > 33){
+        new_reslience = 33;
     }
     if(new_reslience < 0){
-        new_reslience = 5;
+        new_reslience = 0;
     }
     resilience = new_reslience;
     
