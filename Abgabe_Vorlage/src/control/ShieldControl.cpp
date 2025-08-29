@@ -1,11 +1,13 @@
 #include "ShieldControl.hpp"
 #include <iostream>
-
+//constructor that initialized with the given layer
 ShieldControl::ShieldControl(Layer &layer) : 
 layer(layer) 
 {
+ //create the shields   
  shields = create_shields();
 }
+//method for the set up of the shields
 std::vector<std::shared_ptr<Shield>> ShieldControl::create_shields(){
     int i;
     float x = 54;
@@ -20,15 +22,15 @@ std::vector<std::shared_ptr<Shield>> ShieldControl::create_shields(){
     }
     return shields;
 }
+//draws every shiel to the game layer
 void ShieldControl::draw() {
      for(auto &shield : shields){
         shield->draw(layer);
      }
 }
-
-
+//checking for collsions with lasers
 void ShieldControl:: collisions_shield(std::shared_ptr<Laser> laser){
-    
+    //iteration through the shields to seek the ones that were hit
     auto iteration_shields = shields.begin();
 
     while(iteration_shields != shields.end()){
