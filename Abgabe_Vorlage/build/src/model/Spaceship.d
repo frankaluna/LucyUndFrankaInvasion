@@ -1,4 +1,4 @@
-build/src/model/Spaceship.o: src/model/Spaceship.cpp \
+build/./src/model/Spaceship.o: src/model/Spaceship.cpp \
  src/model/Spaceship.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \

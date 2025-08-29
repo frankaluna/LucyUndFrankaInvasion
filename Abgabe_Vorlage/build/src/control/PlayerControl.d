@@ -1,4 +1,4 @@
-build/src/control/PlayerControl.o: src/control/PlayerControl.cpp \
+build/./src/control/PlayerControl.o: src/control/PlayerControl.cpp \
  src/control/PlayerControl.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \

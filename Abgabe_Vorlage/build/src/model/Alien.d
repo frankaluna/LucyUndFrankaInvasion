@@ -1,4 +1,4 @@
-build/src/model/Alien.o: src/model/Alien.cpp src/model/Alien.hpp \
+build/./src/model/Alien.o: src/model/Alien.cpp src/model/Alien.hpp \
  SFML/include/SFML/System/Vector2.hpp SFML/include/SFML/System/Export.hpp \
  SFML/include/SFML/Config.hpp SFML/include/SFML/System/Angle.hpp \
  SFML/include/SFML/System/Angle.inl SFML/include/SFML/System/Vector2.inl \

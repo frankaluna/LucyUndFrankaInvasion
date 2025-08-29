@@ -42,3 +42,6 @@ int Laser::get_speed(){
 const sf::RectangleShape& Laser::get_rectangle() const {
     return rectangle;
 }
+sf::Vector2f Laser :: get_position(){
+    return position;
+}

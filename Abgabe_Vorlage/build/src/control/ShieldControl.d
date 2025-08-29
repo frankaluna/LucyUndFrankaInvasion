@@ -1,4 +1,4 @@
-build/src/control/ShieldControl.o: src/control/ShieldControl.cpp \
+build/./src/control/ShieldControl.o: src/control/ShieldControl.cpp \
  src/control/ShieldControl.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \

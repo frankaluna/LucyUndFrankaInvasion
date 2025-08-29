@@ -29,6 +29,9 @@ class Laser{
     //returns lasers shape
     const sf::RectangleShape& get_rectangle() const;
 
+    //returns the position of the laser
+    sf::Vector2f get_position();
+
     private:
     //lasers position
     sf::Vector2f position;
