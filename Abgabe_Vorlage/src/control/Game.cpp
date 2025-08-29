@@ -111,6 +111,7 @@ void Game::update(float time_passed) {
     if(player_control.is_game_over() || alien_control.is_game_over == true) {
         game_layer.clear();
         overlay_control.is_game_over();
+        return;
     }
     //updating player
     player_control.update_player(time_passed);
