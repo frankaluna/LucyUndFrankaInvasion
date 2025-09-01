@@ -57,7 +57,8 @@ build/./src/model/Alien.o: src/model/Alien.cpp src/model/Alien.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
  SFML/include/SFML/System/Sleep.hpp src/model/Directions.hpp \
- src/model/../view/Layer.hpp src/model/../view/ILayer.hpp
+ src/model/../view/Layer.hpp src/model/../view/ILayer.hpp \
+ src/model/../view/ILayer.hpp
 src/model/Alien.hpp:
 SFML/include/SFML/System/Vector2.hpp:
 SFML/include/SFML/System/Export.hpp:
@@ -139,4 +140,5 @@ SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
 src/model/Directions.hpp:
 src/model/../view/Layer.hpp:
+src/model/../view/ILayer.hpp:
 src/model/../view/ILayer.hpp:

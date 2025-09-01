@@ -1,7 +1,7 @@
 #include "AlienControl.hpp"
 #include <iostream>
 
-AlienControl::AlienControl(Layer &layer) : layer(layer),
+AlienControl::AlienControl(ILayer &layer) : layer(layer),
 score(0),
 level(1)
 {
@@ -20,6 +20,7 @@ level(1)
 
 //method that creates an alien cluster and returns all created aliens in a vector
 std::vector<std::shared_ptr<Alien>> AlienControl::create_aliens() {
+    aliens.clear();
     int i;
     int j;
     int type;
@@ -144,16 +145,6 @@ void AlienControl::update_aliens(float elapsed_time) {
         ),
         alien_lasers.end()
     ); 
-
-/*
-    //starts new level with faster aliens, if all the aliens in aliens are erased 
-    if (aliens.size() == 0){
-            level++;
-            speed = speed + 5 * level;
-            //creates new alien cluster
-            create_aliens(); 
-    }
-    */
 }
 
 //handles the shots of the aliens
@@ -210,4 +201,21 @@ int AlienControl::get_score() {
 // sets players score
 void AlienControl::set_score(int newScore) {
     score = newScore;
+}
+
+//returns the most right, most left and most down Alien
+std::shared_ptr<Alien> AlienControl::get_most_right() {
+    return most_right;
+}
+
+std::shared_ptr<Alien> AlienControl::get_most_left() {
+    return most_left;
+}
+
+std::shared_ptr<Alien> AlienControl::get_most_down() {
+    return most_down;
+}
+
+int AlienControl::get_level(){
+    return level;
 }

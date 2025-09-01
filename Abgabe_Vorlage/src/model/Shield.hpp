@@ -6,6 +6,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 //shield model class
 class Shield{
@@ -23,7 +24,7 @@ class Shield{
     const sf:: Sprite &get_sprite() const;
 
     //draws shield on layer
-    void draw(Layer &layer);
+    void draw(ILayer &layer);
 
     //reslience counter in shields
     int get_resilience();

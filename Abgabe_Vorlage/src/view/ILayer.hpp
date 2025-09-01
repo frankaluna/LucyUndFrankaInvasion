@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ILAYER_H
+#define ILAYER_H
 #include <SFML/Graphics.hpp>
 
 class ILayer {
@@ -10,3 +11,5 @@ public:
     virtual void clear() = 0;
     virtual void set_view(const sf::View &view) = 0;
 };
+
+#endif
