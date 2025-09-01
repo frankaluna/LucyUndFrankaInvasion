@@ -44,13 +44,17 @@ void Alien:: move_down(){
 }
 
 //draws alien on layer
-void Alien::draw(Layer &layer) {
+void Alien::draw(ILayer &layer) {
     layer.add_to_layer(sprite);
 }
 
 //return direction(left, right, none)
 HorizontalDirection Alien:: get_horizontal_movement() const{
     return h_dir;
+}
+
+VerticalDirection Alien:: get_vertical_movement() const {
+    return v_dir;
 }
 
 //get position as vector

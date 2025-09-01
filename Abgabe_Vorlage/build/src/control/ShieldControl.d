@@ -59,7 +59,8 @@ build/./src/control/ShieldControl.o: src/control/ShieldControl.cpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
  SFML/include/SFML/System/Sleep.hpp src/control/../model/Shield.hpp \
  src/control/../model/Directions.hpp \
- src/control/../model/../view/Layer.hpp src/control/../model/Laser.hpp
+ src/control/../model/../view/Layer.hpp \
+ src/control/../model/../view/ILayer.hpp src/control/../model/Laser.hpp
 src/control/ShieldControl.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -142,4 +143,5 @@ SFML/include/SFML/System/Sleep.hpp:
 src/control/../model/Shield.hpp:
 src/control/../model/Directions.hpp:
 src/control/../model/../view/Layer.hpp:
+src/control/../model/../view/ILayer.hpp:
 src/control/../model/Laser.hpp:

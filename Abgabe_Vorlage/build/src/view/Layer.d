@@ -56,7 +56,7 @@ build/src/view/Layer.o: src/view/Layer.cpp src/view/Layer.hpp \
  SFML/include/SFML/System/FileInputStream.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
- SFML/include/SFML/System/Sleep.hpp
+ SFML/include/SFML/System/Sleep.hpp src/view/ILayer.hpp
 src/view/Layer.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -136,3 +136,4 @@ SFML/include/SFML/System/FileInputStream.hpp:
 SFML/include/SFML/System/InputStream.hpp:
 SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
+src/view/ILayer.hpp:
