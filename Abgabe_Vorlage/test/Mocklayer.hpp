@@ -1,31 +1,11 @@
-#pragma once
+#include <gmock/gmock.h>
 #include <SFML/Graphics.hpp>
-#include <vector>
+#include "../src/view/ILayer.hpp"
 
-class Mocklayer {
+class Mocklayer : public ILayer{
 public:
-    std::vector<const sf::Drawable*> drawnObjects;  // speichert, was gezeichnet werden sollte
-    sf::View currentView;
-
-    Mocklayer() = default;
-
-    void add_to_layer(const sf::Drawable &drawable) {
-        drawnObjects.push_back(&drawable);
-    }
-
-    void draw() {
-        // im Test nichts tun
-    }
-
-    void clear() {
-        drawnObjects.clear();
-    }
-
-    void set_view(const sf::View &view) {
-        currentView = view;
-    }
-
-    size_t get_draw_count() const {
-        return drawnObjects.size();
-    }
-};
+    MOCK_METHOD(void, add_to_layer, (const sf::Drawable &drawable));
+    MOCK_METHOD(void, draw, ());
+    MOCK_METHOD(void, clear, ());
+    MOCK_METHOD(void, set_view, (const sf::View &view)); 
+    };

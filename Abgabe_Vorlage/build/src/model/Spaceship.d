@@ -57,7 +57,8 @@ build/src/model/Spaceship.o: src/model/Spaceship.cpp \
  SFML/include/SFML/System/FileInputStream.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
- SFML/include/SFML/System/Sleep.hpp src/model/../view/Layer.hpp
+ SFML/include/SFML/System/Sleep.hpp src/model/../view/Layer.hpp \
+ src/model/../view/ILayer.hpp
 src/model/Spaceship.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -138,3 +139,4 @@ SFML/include/SFML/System/InputStream.hpp:
 SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
 src/model/../view/Layer.hpp:
+src/model/../view/ILayer.hpp:

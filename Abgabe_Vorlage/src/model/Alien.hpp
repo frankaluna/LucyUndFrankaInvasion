@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 #include <iostream>
 
@@ -48,7 +49,7 @@ int get_type();
 void update();
 
 //draw the alien
-void draw(Layer &layer);
+void draw(ILayer &layer);
 
 private:
 sf::Vector2f position;  //aliens position

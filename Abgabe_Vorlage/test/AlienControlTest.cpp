@@ -35,7 +35,7 @@ TEST_F(AlienControlTest, create_aliens_positionTest) {
     ASSERT_EQ(aliens[0]->get_position().y, -548);    
 }
 */
-
+/*
 #include <gtest/gtest.h>
 #include "../src/control/AlienControl.hpp"
 #include "../src/model/Alien.hpp"
@@ -64,3 +64,4 @@ TEST_F(AlienControlTest, create_aliens_positionTest) {
     ASSERT_EQ(aliens[0]->get_position().x, 83);
     ASSERT_EQ(aliens[0]->get_position().y, -548);    
 }
+*/

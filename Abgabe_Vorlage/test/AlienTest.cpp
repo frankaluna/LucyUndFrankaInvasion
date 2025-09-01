@@ -2,6 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "../src/model/Alien.hpp"
+#include "Mocklayer.hpp"
 
 class AlienTest : public ::testing::Test {
 
@@ -12,6 +13,7 @@ class AlienTest : public ::testing::Test {
 
     protected:
     Alien a;
+    Mocklayer layer;
 };
 
 TEST_F(AlienTest, move_right_Test) {
@@ -29,10 +31,11 @@ TEST_F(AlienTest, move_down_Test) {
     ASSERT_EQ(a.get_vertical_movement(), VerticalDirection::DOWN);
 }
 
-/*
+
 TEST_F(AlienTest, draw_Test) {
-    Layer layer;
-    EXPECT_TRUE(layer.)
-    a.draw(layer)
+    
+     EXPECT_CALL(layer, add_to_layer(::testing::_))
+        .Times(1);
+     a.draw(layer);
 }
-*/
+
