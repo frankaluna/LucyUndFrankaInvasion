@@ -2,6 +2,8 @@
 #include <gmock/gmock.h>
 
 #include "../src/model/Player.hpp"
+#include "Mocklayer.hpp"
+#include "../src/model/Directions.hpp"
 
 class PlayerTest: public ::testing::Test{
 
@@ -11,6 +13,7 @@ class PlayerTest: public ::testing::Test{
 
     protected:
         Player p;
+        Mocklayer layer;
 };
 
 TEST_F(PlayerTest, move_left_test){
@@ -25,4 +28,8 @@ TEST_F(PlayerTest, stop_horizontal_movement_test){
     p.stop_horizontal_movement();
     ASSERT_EQ(p.get_horizontal_movement(), HorizontalDirection::NONE);
 }
-//draw method ergänzen
+TEST_F(PlayerTest, draw_test){
+     EXPECT_CALL(layer, add_to_layer(::testing::Ref(p.get_sprite()))).Times(1);
+
+    p.draw(layer); 
+}

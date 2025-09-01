@@ -1,7 +1,7 @@
 #include "PlayerControl.hpp"
 #include <iostream>
 
-PlayerControl::PlayerControl(Layer &layer) : layer(layer)
+PlayerControl::PlayerControl(ILayer &layer) : layer(layer)
 {
     shot_start_time = sf::seconds(0.0f); //initializes shot time
 }
@@ -65,7 +65,7 @@ void PlayerControl::draw_player(){
 }
 
 //returns vector with all active player lasers
-const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
+std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() {
     return lasers;
 }
 

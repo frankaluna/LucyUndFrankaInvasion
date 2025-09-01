@@ -3,21 +3,26 @@
 
 #include "../src/control/PlayerControl.hpp"
 #include "../src/model/Laser.hpp"
+#include "../src/model/Player.hpp"
+#include "Mocklayer.hpp"
 
 class PlayerControlTest :public ::testing::Test{
 
     public:
         PlayerControlTest() : 
-        window(sf::VideoMode(800, 600), "Test Window"),       layer(window),
         pc(layer),
-        laser(std::make_shared<Laser>(sf::Vector2f(300, -60), -2))
+        laser(std::make_shared<Laser>(sf::Vector2f(300, -60), -2)),
+        la(std::make_shared<Laser>(sf::Vector2f(200, -100), -2))
+
         {
         laser->active = true;
+        la->active = false;
         }
     protected:
-        Layer layer;
+        Mocklayer layer;
         PlayerControl pc;
         std::shared_ptr<Laser> laser;
+        std::shared_ptr<Laser> la;
 
 };
 //testing right_button_pressed() method
@@ -39,15 +44,61 @@ TEST_F(PlayerControlTest, direction_button_released_test){
 }
 
 //testing update_player() method
-TEST_F(PlayerControlTest, update_player_test){
+TEST_F(PlayerControlTest, left_update_player_test){
+    pc.get_player().set_position(300,-300);
+    pc.get_player().move_left();
 
+    pc.update_player(1.f);
+
+    //should move left
+    ASSERT_LT(pc.get_player().get_position().x, 300); 
+    //should stay the same in y position
+    ASSERT_EQ(pc.get_player().get_position().y, -300); 
+}
+TEST_F(PlayerControlTest, right_update_player_test){
+    pc.get_player().set_position(300,-300);
+    pc.get_player().move_right();
+
+    pc.update_player(1.f);
+
+    //should move right
+    ASSERT_GT(pc.get_player().get_position().x, 300); 
+    //should stay the same in y position
+    ASSERT_EQ(pc.get_player().get_position().y, -300); 
+}
+TEST_F(PlayerControlTest, 550_update_player_test){
+    pc.get_player().set_position(550,-300);
+    pc.get_player().move_right();
+
+    pc.update_player(1.f);
+
+    //should move right but no further than x = 550
+    ASSERT_LE(pc.get_player().get_position().x, 550);  
+    //should stay the same in y position
+    ASSERT_EQ(pc.get_player().get_position().y, -300); 
+}
+TEST_F(PlayerControlTest, 550_update_player_test){
+    pc.get_player().set_position(50,-300);
+    pc.get_player().move_left();
+
+    pc.update_player(1.f);
+
+    //should move left but no further than x = 50
+    ASSERT_GE(pc.get_player().get_position().x, 50);  
+    //should stay the same in y position
+    ASSERT_EQ(pc.get_player().get_position().y, -300); 
+}
+TEST_F(PlayerControlTest, inactive_laser_update_player_test){
+    pc.get_lasers().push_back(laser);
+    pc.get_lasers().push_back(la);
+    pc.update_player(1.f);
+
+    ASSERT_EQ(pc.get_lasers().size(),1);
 }
 
-//testing draw_player() method
-TEST_F(PlayerControlTest, draw_player_test){
 
-}
-
+//testing draw_player() see: PlayerTest
+ 
 //testing shoot_player() method
 TEST_F(PlayerControlTest, shoot_player_test){
 
@@ -66,7 +117,7 @@ TEST_F(PlayerControlTest, no_collisions_player_test){
     pc.get_player().set_position(300,300);
     pc.set_lives(3);
     pc.collisions_player(laser);
-    ASSERT_EQ(p.get_player().get_lives(), 3);
+    ASSERT_EQ(pc.get_player().get_lives(), 3);
     ASSERT_TRUE(laser->active);
 
 }

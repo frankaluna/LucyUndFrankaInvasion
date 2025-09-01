@@ -17,8 +17,7 @@ class ShieldTest : public ::testing::Test {
 };
 
 TEST_F(ShieldTest, draw_Test) {
-    EXPECT_CALL(layer, add_to_layer(Ref(s.get_sprite())))
-        .Times(1);
+    EXPECT_CALL(layer, add_to_layer(Ref(s.get_sprite()))).Times(1);
 
     s.draw(layer); 
 };

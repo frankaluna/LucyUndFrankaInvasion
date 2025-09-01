@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 //Spaceship model class
 class Spaceship {
@@ -24,7 +25,7 @@ class Spaceship {
         const sf:: Sprite&get_sprite() const;
 
         //draw method
-        void draw(Layer &layer);
+        void draw(ILayer &layer);
 
         //getter speed
         float get_speed() const;

@@ -15,7 +15,7 @@ class PlayerControl {
     public:
 
     //constructs and initializes Player on a layer
-    PlayerControl(Layer &layer);
+    PlayerControl(ILayer &layer);
 
     //move Player to the right
     void right_button_pressed();
@@ -36,7 +36,7 @@ class PlayerControl {
     void shoot_player();
 
     //getter for laser dynamic array for when we want to work on collusion
-    const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
+    std::vector<std::shared_ptr<Laser>>& get_lasers();
 
     //handles players collisions with lasers
     void collisions_player(std::shared_ptr<Laser> laser);
@@ -61,7 +61,7 @@ class PlayerControl {
     Player player;
 
     //layer where player is drawn
-    Layer &layer;
+    ILayer &layer;
 
     //length where the current shot started
     sf::Time shot_start_time;  

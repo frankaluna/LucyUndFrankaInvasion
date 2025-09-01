@@ -2,7 +2,7 @@
 #include <random>
 #include <iostream>
 
-SpaceshipControl:: SpaceshipControl(Layer &layer) :
+SpaceshipControl:: SpaceshipControl(ILayer &layer) :
 layer(layer), 
 speed(0), 
 last_seen(0.f), 
@@ -93,4 +93,12 @@ void SpaceshipControl::collisions_spaceship(std::shared_ptr<Laser> laser){
         collision = true;       //sets collision to true
     }
     
+}
+//getting last_seen of spaceship
+float SpaceshipControl :: get_last_seen(){
+    return last_seen;
+}
+
+Spaceship& SpaceshipControl:: get_spaceship(){
+    return spaceship;
 }

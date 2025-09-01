@@ -36,7 +36,7 @@ const sf:: Sprite& Spaceship:: get_sprite() const{
 }
 
 //draws spaceship on given layer
-void Spaceship:: draw(Layer &layer){
+void Spaceship:: draw(ILayer &layer){
     layer.add_to_layer(sprite);
 }
 

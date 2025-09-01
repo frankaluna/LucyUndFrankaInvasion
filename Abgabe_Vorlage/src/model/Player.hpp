@@ -6,6 +6,7 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 //Player Model Class
 class Player {
@@ -41,7 +42,7 @@ const sf::Sprite &get_sprite() const;
 void stop_horizontal_movement();
 
 //draws player on layer
-void draw(Layer &layer);
+void draw(ILayer &layer);
 
 private:
 sf::Vector2f position;  //players position
