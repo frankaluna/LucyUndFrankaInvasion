@@ -3,7 +3,7 @@
 
 #include "../src/model/Spaceship.hpp"
 
-class SpaceshipTest: public ::testing::Test(){
+class SpaceshipTest: public ::testing::Test{
 
     public:
         SpaceshipTest() : s(){

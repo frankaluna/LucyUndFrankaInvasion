@@ -50,6 +50,12 @@ class PlayerControl {
     //sets the players lives
     void set_lives(int new_lives);
 
+    //getter for the horizontal direction of the player
+    HorizontalDirection get_player_movement() const;
+
+    //getter for the Player
+    const Player& get_player();
+
     private:
     //player
     Player player;

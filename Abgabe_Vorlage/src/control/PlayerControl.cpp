@@ -104,3 +104,12 @@ void PlayerControl::set_lives(int new_lives){
     player.set_lives(new_lives);
 }
 
+//getting the direction the player uses in the player class
+HorizontalDirection PlayerControl::get_player_movement() const{
+    return player.get_horizontal_movement();
+}
+
+//getter for the Player
+Player& PlayerControl:: get_player(){
+    return player;
+}

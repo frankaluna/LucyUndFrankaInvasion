@@ -3,7 +3,22 @@
 
 #include "../src/control/Game.hpp"
 
-TEST(GameTest, example) { 
-  // Expect equality.
-  EXPECT_EQ(3 * 4, 12);
-}
+
+class GameTest : public ::testing::Test{
+
+    public:
+      GameTest() : g(){
+      }
+
+    protected:
+      Game g;
+};
+//testing the start() method
+
+//testing the input method
+
+//testing the update method
+
+//testing the draw method
+
+//
