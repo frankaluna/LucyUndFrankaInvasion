@@ -14,6 +14,8 @@ class LaserTest: public ::testing::Test{
         Laser lp;
         //Laser for alien
         Laser la;
+        //Mocklayer
+        Mocklayer layer;
 };
 TEST_F(LaserTest,update_test){
     lp.active = true;
@@ -28,8 +30,8 @@ TEST_F(LaserTest,update_test){
     ASSERT_EQ(la.get_position().y,-198);
     ASSERT_EQ(la.active, true);
 }
-/*TEST_F(LaserTest, draw_test){
+TEST_F(LaserTest, draw_test){
     lp.active = true;
     la.active = false;
     ASSERT_EQ(lp.draw(), )
-}*/
+}

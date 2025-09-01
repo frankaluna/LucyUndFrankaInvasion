@@ -22,7 +22,7 @@ void Laser::update(float dt){       //dt: delta time
 }
 
 //draws active lasers
-void Laser::draw(Layer &layer){
+void Laser::draw(ILayer &layer){
     if (!active){
         return;
     }

@@ -54,7 +54,7 @@ class PlayerControl {
     HorizontalDirection get_player_movement() const;
 
     //getter for the Player
-    const Player& get_player();
+    Player& get_player();
 
     private:
     //player

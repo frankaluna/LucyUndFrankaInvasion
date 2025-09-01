@@ -18,7 +18,7 @@ class Laser{
     void update(float dt);
 
     //draws lasers
-    void draw(Layer &layer);
+    void draw(ILayer &layer);
 
     //is true if laser is active
     bool active;
