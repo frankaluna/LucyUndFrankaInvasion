@@ -14,6 +14,10 @@ class GameTest : public ::testing::Test{
       Game g;
 };
 //testing the start() method
+TEST_F(GameTest, start_test){
+  g.input() = true;
+  
+}
 
 //testing the input method
 
