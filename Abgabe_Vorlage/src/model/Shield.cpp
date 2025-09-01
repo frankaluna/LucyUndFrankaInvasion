@@ -18,7 +18,7 @@ resilience(33)
 
 }
 //adds sprite of shield to layer
-void Shield::draw(Layer &layer) {        
+void Shield::draw(ILayer &layer) {        
     layer.add_to_layer(sprite);
 }
 

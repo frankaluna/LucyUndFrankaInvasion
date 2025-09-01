@@ -11,6 +11,7 @@
 #include "../model/Alien.hpp"
 #include "../model/Directions.hpp"
 #include "PlayerControl.hpp"
+#include "../view/ILayer.hpp"
 
 //class to control the Aliens
 
@@ -18,7 +19,7 @@ class AlienControl {
     public:
 
     //constructor
-    AlienControl(Layer &layer);
+    AlienControl(ILayer &layer);
     
     //creates the Block of Aliens
     std::vector<std::shared_ptr<Alien>> create_aliens();
@@ -53,6 +54,15 @@ class AlienControl {
     //checks if aliens are at the Players level
     bool is_game_over;
 
+    //returns the most right, most left and most down Alien
+    std::shared_ptr<Alien> get_most_right();
+
+    std::shared_ptr<Alien> get_most_left();
+
+    std::shared_ptr<Alien> get_most_down();
+
+    int get_level();
+
     private:
     int score;
     int level;
@@ -62,7 +72,7 @@ class AlienControl {
     std::vector<std::shared_ptr<Alien>> aliens;
 
     //layer on which the aliens are drawn
-    Layer &layer;
+    ILayer &layer;
     
     //vector of pointers to all lasers shot by aliens
     std::vector<std::shared_ptr<Laser>> alien_lasers;

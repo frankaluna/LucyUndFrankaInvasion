@@ -3,12 +3,12 @@
 
 #include "../src/model/Alien.hpp"
 #include "Mocklayer.hpp"
+using ::testing::Ref;
 
 class AlienTest : public ::testing::Test {
 
     public:
         AlienTest() : a(2, {300, -300}) {
-
         }
 
     protected:
@@ -33,9 +33,9 @@ TEST_F(AlienTest, move_down_Test) {
 
 
 TEST_F(AlienTest, draw_Test) {
-    
-     EXPECT_CALL(layer, add_to_layer(::testing::_))
+    EXPECT_CALL(layer, add_to_layer(Ref(a.get_sprite())))
         .Times(1);
-     a.draw(layer);
+
+    a.draw(layer); 
 }
 
