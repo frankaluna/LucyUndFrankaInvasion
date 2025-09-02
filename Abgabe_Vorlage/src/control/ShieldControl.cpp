@@ -1,7 +1,7 @@
 #include "ShieldControl.hpp"
 #include <iostream>
 //constructor that initialized with the given layer
-ShieldControl::ShieldControl(Layer &layer) : 
+ShieldControl::ShieldControl(ILayer &layer) : 
 layer(layer) 
 {
  //create the shields   
@@ -9,6 +9,7 @@ layer(layer)
 }
 //method for the set up of the shields
 std::vector<std::shared_ptr<Shield>> ShieldControl::create_shields(){
+    shields.clear();
     int i;
     float x = 54;
     float y = -125;
@@ -54,5 +55,9 @@ void ShieldControl:: collisions_shield(std::shared_ptr<Laser> laser){
         
        
     }   
+}
+
+std::vector<std::shared_ptr<Shield>>& ShieldControl::get_shields(){
+    return shields;
 }
 

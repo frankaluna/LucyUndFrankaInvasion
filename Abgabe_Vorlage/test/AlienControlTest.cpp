@@ -1,41 +1,3 @@
-/*#include <gtest/gtest.h>
-#include <gmock/gmock.h>
-
-#include "../src/control/AlienControl.hpp"
-#include "../src/model/Alien.hpp"
-#include "../src/view/Layer.hpp"
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-
-class AlienControlTest : public ::testing::Test {
-protected:
-    sf::RenderWindow dummyWindow;
-    Layer dummyLayer;
-    AlienControl ac;
-
-    AlienControlTest() 
-        : dummyWindow(sf::VideoMode(600.0, 600.0), "Test"), // zuerst Window
-          dummyLayer(dummyWindow),                      // dann Layer mit Window
-          ac(dummyLayer)                                // dann AlienControl mit Layer
-    {}
-
-    //~AlienControlTest() override = default;
-};
-
-TEST_F(AlienControlTest, create_aliens_sizeTest){
-    std::vector<std::shared_ptr<Alien>> aliens = ac.create_aliens();
-
-    ASSERT_EQ(aliens.size(), 36);
-}
-
-TEST_F(AlienControlTest, create_aliens_positionTest) {
-    std::vector<std::shared_ptr<Alien>> aliens = ac.create_aliens();
-
-    ASSERT_EQ(aliens[0]->get_position().x, 83);
-    ASSERT_EQ(aliens[0]->get_position().y, -548);    
-}
-*/
-
 #include <gtest/gtest.h>
 #include "../src/control/AlienControl.hpp"
 #include "../src/model/Alien.hpp"
@@ -59,6 +21,8 @@ protected:
 };
 
 TEST_F(AlienControlTest, create_aliens_sizeTest){
+    aliens.clear();
+    aliens = ac.create_aliens();
     //std::vector<std::shared_ptr<Alien>> aliens = ac.create_aliens();
 
     ASSERT_EQ(aliens.size(), 36);
@@ -66,6 +30,8 @@ TEST_F(AlienControlTest, create_aliens_sizeTest){
 
 TEST_F(AlienControlTest, create_aliens_positionTest) {
     //std::vector<std::shared_ptr<Alien>> aliens = ac.create_aliens(); 
+    aliens.clear();
+    aliens = ac.create_aliens();
     int x = 0;
 
     for (int i = 0; i < 4; i++) {
@@ -171,5 +137,14 @@ TEST_F(AlienControlTest, shoot_Test) {
 
 
 TEST_F(AlienControlTest, collisions_aliens_Test) {
-    ac.get_aliens().push_back()
+    std::shared_ptr<Laser> laser_ptr (new Laser({300, -300}, -2));
+    ac.get_aliens().clear();
+    ac.random_alien()->set_position(300, -300);
+    ac.get_aliens().push_back(ac.random_alien());
+
+    ASSERT_EQ(ac.get_aliens().size(), 1);
+
+    ac.collisions_aliens(laser_ptr);
+
+    ASSERT_EQ(ac.get_aliens().size(), 0);
 } 
