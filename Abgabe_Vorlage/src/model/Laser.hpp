@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "Directions.hpp"
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 //class that handles lasers
 
@@ -18,7 +19,7 @@ class Laser{
     void update(float dt);
 
     //draws lasers
-    void draw(Layer &layer);
+    void draw(ILayer &layer);
 
     //is true if laser is active
     bool active;
@@ -28,6 +29,9 @@ class Laser{
 
     //returns lasers shape
     const sf::RectangleShape& get_rectangle() const;
+
+    ///returns the position of the laser
+    sf::Vector2f get_position();
 
     private:
     //lasers position

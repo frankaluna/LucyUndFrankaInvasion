@@ -1,4 +1,4 @@
-build/src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
+build/./src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
  SFML/include/SFML/System/Vector2.hpp SFML/include/SFML/System/Export.hpp \
  SFML/include/SFML/Config.hpp SFML/include/SFML/System/Angle.hpp \
  SFML/include/SFML/System/Angle.inl SFML/include/SFML/System/Vector2.inl \
@@ -57,7 +57,8 @@ build/src/model/Laser.o: src/model/Laser.cpp src/model/Laser.hpp \
  SFML/include/SFML/System/InputStream.hpp \
  SFML/include/SFML/System/MemoryInputStream.hpp \
  SFML/include/SFML/System/Sleep.hpp src/model/Directions.hpp \
- src/model/../view/Layer.hpp src/model/../view/ILayer.hpp
+ src/model/../view/Layer.hpp src/model/../view/ILayer.hpp \
+ src/model/../view/ILayer.hpp
 src/model/Laser.hpp:
 SFML/include/SFML/System/Vector2.hpp:
 SFML/include/SFML/System/Export.hpp:
@@ -139,4 +140,5 @@ SFML/include/SFML/System/MemoryInputStream.hpp:
 SFML/include/SFML/System/Sleep.hpp:
 src/model/Directions.hpp:
 src/model/../view/Layer.hpp:
+src/model/../view/ILayer.hpp:
 src/model/../view/ILayer.hpp:

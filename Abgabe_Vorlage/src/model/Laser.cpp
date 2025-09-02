@@ -22,7 +22,7 @@ void Laser::update(float dt){       //dt: delta time
 }
 
 //draws active lasers
-void Laser::draw(Layer &layer){
+void Laser::draw(ILayer &layer){
     if (!active){
         return;
     }
@@ -41,4 +41,8 @@ int Laser::get_speed(){
 //returns lasers shape
 const sf::RectangleShape& Laser::get_rectangle() const {
     return rectangle;
+}
+//getting the position of the laser
+sf::Vector2f Laser :: get_position(){
+    return position;
 }
