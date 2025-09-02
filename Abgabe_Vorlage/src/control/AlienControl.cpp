@@ -170,7 +170,7 @@ return aliens[random_number];
 }
 
 //returns the vector alien_lasers including all the active lasers shot by aliens 
-std::vector<std::shared_ptr<Laser>> AlienControl::get_alien_lasers() {
+std::vector<std::shared_ptr<Laser>>& AlienControl::get_alien_lasers() {
     return alien_lasers;
 }
 
@@ -219,3 +219,17 @@ std::shared_ptr<Alien> AlienControl::get_most_down() {
 int AlienControl::get_level(){
     return level;
 }
+
+float AlienControl::get_speed(){
+    return speed;
+}
+
+HorizontalDirection AlienControl::get_h_dir() {
+    return h_dir;
+}
+
+std::vector<std::shared_ptr<Alien>>& AlienControl::get_aliens(){
+    return aliens;
+}
+
+

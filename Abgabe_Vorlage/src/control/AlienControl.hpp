@@ -40,7 +40,7 @@ class AlienControl {
     std::shared_ptr<Alien> random_alien();
 
     //returns the vector, that contains all active lasers shot by aliens
-    std::vector<std::shared_ptr<Laser>> get_alien_lasers();
+    std::vector<std::shared_ptr<Laser>>& get_alien_lasers();
 
     //checks if lasers are colliding with a laser
     void collisions_aliens(std::shared_ptr<Laser> laser);
@@ -61,7 +61,17 @@ class AlienControl {
 
     std::shared_ptr<Alien> get_most_down();
 
+    //returns level
     int get_level();
+
+    //returns speed
+    float get_speed();
+
+    //returns horizontal direction
+    HorizontalDirection get_h_dir();
+
+    //returns aliens vector
+    std::vector<std::shared_ptr<Alien>>& get_aliens();
 
     private:
     int score;
