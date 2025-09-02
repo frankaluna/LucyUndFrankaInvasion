@@ -60,6 +60,9 @@ class PlayerControl {
     //getter for player (copy)
     Player& get_player();
 
+    //getter for the shot start time for testing
+    sf::Time& get_shot_start_time();
+
 
     private:
     //player

@@ -36,10 +36,18 @@ TEST_F(PlayerControlTest, left_button_pressed_test){
     ASSERT_EQ(pc.get_player_movement(), HorizontalDirection::LEFT);
 }
 
-//testing direction_button_released() method
-TEST_F(PlayerControlTest, direction_button_released_test){
-    HorizontalDirection direction = HorizontalDirection::LEFT;
-    pc.direction_button_released(direction);
+//testing direction_button_released() method for left
+TEST_F(PlayerControlTest, right_direction_button_released_test){
+    pc.get_player().move_left();
+    ASSERT_EQ(pc.get_player_movement(), HorizontalDirection::LEFT);
+    pc.direction_button_released(HorizontalDirection::LEFT);
+    ASSERT_EQ(pc.get_player_movement(), HorizontalDirection::NONE);
+}
+//testing direction_button_released() method for right
+TEST_F(PlayerControlTest, left_direction_button_released_test){
+    pc.get_player().move_right();
+    ASSERT_EQ(pc.get_player_movement(), HorizontalDirection::RIGHT);
+    pc.direction_button_released(HorizontalDirection::RIGHT);
     ASSERT_EQ(pc.get_player_movement(), HorizontalDirection::NONE);
 }
 
@@ -101,10 +109,12 @@ TEST_F(PlayerControlTest, inactive_laser_update_player_test){
  
 //testing shoot_player() method
 TEST_F(PlayerControlTest, shoot_player_test){
-   /* pc.clock.getElapsedTime()- pc.shot_start_time = 0.35f;
-    pc.shoot_player();
-    ASSERT_EQ(pc.get_lasers().size(),);*/
+   pc.get_player().set_position(300.f, -300.f);
+   pc.get_lasers().clear();
+   pc.get_shot_start_time() = sf::seconds(-100.f);
+   pc.shoot_player();
 
+   ASSERT_EQ(pc.get_lasers().size(),1);
 
 }
 
@@ -116,26 +126,11 @@ TEST_F(PlayerControlTest, collisions_player_test){
     auto laser_ptr = std::make_shared<Laser>(sf::Vector2f{0.f, 0.f}, 2);
     laser_ptr->active = true;
     pc.collisions_player(laser_ptr);
-    //laser->get_rectangle().setPosition(300, -50); 
     ASSERT_EQ(pc.get_player().get_lives(), 2);
     ASSERT_FALSE(laser_ptr->active);
 
     
 }
-/*TEST_F(AlienControlTest, collisions_aliens_Test) {
-    //Laser laser({300, -300}, -2);
-    std::shared_ptr<Laser> laser_ptr (new Laser({300, -300}, -2));
-    ac.get_aliens().clear();
-    ac.random_alien()->set_position(300, -300);
-    ac.get_aliens().push_back(ac.random_alien());
-
-    ASSERT_EQ(ac.get_aliens().size(), 1);
-
-    ac.collisions_aliens(laser_ptr);
-
-    ASSERT_EQ(ac.get_aliens().size(), 0);
-}
-*/
 TEST_F(PlayerControlTest, no_collisions_player_test){
     pc.get_player().set_position(300,300);
     pc.set_lives(3);
