@@ -18,7 +18,7 @@ Wenn alle Invader Raumschiffe erschossen wurden, begibt sich der Player in das n
 Wenn die heimischen UFOs 33 mal getroffen wurden, sind diese für immer zerstört.
 Wenn der Player sich unter den heimischen UFOs befindet kann er nicht getroffen werden, allerdings auch selber keine Invader erschießen.
 
-Das Spiel endet, wenn alle drei Leben des Players erloschen sind, dies wird durch "GAME OVER" auf dem Bildschirm bekannt gegeben.
+Das Spiel endet, wenn alle drei Leben des Players erloschen sind oder die angreifenden Raumschiffe, die heimischen UFOs erreicht haben, dies wird durch "GAME OVER" auf dem Bildschirm bekannt gegeben.
 
 Steuerung:
 Mit der linken Pfeiltaste bewegt der Player sich nach links.
