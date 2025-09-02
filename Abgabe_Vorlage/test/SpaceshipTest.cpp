@@ -15,7 +15,7 @@ class SpaceshipTest: public ::testing::Test{
         Spaceship s;
         Mocklayer layer;
 };
-
+//testing if Spaceship gets drawn to the mocklayer
 TEST_F(SpaceshipTest,draw_test){
     EXPECT_CALL(layer, add_to_layer(Ref(s.get_sprite()))).Times(1);
 
