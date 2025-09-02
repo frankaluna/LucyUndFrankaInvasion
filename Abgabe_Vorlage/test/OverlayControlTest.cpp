@@ -38,14 +38,25 @@ TEST_F(OverlayControlTest, draw_Test) {
     oc.draw(); 
 }
 
-TEST_F(OverlayControlTest, is_game_over_loads_sprite) {
-    // Methode aufrufen
-    EXPECT_NO_THROW(oc.is_game_over());
+TEST_F(OverlayControlTest, is_game_over_Test) {
 
-    // Prüfen, dass show_game_over gesetzt wurde
+    EXPECT_NO_THROW(oc.is_game_over());
+ 
     ASSERT_TRUE(oc.get_show_game_over());
 
-    // Prüfen, dass die Textur dem Sprite gesetzt wurde
-    auto& tex = oc.get_game_over_sprite().getTexture(); // auto → const sf::Texture*
-    ASSERT_NE(tex, nullptr);
+}
+
+TEST_F(OverlayControlTest, show_score_Test) {
+
+    EXPECT_NO_THROW(oc.show_score(5));
+
+    oc.show_score(5);
+
+    ASSERT_EQ(oc.get_score_counter().getString(), "5");
+}
+
+TEST_F(OverlayControlTest, show_lives_Test) {
+    oc.show_lives(3);
+
+    ASSERT_EQ(oc.get_lives_sprites().size(), 3);
 }

@@ -152,7 +152,7 @@ void AlienControl::shoot_alien(){
     //selects a random alien
     std::shared_ptr<Alien> random_a = random_alien();
     //determines times between shots
-    if (clock.getElapsedTime() - shot_start_time >= sf::seconds(2.0f - (0.4 * level))) {
+    if (clock.getElapsedTime() - shot_start_time >= sf::seconds(3.0f - (0.4 * level))) {
         //adds a new laser to the alien_lasers vector
         alien_lasers.push_back(std::make_shared<Laser>(
         sf::Vector2f(random_a->get_position().x, random_a->get_position().y) , 150));

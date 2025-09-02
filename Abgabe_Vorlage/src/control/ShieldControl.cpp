@@ -43,7 +43,7 @@ void ShieldControl:: collisions_shield(std::shared_ptr<Laser> laser){
             //deactivate laser
             laser->active = false;
             
-            std::cout <<"shield attacked" << shield->get_resilience()  <<  std::endl;
+            //std::cout <<"shield attacked" << shield->get_resilience()  <<  std::endl;
             
             //reduce resilience if
             if (shield->get_resilience() <= 0){
