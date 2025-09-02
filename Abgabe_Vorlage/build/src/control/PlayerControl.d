@@ -1,4 +1,4 @@
-build/src/control/PlayerControl.o: src/control/PlayerControl.cpp \
+build/./src/control/PlayerControl.o: src/control/PlayerControl.cpp \
  src/control/PlayerControl.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \
@@ -61,10 +61,10 @@ build/src/control/PlayerControl.o: src/control/PlayerControl.cpp \
  src/control/../model/Directions.hpp \
  src/control/../model/../view/Layer.hpp \
  src/control/../model/../view/ILayer.hpp \
+ src/control/../model/../view/ILayer.hpp \
  src/control/../model/Directions.hpp src/control/../view/Layer.hpp \
  src/control/AlienControl.hpp src/control/../model/Laser.hpp \
- src/control/../model/../view/ILayer.hpp src/control/../model/Alien.hpp \
- src/control/../view/ILayer.hpp
+ src/control/../model/Alien.hpp src/control/../view/ILayer.hpp
 src/control/PlayerControl.hpp:
 SFML/include/SFML/Graphics.hpp:
 SFML/include/SFML/Graphics/BlendMode.hpp:
@@ -148,10 +148,10 @@ src/control/../model/Player.hpp:
 src/control/../model/Directions.hpp:
 src/control/../model/../view/Layer.hpp:
 src/control/../model/../view/ILayer.hpp:
+src/control/../model/../view/ILayer.hpp:
 src/control/../model/Directions.hpp:
 src/control/../view/Layer.hpp:
 src/control/AlienControl.hpp:
 src/control/../model/Laser.hpp:
-src/control/../model/../view/ILayer.hpp:
 src/control/../model/Alien.hpp:
 src/control/../view/ILayer.hpp:

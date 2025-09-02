@@ -31,7 +31,7 @@ void Player:: stop_horizontal_movement(){
 }
 
 //draws player on given layer
-void Player::draw(Layer &layer) {
+void Player::draw(ILayer &layer) {
     layer.add_to_layer(sprite);
 }
 

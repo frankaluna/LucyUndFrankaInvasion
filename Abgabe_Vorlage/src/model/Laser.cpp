@@ -6,13 +6,14 @@ Laser::Laser(sf::Vector2f position, int speed) : rectangle(sf::Vector2f ({4.f, 1
     this -> position = position; //initializes position
     this -> speed = speed;       //intitializes speed
     active = true;               //initializes active status
-
+    //rectangle.setPosition(position);
 }
 
 //handles laser updates
 void Laser::update(float dt){       //dt: delta time
     //moves laser
     position.y += speed * dt;
+    rectangle.setPosition(position);
     if (active){
         //deactivates laser if its out of the screen
         if(position.y < -600 || position.y >0){
@@ -29,7 +30,7 @@ void Laser::draw(ILayer &layer){
 
 //rectangle in an Pink Color as laser
 rectangle.setFillColor(sf::Color{ 232, 9, 121});
-rectangle.setPosition(position);
+//rectangle.setPosition(position);
 layer.add_to_layer(rectangle); //draws laser
 }
 

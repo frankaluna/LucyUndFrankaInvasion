@@ -1,7 +1,7 @@
 #include "PlayerControl.hpp"
 #include <iostream>
 
-PlayerControl::PlayerControl(Layer &layer) : layer(layer)
+PlayerControl::PlayerControl(ILayer &layer) : layer(layer)
 {
     shot_start_time = sf::seconds(0.0f); //initializes shot time
 }
@@ -65,7 +65,7 @@ void PlayerControl::draw_player(){
 }
 
 //returns vector with all active player lasers
-const std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() const {
+std::vector<std::shared_ptr<Laser>>& PlayerControl::get_lasers() {
     return lasers;
 }
 
@@ -104,3 +104,16 @@ void PlayerControl::set_lives(int new_lives){
     player.set_lives(new_lives);
 }
 
+//getting the direction the player uses in the player class
+HorizontalDirection PlayerControl::get_player_movement() const{
+    return player.get_horizontal_movement();
+}
+
+//getter for the Player for only reading
+const Player& PlayerControl:: get_player() const{
+    return player;
+}
+//getter for the Player no const for writing
+Player& PlayerControl:: get_player(){
+    return player;
+}

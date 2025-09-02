@@ -9,13 +9,14 @@
 #include <vector>
 #include "../model/Laser.hpp"
 #include <SFML/System.hpp>
+#include "../view/ILayer.hpp"
 
 
 class PlayerControl {
     public:
 
     //constructs and initializes Player on a layer
-    PlayerControl(Layer &layer);
+    PlayerControl(ILayer &layer);
 
     //move Player to the right
     void right_button_pressed();
@@ -36,7 +37,7 @@ class PlayerControl {
     void shoot_player();
 
     //getter for laser dynamic array for when we want to work on collusion
-    const std::vector<std::shared_ptr<Laser>>& get_lasers() const;
+    std::vector<std::shared_ptr<Laser>>& get_lasers();
 
     //handles players collisions with lasers
     void collisions_player(std::shared_ptr<Laser> laser);
@@ -50,12 +51,22 @@ class PlayerControl {
     //sets the players lives
     void set_lives(int new_lives);
 
+    //getter for the horizontal direction of the player
+    HorizontalDirection get_player_movement() const;
+
+    //getter for the Player
+    const Player& get_player() const;
+
+    //getter for player (copy)
+    Player& get_player();
+
+
     private:
     //player
     Player player;
 
     //layer where player is drawn
-    Layer &layer;
+    ILayer &layer;
 
     //length where the current shot started
     sf::Time shot_start_time;  

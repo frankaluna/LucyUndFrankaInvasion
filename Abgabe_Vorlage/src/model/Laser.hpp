@@ -33,6 +33,7 @@ class Laser{
     ///returns the position of the laser
     sf::Vector2f get_position();
 
+
     private:
     //lasers position
     sf::Vector2f position;

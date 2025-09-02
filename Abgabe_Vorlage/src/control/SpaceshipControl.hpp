@@ -8,12 +8,13 @@
 #include "../view/Layer.hpp"
 #include "../model/Laser.hpp"
 #include "PlayerControl.hpp"
+#include "../view/ILayer.hpp"
 
 class SpaceshipControl{
     public:
 
     //initialites Spaceship on layer
-    SpaceshipControl(Layer &layer);
+    SpaceshipControl(ILayer &layer);
 
     //updates Spaceship
     void update(float dt);
@@ -32,6 +33,15 @@ class SpaceshipControl{
 
     //returns true if there is a collision
     bool collision;
+
+    //returns last_seen of spaceship for testing
+    float get_last_seen();
+
+    //getter for the spaceship in private for testing
+    Spaceship& get_spaceship();
+
+    //getter for the spaceship in private for testing
+    const Spaceship& get_spaceship() const;
     
     private:
 
@@ -39,7 +49,7 @@ class SpaceshipControl{
     Spaceship spaceship;
 
     //layer where spaceship is drawn
-    Layer &layer;
+    ILayer &layer;
 
     //speed
     float speed;
