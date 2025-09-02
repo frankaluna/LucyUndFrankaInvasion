@@ -233,3 +233,7 @@ std::vector<std::shared_ptr<Alien>>& AlienControl::get_aliens(){
 }
 
 
+ sf::Time& AlienControl::get_shot_start_time() {
+    return shot_start_time;
+ }
+

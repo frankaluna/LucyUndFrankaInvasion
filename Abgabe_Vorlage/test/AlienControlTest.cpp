@@ -55,6 +55,7 @@ protected:
     std::vector<std::shared_ptr<Alien>> aliens = ac.create_aliens();
     std::shared_ptr<Laser> laser;
     std::shared_ptr<Laser> la;
+    std::vector<std::shared_ptr<Laser>>& alien_lasers = ac.get_alien_lasers();
 };
 
 TEST_F(AlienControlTest, create_aliens_sizeTest){
@@ -75,7 +76,6 @@ TEST_F(AlienControlTest, create_aliens_positionTest) {
         }
     }   
 }
-
 
 //draw_alien: da Alien::draw() getestet ist und funktioniert muss auch AlienControl::draw_alien() funktionieren
 
@@ -162,6 +162,14 @@ TEST_F(AlienControlTest, update_erase_Test) {
 }
 
 TEST_F(AlienControlTest, shoot_Test) {
-    
+    ac.get_alien_lasers().clear();
+    ac.get_shot_start_time() = sf::seconds(-100.f);
+    ac.shoot_alien();
+
+    ASSERT_EQ(ac.get_alien_lasers().size(), 1);
 }
 
+
+TEST_F(AlienControlTest, collisions_aliens_Test) {
+    ac.get_aliens().push_back()
+} 
