@@ -63,7 +63,7 @@ build/src/control/PlayerControl.o: src/control/PlayerControl.cpp \
  src/control/../model/../view/ILayer.hpp \
  src/control/../model/Directions.hpp src/control/../view/Layer.hpp \
  src/control/AlienControl.hpp src/control/../model/Laser.hpp \
- src/control/../model/Alien.hpp src/control/../model/../view/ILayer.hpp \
+ src/control/../model/../view/ILayer.hpp src/control/../model/Alien.hpp \
  src/control/../view/ILayer.hpp
 src/control/PlayerControl.hpp:
 SFML/include/SFML/Graphics.hpp:
@@ -152,6 +152,6 @@ src/control/../model/Directions.hpp:
 src/control/../view/Layer.hpp:
 src/control/AlienControl.hpp:
 src/control/../model/Laser.hpp:
-src/control/../model/Alien.hpp:
 src/control/../model/../view/ILayer.hpp:
+src/control/../model/Alien.hpp:
 src/control/../view/ILayer.hpp:
