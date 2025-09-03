@@ -12,22 +12,22 @@ class Spaceship {
         //constructor and initialize
         Spaceship();
 
-        //boolean for checking if it is alive
+        //boolean for checking if it is alive/ is to be seen 
         bool alive;
 
-        //position of spaceship
+        //setting position of spaceship
         void set_position(float x, float y);
 
-        //getter position
+        //returns position
         sf::Vector2f get_position() const;
 
         //sprite for spaceship
         const sf:: Sprite&get_sprite() const;
 
-        //draw method
+        //draw method on layer
         void draw(ILayer &layer);
 
-        //getter speed
+        //returns the speed
         float get_speed() const;
 
     private:

@@ -40,8 +40,6 @@ class Shield{
 
     //sprite for the shield
     sf:: Sprite sprite;
-    //sf::Text text;
-    //sf::Font font;
 
     int resilience;
 

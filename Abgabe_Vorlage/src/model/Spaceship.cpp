@@ -2,6 +2,7 @@
 
 
 Spaceship::Spaceship() :
+    //initializing the position of the spaceship at the top of the screen with texture and sprite
     position({300, -550}), 
     texture(),
     sprite(texture)
@@ -13,12 +14,13 @@ Spaceship::Spaceship() :
     sprite.setTextureRect(sf::IntRect({0, 0}, {32, 32}));
     sprite.setOrigin({16, 16}); // middle point
     sprite.setPosition(position);
-
+    
+    //not seen at first
     alive = false;
 
 }
 
-//get position
+//returns the position of the spaceship
 sf::Vector2f Spaceship:: get_position() const{
     return position;
 }
@@ -30,7 +32,7 @@ void Spaceship:: set_position(float x, float y){
     sprite.setPosition({x,y});
 }
 
-//get sprite picture
+//returns the sprite of the spaceship
 const sf:: Sprite& Spaceship:: get_sprite() const{
     return sprite;
 }
@@ -40,7 +42,7 @@ void Spaceship:: draw(ILayer &layer){
     layer.add_to_layer(sprite);
 }
 
-//getter speed
+//returns the speed of the spaceship
 float Spaceship:: get_speed() const{
     return speed;
 }
