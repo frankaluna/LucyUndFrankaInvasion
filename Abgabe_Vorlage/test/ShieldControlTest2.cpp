@@ -61,8 +61,8 @@ TEST_F(ShieldControlTest, collisions_shield_eraseTest) {
     sc.get_shields().clear();
     sc.get_shields().push_back(shield);
    
-    int oldSize = shields.size(); 
-    shields[0]->set_resilience(1);
+    int oldSize = sc.get_shields().size(); 
+    sc.get_shields()[0]->set_resilience(0);
 
     sc.collisions_shield(laser_ptr);
 

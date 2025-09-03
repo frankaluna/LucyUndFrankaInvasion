@@ -31,16 +31,22 @@ class OverlayControl{
     //shows players lives
     void show_lives(int lives);
 
+    //returns score sprite
     sf::Sprite& get_score_sprite();
 
+    //returns game over sprite
     sf::Sprite& get_game_over_sprite();
 
+    //returns score counter
     sf::Text& get_score_counter();
 
+    //returns lives sprite
     std::vector<sf::Sprite>& get_lives_sprites();
 
+    //returns if the game is over
     bool get_show_game_over();
 
+    //sets the show_game_over attribute 
     void set_show_game_over(bool game_over);
 
 
