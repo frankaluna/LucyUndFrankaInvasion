@@ -35,7 +35,7 @@ ASSERT_EQ(sc.get_last_seen(), 0.0f );
 
 
 //testing collisions_spaceship method
-/*TEST_F(SpaceshipControlTest, no_collisions_spaceship_test){
+TEST_F(SpaceshipControlTest, no_collisions_spaceship_test){
     auto laser = std::make_shared<Laser>(sf::Vector2f{500,-500}, -1);
     laser->active = true;
     sc.get_spaceship().set_position(50, -50);
@@ -46,7 +46,8 @@ ASSERT_EQ(sc.get_last_seen(), 0.0f );
     EXPECT_TRUE(sc.get_spaceship().alive); // spaceship alive
     EXPECT_FALSE(sc.collision);   // no Collision
 
-}*/
+}
+//Testausführung aufgrund der Sprite des Spaceships nicht möglich, siehe AlienControl, dass methode aber tests passed
 /*TEST_F(SpaceshipControlTest, collisions_spaceship_test){
     auto laser = std::make_shared<Laser>(sf::Vector2f{300,-300}, 1);
     laser->active = true;

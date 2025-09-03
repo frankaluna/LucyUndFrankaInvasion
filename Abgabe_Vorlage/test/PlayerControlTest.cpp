@@ -131,6 +131,7 @@ TEST_F(PlayerControlTest, shoot_player_test){
 }
 
 //testing collisions_player() method
+//Testausführung aufgrund der Sprite des Players nicht möglich, siehe AlienControl, dass methode aber tests passed
 /*TEST_F(PlayerControlTest, collisions_player_test){
     pc.get_player().set_position(300.f,-50.f);
     pc.set_lives(3);
@@ -145,13 +146,13 @@ TEST_F(PlayerControlTest, shoot_player_test){
     
 }*/
 
-/*TEST_F(PlayerControlTest, no_collisions_player_test){
+TEST_F(PlayerControlTest, no_collisions_player_test){
     pc.get_player().set_position(300,300);
     pc.set_lives(3);
     pc.collisions_player(laser);
     ASSERT_EQ(pc.get_player().get_lives(), 3);
     ASSERT_TRUE(laser->active);
-}*/
+}
 
 //testing is_game_over() method
 TEST_F(PlayerControlTest, is_game_over_test){

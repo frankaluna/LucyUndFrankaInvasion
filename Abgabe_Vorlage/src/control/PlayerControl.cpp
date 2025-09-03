@@ -117,6 +117,7 @@ const Player& PlayerControl:: get_player() const{
 Player& PlayerControl:: get_player(){
     return player;
 }
+//returns the shot start time for testing
 sf::Time& PlayerControl:: get_shot_start_time(){
         return shot_start_time;
     }
