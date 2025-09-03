@@ -3,7 +3,7 @@
 #include <SFML/Window/Event.hpp>
 #include "../model/Constants.hpp"
 //Constructor that inirializes the game with its settings
-Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Space Invaders"),
+Game::Game() : window(sf::VideoMode({constants::VIEW_WIDTH, constants::VIEW_HEIGHT}), "Lucy und Franka Invasion"),
     view(sf::FloatRect(sf::Vector2f({0,-constants::VIEW_HEIGHT}), sf::Vector2f({constants::VIEW_WIDTH,constants::VIEW_HEIGHT}))),
     //layers
     game_layer(window),             
@@ -141,7 +141,6 @@ void Game::update(float time_passed) {
     if (spaceship_control.collision){
         int new_lives = player_control.get_lives() + 1;
         player_control.set_lives(new_lives);
-        std::cout << "ein neues Leben!!!!" << player_control.get_lives() << std::endl;
         spaceship_control.collision = false;
     }    
 

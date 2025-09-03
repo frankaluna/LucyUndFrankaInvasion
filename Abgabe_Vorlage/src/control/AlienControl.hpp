@@ -73,6 +73,8 @@ class AlienControl {
     //returns aliens vector
     std::vector<std::shared_ptr<Alien>>& get_aliens();
 
+    sf::Time& get_shot_start_time();
+
     private:
     int score;
     int level;

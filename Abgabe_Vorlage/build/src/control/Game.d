@@ -63,11 +63,21 @@ build/src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
  src/control/./../model/../view/ILayer.hpp \
  src/control/./../model/Directions.hpp src/control/./../view/Layer.hpp \
  src/control/./AlienControl.hpp src/control/./../model/Laser.hpp \
+<<<<<<< HEAD
  src/control/./../model/Alien.hpp src/control/./PlayerControl.hpp \
  src/control/./../view/ILayer.hpp src/control/./ShieldControl.hpp \
  src/control/./../model/Shield.hpp src/control/./AlienControl.hpp \
  src/control/./SpaceshipControl.hpp src/control/./../model/Spaceship.hpp \
  src/control/OverlayControl.hpp src/control/../view/Layer.hpp \
+=======
+ src/control/./../model/Alien.hpp \
+ src/control/./../model/../view/ILayer.hpp \
+ src/control/./PlayerControl.hpp src/control/./../view/ILayer.hpp \
+ src/control/./ShieldControl.hpp src/control/./../model/Shield.hpp \
+ src/control/./AlienControl.hpp src/control/./SpaceshipControl.hpp \
+ src/control/./../model/Spaceship.hpp src/control/OverlayControl.hpp \
+ src/control/../view/Layer.hpp src/control/../view/ILayer.hpp \
+>>>>>>> main
  src/control/../model/Laser.hpp src/control/../model/Constants.hpp
 src/control/Game.hpp:
 SFML/include/SFML/Graphics.hpp:
@@ -168,5 +178,6 @@ src/control/./SpaceshipControl.hpp:
 src/control/./../model/Spaceship.hpp:
 src/control/OverlayControl.hpp:
 src/control/../view/Layer.hpp:
+src/control/../view/ILayer.hpp:
 src/control/../model/Laser.hpp:
 src/control/../model/Constants.hpp:

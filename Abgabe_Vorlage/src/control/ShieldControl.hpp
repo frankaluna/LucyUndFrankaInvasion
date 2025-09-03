@@ -5,12 +5,14 @@
 #include "../model/Shield.hpp"
 #include <SFML/Window.hpp>
 #include "../model/Laser.hpp"
+#include "../view/ILayer.hpp"
 #include <vector>
+
 //Controller class for the shields
 class ShieldControl {
     public:
     //constructor and initializes with layer
-    ShieldControl(Layer &layer);
+    ShieldControl(ILayer &layer);
 
     //draws shield to the game layer
     void draw();
@@ -21,11 +23,13 @@ class ShieldControl {
     //checking for the collisions between shields and lasers
     void collisions_shield(std::shared_ptr<Laser> laser);
 
+    std::vector<std::shared_ptr<Shield>>& get_shields();
+
 
     private:
 
     //the layer we want to draw on
-    Layer &layer;
+    ILayer &layer;
 
     //the row as a vector of the shields
     std::vector<std::shared_ptr<Shield>> shields;

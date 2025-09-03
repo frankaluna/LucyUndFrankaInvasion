@@ -6,6 +6,8 @@
 
 using ::testing::Ref;
 
+//test class for shield
+
 class ShieldTest : public ::testing::Test {
     public:
         ShieldTest() : s({300, -300}) {
@@ -16,6 +18,7 @@ class ShieldTest : public ::testing::Test {
         Mocklayer layer;
 };
 
+//tests if the shields is drawn correctly onto the layer
 TEST_F(ShieldTest, draw_Test) {
     EXPECT_CALL(layer, add_to_layer(Ref(s.get_sprite())))
         .Times(1);

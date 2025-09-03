@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include "../view/Layer.hpp"
+#include "../view/ILayer.hpp"
 
 //This class handles the overlay of the game: displaying the lives, score and game over screen
 
@@ -13,7 +14,7 @@ class OverlayControl{
     public: 
 
     //constructor
-    OverlayControl(Layer &layer);
+    OverlayControl(ILayer &layer);
 
     //updates the overlay
     void update(int score, int lives);
@@ -30,9 +31,22 @@ class OverlayControl{
     //shows players lives
     void show_lives(int lives);
 
+    sf::Sprite& get_score_sprite();
+
+    sf::Sprite& get_game_over_sprite();
+
+    sf::Text& get_score_counter();
+
+    std::vector<sf::Sprite>& get_lives_sprites();
+
+    bool get_show_game_over();
+
+    void set_show_game_over(bool game_over);
+
+
     private:
 
-    Layer &layer; //layer in which overlay is drawn
+    ILayer &layer; //layer in which overlay is drawn
 
     sf::Font font; //font for the score
 

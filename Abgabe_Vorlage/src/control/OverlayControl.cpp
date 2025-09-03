@@ -1,7 +1,7 @@
 #include "OverlayControl.hpp"
 
 
-OverlayControl::OverlayControl(Layer &layer) :
+OverlayControl::OverlayControl(ILayer &layer) :
 font("assets/fonts/ARCADECLASSIC.TTF"),
 layer(layer),
 game_over(), 
@@ -82,4 +82,28 @@ void OverlayControl::show_lives(int lives){
         lives_sprite.setPosition({475 + i * 32, 565});  //adjusting position of the created sprite
         lives_sprites.push_back(lives_sprite);      //adding the lives_sprite to the lives_sprites vector
     }
+}
+
+sf::Sprite& OverlayControl::get_score_sprite() { 
+    return score_sprite;
+}
+
+sf::Sprite& OverlayControl::get_game_over_sprite() {
+    return game_over_sprite;
+};
+
+sf::Text& OverlayControl::get_score_counter() {
+    return score_counter;
+}
+
+std::vector<sf::Sprite>& OverlayControl::get_lives_sprites() {
+    return lives_sprites;
+}
+
+bool OverlayControl::get_show_game_over() {
+    return show_game_over; 
+}
+
+void OverlayControl::set_show_game_over(bool game_over) {
+    show_game_over = game_over;
 }
