@@ -43,9 +43,7 @@ void ShieldControl:: collisions_shield(std::shared_ptr<Laser> laser){
             //deactivate laser
             laser->active = false;
             
-            //std::cout <<"shield attacked" << shield->get_resilience()  <<  std::endl;
-            
-            //reduce resilience if
+            //erase shield if lives are up
             if (shield->get_resilience() <= 0){
                 iteration_shields = shields.erase(iteration_shields);
                 continue;
@@ -57,6 +55,7 @@ void ShieldControl:: collisions_shield(std::shared_ptr<Laser> laser){
     }   
 }
 
+//returns vector including all four shields
 std::vector<std::shared_ptr<Shield>>& ShieldControl::get_shields(){
     return shields;
 }

@@ -1,4 +1,4 @@
-build/src/control/AlienControl.o: src/control/AlienControl.cpp \
+build/./src/control/AlienControl.o: src/control/AlienControl.cpp \
  src/control/AlienControl.hpp SFML/include/SFML/Graphics.hpp \
  SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \

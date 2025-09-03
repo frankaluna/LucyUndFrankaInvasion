@@ -1,4 +1,4 @@
-build/src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
+build/./src/control/Game.o: src/control/Game.cpp src/control/Game.hpp \
  SFML/include/SFML/Graphics.hpp SFML/include/SFML/Graphics/BlendMode.hpp \
  SFML/include/SFML/Graphics/Export.hpp SFML/include/SFML/Config.hpp \
  SFML/include/SFML/Graphics/CircleShape.hpp \

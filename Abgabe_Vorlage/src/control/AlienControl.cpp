@@ -208,32 +208,38 @@ std::shared_ptr<Alien> AlienControl::get_most_right() {
     return most_right;
 }
 
+
 std::shared_ptr<Alien> AlienControl::get_most_left() {
     return most_left;
 }
+
 
 std::shared_ptr<Alien> AlienControl::get_most_down() {
     return most_down;
 }
 
+//returns level
 int AlienControl::get_level(){
     return level;
 }
 
+//returns aliens speed
 float AlienControl::get_speed(){
     return speed;
 }
 
+//returns horizontal direction
 HorizontalDirection AlienControl::get_h_dir() {
     return h_dir;
 }
 
+//returns aliens cluster
 std::vector<std::shared_ptr<Alien>>& AlienControl::get_aliens(){
     return aliens;
 }
 
-
- sf::Time& AlienControl::get_shot_start_time() {
+//returns shot start time
+sf::Time& AlienControl::get_shot_start_time() {
     return shot_start_time;
- }
+}
 

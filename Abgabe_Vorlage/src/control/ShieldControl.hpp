@@ -23,6 +23,7 @@ class ShieldControl {
     //checking for the collisions between shields and lasers
     void collisions_shield(std::shared_ptr<Laser> laser);
 
+    //returns vector including all shields
     std::vector<std::shared_ptr<Shield>>& get_shields();
 
 

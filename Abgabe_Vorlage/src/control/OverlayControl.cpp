@@ -84,26 +84,32 @@ void OverlayControl::show_lives(int lives){
     }
 }
 
+//returns score sprite
 sf::Sprite& OverlayControl::get_score_sprite() { 
     return score_sprite;
 }
 
+//returns game_over_sprite
 sf::Sprite& OverlayControl::get_game_over_sprite() {
     return game_over_sprite;
 };
 
+//returns score counter
 sf::Text& OverlayControl::get_score_counter() {
     return score_counter;
 }
 
+//returns lives sprite vector
 std::vector<sf::Sprite>& OverlayControl::get_lives_sprites() {
     return lives_sprites;
 }
 
+//returns if the game is over
 bool OverlayControl::get_show_game_over() {
     return show_game_over; 
 }
 
+//sets value of show_game_over
 void OverlayControl::set_show_game_over(bool game_over) {
     show_game_over = game_over;
 }
